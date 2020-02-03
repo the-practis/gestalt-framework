@@ -1,0 +1,9 @@
+{{- if eq .Params.lastModDisplay true -}}
+<li class="lastmod">
+  <i data-feather="edit"></i>
+  {{- $updateDateTime := .Lastmod.Format "2006-01-02" -}}
+{{/* <!-- TODO Check if you need to have dateFormat or do you need to impliment it in your config file? --> */}}
+  {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" -}}
+  <span>Updated:&nbsp;</span><time datetime="{{ $updateDateTime }}">{{- .Lastmod.Format "January 2, 2006" -}}</time>
+</li>
+{{- end }}

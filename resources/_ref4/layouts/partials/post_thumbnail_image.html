@@ -1,0 +1,16 @@
+{{ if .Params.thumbnailImage }}
+<a href="{{ .Permalink }}">
+  <div class="post_thumbnail_image">
+      <img src="{{ .Params.thumbnailImage }}" alt="image from {{ .Title }}">
+  </div>
+  </a>
+  {{ else }}
+
+  {{ if .Params.featureImage }}
+  <a href="{{ .Permalink }}">
+    <div class="post_feature_image">
+        <img src="{{ .Params.featureImage }}" alt="image from {{ .Title }}">
+    </div>
+  </a>
+{{ end }}
+{{ end }}

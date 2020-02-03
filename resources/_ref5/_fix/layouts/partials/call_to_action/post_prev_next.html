@@ -1,0 +1,22 @@
+<section class="post-prev-next">
+
+  <ul>
+    <li class="previous">
+
+      {{ with .PrevInSection }}
+
+        <span>Previous:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+      {{ end }}
+    </li>
+
+    <li class="title">{{ .Title }}</li>
+
+    <li class="next">
+      {{ with .NextInSection }}
+
+        <span>Next:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+      {{ end }}
+    </li>
+  </ul>
+
+<section>

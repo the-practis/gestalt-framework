@@ -1,0 +1,26 @@
+footer {
+  margin: 8rem 0 1.5rem 0;
+}
+footer > hr.half {
+  margin: 0 auto 8rem auto;
+  text-align: center;
+
+}
+footer .copyright {
+  /* display: block; */
+  /* min-width: 100%; */
+  /* IDEA Make an easter egg effect for hovering on the copyright text, something really cool. */
+  margin: 0 auto;
+  font-size: 0.9em;
+  text-align: center;
+  /* opacity: 0.4; */
+}
+/* TODO Below is your site version no. it should link to your releases page like https://desktop.github.com/release-notes/, you'll need to learn how to use github and link the data, do a free course it should not take to long. */
+footer .copyright span {
+  font-size: 0.7em;
+
+}
+
+footer .newsletter-signup {
+  margin: 6rem 0 0 0;
+}

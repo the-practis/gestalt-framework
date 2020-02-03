@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+  {{ block "head" . }}
+    {{ partial "head/head_meta.html" . }}
+    {{ partial "head/head_title.html" . }}
+  {{ end }}
+
+
+  {{/* <!-- IDEA Use an api to call the normalize style sheet, so you alwasy have the most recent one --> */}}
+  {{/* <!-- NOTE Global Styles --> */}}
+  {{ $css_normalize := "/css/normalize.css" | absURL }}
+  <link rel="stylesheet" href="{{ $css_normalize }}" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/typography.css" />
+  <link rel="stylesheet" href="/css/nav_prime.css" />
+  <link rel="stylesheet" href="/css/image.css" />
+  <link rel="stylesheet" href="/css/effects.css" />
+  <link rel="stylesheet" href="/css/page_label.css" />
+
+  {{/* <!-- NOTE Content Specific Styles --> */}}
+  <link rel="stylesheet" href="/css/nav_local.css" />
+  <link rel="stylesheet" href="/css/nav_aside.css" />
+  <link rel="stylesheet" href="/css/post-prev-next.css" />
+  <link rel="stylesheet" href="/css/blockquote.css" />
+  <link rel="stylesheet" href="/css/nav_pagination_custom.css" />
+
+  {{/* <!-- NOTE Plugin Specific Styles --> */}}
+  <link rel="stylesheet" href="/css/stickybits.css" />
+  <link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+
+
+  {{/* <!-- NOTE Fonts (Resources: Google, Typekit Fonts) --> */}}
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700&display=swap" rel="stylesheet">
+
+
+  {{/* <!-- Used to connect to Netlify CMS --> */}}
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+
+
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Figure out how this works with the above Hugo_ENV codes. --> */}}
+</head>
+<body>
+  <div class="body-content">
+
+
+
+  <header>
+    <nav class="navigationTop new> nav-wrap-top-bar">
+      <div id="navPrimeHide" class="navbarPrimaryScrollHide new> nav-prime-hide">
+      {{ block "header" . }}
+        {{ partial "header/nav_prime.html" . }}
+        {{ partial "header/nav_local.html" . }}
+      {{ end }}
+      </div><!-- end navbarPrimaryScrollHide -->
+    </nav><!-- end navigationTop -->
+  </header>
+
+
+
+  <main id="main" class="main " role="main">
+    <div class="main-content">
+      <!-- TODO Add a main-content div here, do the same for the rest -->
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+  </main>
+
+
+
+  <aside>
+    <div class="aside-content">
+      {{ block "aside" . }}
+      {{ end }}
+    </div>
+  </aside>
+
+
+
+  <section class="local-call-to-action">
+    <div class="local-call-to-action-content">
+      {{ block "local_call_to_action" . }}
+        {{ partial "call_to_action/post_prev_next" . }}
+<!-- BUG For some reason placing " partial "call_to_action/nav_pagination_custom" . " errors out the entire site -->
+      {{ end }}
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="footer-content">
+      {{ block "footer" . }}
+      {{ end }}
+    </div>
+  </footer>
+
+
+</div><!-- end body-content -->
+
+
+
+  {{/* <!-- TODO Make use of the script block --> */}}
+  {{ block "script" . }}
+  {{ end }}
+
+
+  {{/* <!-- TODO Turn the base js into a partial with a condition that loads JQuery if not present somewhere. --> */}}
+  {{ $js_jquery := "js/jquery.js" | absURL }}
+  <script src="{{ $js_jquery }}"></script>
+  {{ $js_nav_prime_hide := "js/nav_prime_hide.js" | absURL }}
+  <script src="{{ $js_nav_prime_hide }}"></script><!-- Requires JQuery -->
+  <!-- NOTE Newly Refactored ^^^ -->
+
+
+  {{ $js_navbar_menu_toggle := "js/navbar_menu_toggle.js" | absURL }}
+  <script src="{{ $js_navbar_menu_toggle }}"></script>
+  <script src="/js/navbar_secondary_expand.js"></script>
+  <!-- NOTE Use if jquery.stickybits.js isn't loaded before the stickybit.js loads -->
+  <!-- <script src="js/jquery.stickybits.js"></script> -->
+  <script src="/js/stickybits.js"></script>
+
+
+  {{/* <!-- Used to connect Netlify CMS
+    TODO: Include this as a partial or pipe or something --> */}}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+
+</body>
+</html>

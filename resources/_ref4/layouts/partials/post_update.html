@@ -1,0 +1,8 @@
+{{ if eq .Params.lastModCheck true }}
+<li class="post_update">
+  {{ $updateDateTime := .Lastmod.Format "2006-01-02" }}
+  {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+  <span>Updated:&nbsp;</span><time datetime="{{ $updateDateTime }}">{{ .Lastmod.Format "January 2, 2006" }}</time>
+</li>
+{{ end }}
+</ul>

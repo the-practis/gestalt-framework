@@ -1,0 +1,32 @@
+<div class="navbar-secondary frosted-glass-light frosted-glass-dark">
+
+  <button class="navbarSecondaryExpand">  <a href="/everyday/">Everydays</a></button>
+    <div class="navbar-secondary-content">
+
+
+        <div class="menu-mobile">
+          <div class="local-nav-title">
+          <a href="/everyday/">Everydays</a>
+        </div>
+
+
+        <!-- TODO make the menu items reference local information that is page specific. -->
+        {{ $currentPage := . }}
+        {{ if .Site.Menus.nav_local_everyday }}
+        <ul class="menu local-menu">
+          {{ range .Site.Menus.nav_local_everyday }}
+          <li class="menu-item">
+            <a class="{{if or ($currentPage.IsMenuCurrent "nav_local_everyday" .) ($currentPage.HasMenuCurrent "nav_local_everyday" .) }} menu-item-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">
+              {{- .Name -}}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+
+
+
+    </div><!-- end navbar-secondary-content -->
+
+</div><!-- end navbar-secondary -->

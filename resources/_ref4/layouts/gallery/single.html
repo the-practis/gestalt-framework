@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="page-label">
+  <span>Layout:&nbsp;/gallery/single/</span>
+</div>
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<main class="main-content-container">
+
+  <nav class="nav-local-switch">
+    {{ $roundName1 := "Round 01" }}
+    {{ $roundName2 := "Round 02" }}
+    {{ $roundName3 := "Round 03" }}
+    {{ $roundName4 := "Round 04" }}
+    {{ $currentRoundNumber := (.Params.round_number) }}
+    <!-- Round 01 -->
+    {{ if eq $currentRoundNumber $roundName1 }}
+    <ul>{{ range where .Site.Pages "Params.layout" "round_one" }}
+      <li>    <a href=" {{ .Permalink }}">
+        {{- .Title -}}
+      </a></li>{{ end }}</ul>
+      {{ else }}<!-- Do Nothing -->{{ end }}
+      <!-- Round 02 -->
+      {{ if eq $currentRoundNumber $roundName2 }}
+      <ul>{{ range where .Site.Pages "Params.layout" "round_two" }}
+        <li>    <a href=" {{ .Permalink }}">
+          {{- .Title -}}
+        </a></li>{{ end }}</ul>
+        {{ else }}<!-- Do Nothing -->{{ end }}
+        <!-- Round 03 -->
+        {{ if eq $currentRoundNumber $roundName3 }}
+        <ul>{{ range where .Site.Pages "Params.layout" "round_three" }}
+          <li>    <a href=" {{ .Permalink }}">
+            {{- .Title -}}
+          </a></li>{{ end }}</ul>
+          {{ else }}<!-- Do Nothing -->{{ end }}
+          <!-- Round 04 -->
+          {{ if eq $currentRoundNumber $roundName4 }}
+          <ul>{{ range where .Site.Pages "Params.layout" "round_four" }}
+            <li>    <a href=" {{ .Permalink }}">
+              {{- .Title -}}
+            </a></li>{{ end }}</ul>
+            {{ else }}<!-- Do Nothing -->{{ end }}
+  </nav>
+
+  <h1 class="gallery-title">{{ .Title }}</h1>
+
+  <section class="gallery-container">
+    {{ .Content }}
+    {{/* <!-- TODO Add the load more button --> */}}
+  </section>
+
+
+</main>
+{{ end }}

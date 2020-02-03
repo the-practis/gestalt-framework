@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="page-label">
+    <span>Layout:&nbsp;/article/list/</span>
+</div>
+
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<div class="">
+  <ul class="range-list">
+    {{ $paginator := .Paginate (where .Data.Pages.ByPublishDate.Reverse "Type" "article") 3}}
+    {{ range $paginator.Pages }}
+    <li class="range-list-item">
+
+      <article>
+        <header class="post-header">
+          <!-- <div> -->
+            <!-- FIXME I should not need to wrap in a div section tag should keep the content seperate -->
+            {{ partial "post_hero_image_thumbnail" . }}
+            <!-- </div> -->
+
+          {{ partial "post_masthead_thumbnail" . }}
+        </header>
+
+        <section class="post-body-copy">
+          <p>
+            {{ .Summary | truncate 280 }}<a href="{{ .RelPermalink }}">continue</a>
+          </p>
+        </section>
+      </article>
+
+
+    </li>
+    {{ end }}
+  </ul>
+</div><!-- end post_list_range -->
+
+{{ end }}
+
+  {{ define "aside" }}
+  {{ end }}
+
+  {{ define "local_call_to_action" }}
+    
+  {{ end }}
+
+  {{ define "footer" }}
+  {{ end }}
+
+  {{ define "scripts" }}
+  {{ end }}

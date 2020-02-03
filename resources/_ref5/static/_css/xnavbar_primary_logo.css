@@ -1,0 +1,21 @@
+ .site-brandmark {
+   margin: 0 0 0 16px;
+   font-size: 20px;
+   transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+   transition-delay: 0s;
+   transition-delay: 0.65s;
+   background-color: transparent;
+   z-index: 7;
+   align-items: center;
+}
+ .site-brandmark span {
+  color: rgba(245, 245, 245, 1.0);
+  transition: all 0.5s ease-out;
+}
+ .site-brandmark span:hover {
+  color: rgba(71, 153, 226, 1.0);
+  transition: all 0.5s ease-out;
+}
+ .site-brandmark span span {
+  color: rgba(71, 153, 226, 1.0);
+}

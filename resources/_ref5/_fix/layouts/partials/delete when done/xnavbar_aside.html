@@ -1,0 +1,15 @@
+<div class="navbar-secondary frosted-glass-light frosted-glass-dark">
+
+  <button class="navbarSecondaryExpand">Secondary Menu</button>
+  <div class="navbar-secondary-content">
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+
+    <nav class="sidebar-nav">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.nav_sections }}
+        <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "nav_sections" .) ($currentPage.HasMenuCurrent "nav_sections" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+
+  </div><!-- end navbar-secondary-content -->
+</div><!-- end navbar-secondary -->

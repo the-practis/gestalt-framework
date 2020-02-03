@@ -1,0 +1,13 @@
+<ul class="prev_next">
+  {{ with .PrevInSection }}
+  <li class="previous">
+    <span>Previous:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+  </li>
+  {{ end }}
+
+  {{ with .NextInSection }}
+  <li class="next">
+    <span>Next:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+  </li>
+  {{ end }}
+</ul>

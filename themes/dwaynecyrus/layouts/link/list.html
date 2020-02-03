@@ -1,0 +1,96 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: link/list.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+{{/* <!-- Hidden Page Title IDEA consider making into a partial as it's repeated throughout the website. --> */}}
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<ol class="range-list-group">
+{{/* <!-- FIXME Figure out how to paginate this list group keys, you probably need to use custom variables --> */}}
+{{ range (.Data.Pages.GroupByPublishDate "Monday, 02 January 2006" ) }}
+  <li class="range-list-group__item">
+
+    <p class="range-list-group__key">
+      <time>{{ .Key }}</time>
+    </p>
+
+    <ol class="range-list">
+      {{ range .Pages.ByPublishDate.Reverse }}
+      <li class="range-list__item">
+
+        <article class="post-container__container">
+          <header class="post-container__header">
+
+            {{/* <!-- FIXME I ond't know how to best name these following classes. Whats the block for BEM? --> */}}
+            <div class="post-container__link-title-container ??">
+              <h2 class="post-container__title">
+                <a href="{{ .Params.sourceLink | default .Permalink }}" target="_blank">{{- .Title -}}</a>
+              </h2>
+              {{/* <!-- TODO Make the dot pulse and give it hover text saying permalink on hover of list item --> */}}
+
+              {{/* <!-- TODO Decide which of the two HTML links to keep. --> */}}
+              <a class="post-permalink" href="{{ .Permalink }}">Permalink<div></div></a>
+
+              <p>
+                <a href="{{ .Permalink }}">Permalink</a>
+              </p>
+            </div>
+
+            <ul class="metadata">
+              {{- partial "content_type.html" . -}}
+              {{- partial "category.html" . -}}
+              {{- partial "date_published.html" . -}}
+              {{- partial "date_modified.html" . -}}
+              {{- partial "author.html" . -}}
+              {{- partial "read_time.html" . -}}
+            </ul>
+          </header>
+
+          <section class="post-container__main">
+            {{- .Content -}}
+              {{/* <!-- TODO Set the poem to reveal the rest of the content on hover or click. Only show a certain height of content. --> */}}
+          </section>
+
+          <footer class="post-container__footer">
+            <ul class="metadata">
+              {{/* <!-- TODO Research a good limit for tags to be used on the web with articles --> */}}
+              {{- partial "tags.html" . -}}
+            </ul>
+          </footer>
+        </article>
+      </li>
+      {{- end }}
+    </ol>{{/* <!-- end "range-list" --> */}}
+  </li>
+  {{- end }}
+</ol>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "pagination_custom" . -}}
+{{- end }}

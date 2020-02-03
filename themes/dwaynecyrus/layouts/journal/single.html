@@ -1,0 +1,124 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: journal/list.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<article class="post-container">
+  <header class="post-container__header">
+
+    {{/* <!-- TODO Decide which date HTML you are going to use. --> */}}
+    <ul>
+      {{- partial "date_published.html" . -}}
+    </ul>
+    <p class="">
+      {{- $publishDateTime := .PublishDate.Format "2006-01-02" -}}
+      {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" -}}
+      <time datetime="{{ $publishDateTime }}">
+        {{- .PublishDate.Format "Monday — January 2, 2006" -}}
+      </time>
+    </p>
+
+    {{/* <!-- TODO Make the subtitle mandatory! --> */}}
+    <h1 class="post-container__title">Subtitle:&nbsp;{{ .Params.subtitle }}</h1>
+
+    <ul>
+      {{- partial "content_type.html" . -}}
+      {{- partial "date_modified.html" . -}}
+      {{- partial "author.html" . -}}
+      {{- partial "read_time.html" . -}}
+    </ul>
+
+    {{/* <!-- TODO Be sure to test that this functions correctly with front matter. MAybe it's possible for this to automatically pull the correct link from the vlog section of the site on its own in that posts front matter. --> */}}
+    <p>View today's vlog (maybe don't need this word), <a href="{{ .Params.vlogLink }}" target="_blank">Name of vlog episode 138</a>.
+  </header>
+
+  <section class="post-container__main">
+    {{ .Content }}
+
+    {{/* <!-- TODO You will want to clean up the content below, but over time, get some posts in forat ya know, don't stress to much. --> */}}
+    <hr/>
+
+    <section>
+      <p><span>Overall rating of the Day:</span> {{ .Params.day_rating }}</p>
+      <p><span>Intention:</span> {{ .Params.intention }}</p>
+        <ol>
+          <li>
+            {{- if eq .Params.task_one_result true }}<span><span><i>success/win</i></span>{{- .Params.task_one -}}</span>
+            {{ else }}
+
+            {{- if eq .Params.task_one_result false }}
+            <span><span><i>failure</i></span>{{- .Params.task_one -}}</span>
+            {{- end }}
+            {{- end }}
+          </li>
+
+          <li>
+            {{- if eq .Params.task_two_result true }}<span><span><i>success/win</i></span>{{- .Params.task_two -}}</span>
+            {{ else }}
+
+            {{- if eq .Params.task_two_result false }}
+            <span><span><i>failure</i></span>{{- .Params.task_two -}}</span>
+            {{- end }}
+            {{- end }}
+          </li>
+
+          <li>
+            {{- if eq .Params.task_three_result true }}<span><span><i>success/win</i></span>{{- .Params.task_three -}}</span>
+            {{ else }}
+
+            {{- if eq .Params.task_three_result false }}
+            <span><span><i>failure</i></span>{{- .Params.task_one -}}</span>
+            {{- end }}
+            {{- end }}
+          </li>
+        </ol>
+
+      <p><span>Tomorrow's 1% Improvement:</span> {{ .Params.intention }}</p>
+
+      {{/* <!-- TODO Place the scribled image of how the day felt in charcoal /pen /pencil. Be sure to reference you other TODO and IDEA notes as there's mention of this already somewhere in the list diary.
+{{ partial "feature_image.html" . }}
+       --> */}}
+
+      {{/* <!-- TODO Add the system for addition wins and losses of the day, figure this out later.
+
+      IDEA is the section wrapper actually needed? --> */}}
+    </section>
+  </section>
+
+  <footer class="post-container__footer">
+    <ul class="metadata">
+      {{ partial "tags.html" . }}
+      {{ partial "character_count.html" . }}
+      {{ partial "word_count.html" . }}
+    </ul>
+  </footer>
+</article>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "prev_next" . -}}
+{{- end }}

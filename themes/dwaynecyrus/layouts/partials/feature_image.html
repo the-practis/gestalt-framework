@@ -1,0 +1,12 @@
+{{- if .Params.featureImage }}
+<div class="post-image__feature">
+    <img src="{{ .Params.featureImage }}" alt="image from {{ .Title }}">
+</div>
+{{ else }}
+
+{{- if .Params.thumbnailImage }}
+<div class="post-image__thumbnail">
+    <img src="{{ .Params.thumbnailImage }}" alt="image from {{ .Title }}">
+</div>
+{{- end }}
+{{- end }}

@@ -1,0 +1,58 @@
+Black #1d1c1c rgba(29, 28, 28, 1.0)
+Blue #4799e2 rgba(71, 153, 226, 1.0)
+Dark Blue #222831 rgba(34, 40, 49, 1.0)
+Grey #1d1c1c rgba(29, 28, 28, 0.5)
+White #f5f5f5 rgba(245, 245, 245, 1.0)
+
+font-family: 'Ubuntu', sans-serif;
+font-size: 15px;
+font-weight: 400;
+
+
+Red Box 45px 3rem (double red is 5)
+Yellow Box 24px 1.5rem
+purple 15px
+grey 6rem
+green 8rem
+
+
+/* NOTE Ratio Containers Reference
+/* ================================ */
+/* Ratio of 1:1 */
+.squareContainer  {
+  height: 0;
+  padding-top: 100%;
+}
+/* Ratio of 3:2 */
+.classicContainer {
+  height: 0;
+  padding-top: 66.666666%;
+}
+/* Ratio of 4:3 */
+.standardContainer {
+  height: 0;
+  padding-top: 75.0%;
+}
+/* Ratio of 16:9 */
+.wideContainer {
+  height: 0;
+  padding-top: 56.25%;
+}
+/* Ratio of 21:9 */
+.extraWideContainer {
+  height: 0;
+  padding-top: 42.857143%;
+}
+
+Reverse
+/* Ratio of 3:4 */
+.ratioBox-standard-v {
+  height: 0;
+  padding-top: 133.333333%;
+}
+
+/* Ratio of 9:16 */
+.ratioBox-standard-v {
+  height: 0;
+  padding-top: 177.777777%;
+}

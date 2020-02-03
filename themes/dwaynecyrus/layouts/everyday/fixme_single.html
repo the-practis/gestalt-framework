@@ -1,0 +1,199 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: everyday/single.html</div>
+{{- end }}
+
+    {{/* <!-- TODO Clean all of this HTML and CSS up! --> */}}
+
+{{- define "header_page_specific" }}
+  {{- partial "feature_image.html" . -}}
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<h1 class="hidden_page_title">{{ .Title }}</h1>
+
+
+
+<article class="sc-article-post">
+
+  <header class="post-header">
+    <div class="hero-title">
+      <h2>
+        <time>{{ partial "timer_countup_everyday.html" . }}</time>
+        Consecutive Days
+    </h2>
+  </header>
+
+  <section class="post-body-copy">
+    <p>
+      These pictures are all done from start to finish every day. The purpose of this project is to help me get better at different things. By posting the results online, I'm "less" likely to throw down a big pile of ass-shit even though most of the time I still do because I suck ass.
+    </p>
+
+      <p>
+      I am currently on my 12th round of everydays. This year I'll be doing a render everyday using Cinema 4D and mostly Octane, instead of trying to learn new software, will be focusing on some of the fundamentals like color, composition, value etc.... :)
+      </p>
+  </section>
+
+  <footer class="post-footer">
+  </footer>
+
+</article>
+
+<div class="archive-list">
+
+  <h1 class="gallery-title">{{ .Title }} Archive</h1>
+
+    <ul>
+    {{ range where .Site.Pages "Params.everydays" "primary" }}
+      <li>
+        {{ if .Params.gallery_thumbnail_image }}
+        <a href="{{ .Permalink }}">
+          <div class="">
+              <img src="{{ .Params.gallery_thumbnail_image }}" alt="image from {{ .Params.round_number }}">
+          </div>
+
+        </a>
+
+    {{ end }}
+
+      {{ if .Params.description }}
+        <a href="{{ .Permalink }}"><h3 class="round-title">{{- .Params.round_number -}}</h3></a>
+        <p class="description">{{ .Params.description }}
+
+          </p>
+
+        {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+  </div>
+
+{{ end }}
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "prev_next" . -}}
+
+  {{ $js_countup_timer_everyday := "js/countup-timer-everyday.js" | absURL }}
+<script src="{{ $js_countup_timer_everyday }}"></script
+{{- end }}
+
+
+{{- define "page_css" }}
+
+{{ $css_hugo_easy_gallery := "/css/hugo_easy_gallery.css" | absURL }}
+<link rel="stylesheet" href="/css/hugo_easy_gallery.css" />
+
+{{ $css_blog := "css/artwork.css" | absURL }}
+<link rel="stylesheet" href="{{ $css_blog }}">
+
+{{ $css_insight := "css/everyday.css" | absURL }}
+<link rel="stylesheet" href="{{ $css_insight }}">
+{{- end }}
+
+
+
+{{- define "main" }}
+<div class="layout_label">
+    <span>Layout: everyday/single/</span>
+</div>
+
+<h1 class="hidden_page_title">{{ .Title }}</h1>
+
+
+  <article class="sc-article-post">
+
+    <header class="post-header">
+      <div class="hero-title">
+        <h1>{{ .Params.round_number }}<time>{{ .Params.duration }}</time>
+      </h1>
+    </header>
+
+    <section class="post-body-copy">
+      <p>
+        I am currently on my 12th round of everydays. This year I'll be doing a render everyday using Cinema 4D and mostly Octane, instead of trying to learn new software, will be focusing on some of the fundamentals like color, composition, value etc.... :)
+      </p>
+    </section>
+
+    <footer class="post-footer">
+    </footer>
+
+  </article>
+
+
+  <nav class="nav-local-switch">
+    {{ $roundName1 := "Round 01" }}
+    {{ $roundName2 := "Round 02" }}
+    {{ $roundName3 := "Round 03" }}
+    {{ $roundName4 := "Round 04" }}
+    {{ $currentRoundNumber := (.Params.round_number) }}
+    <!-- Round 01 -->
+    {{ if eq $currentRoundNumber $roundName1 }}
+    <ul>{{ range where .Site.Pages "Params.layout" "round_one" }}
+      <li>    <a href=" {{ .Permalink }}">
+        {{- .Title -}}
+      </a></li>{{ end }}</ul>
+      {{ else }}<!-- Do Nothing -->{{ end }}
+      <!-- Round 02 -->
+      {{ if eq $currentRoundNumber $roundName2 }}
+      <ul>{{ range where .Site.Pages "Params.layout" "round_two" }}
+        <li>    <a href=" {{ .Permalink }}">
+          {{- .Title -}}
+        </a></li>{{ end }}</ul>
+        {{ else }}<!-- Do Nothing -->{{ end }}
+        <!-- Round 03 -->
+        {{ if eq $currentRoundNumber $roundName3 }}
+        <ul>{{ range where .Site.Pages "Params.layout" "round_three" }}
+          <li>    <a href=" {{ .Permalink }}">
+            {{- .Title -}}
+          </a></li>{{ end }}</ul>
+          {{ else }}<!-- Do Nothing -->{{ end }}
+          <!-- Round 04 -->
+          {{ if eq $currentRoundNumber $roundName4 }}
+          <ul>{{ range where .Site.Pages "Params.layout" "round_four" }}
+            <li>    <a href=" {{ .Permalink }}">
+              {{- .Title -}}
+            </a></li>{{ end }}</ul>
+            {{ else }}<!-- Do Nothing -->{{ end }}
+  </nav>
+
+
+
+
+
+          <h1 class="gallery-title">{{ .Title }}</h1>
+          {{- range (where .Data.Pages "everyday" "round") }}
+          <p>{{ .Title }}</p>
+          {{ end }}
+
+
+<section class="gallery-container">
+
+
+            {{ .Content }}
+            <!-- TODO  -->
+            <!-- <p class="view-more">
+              View More
+              </p> -->
+
+          {{/* <!-- TODO Add the load more button --> */}}
+</section>
+
+
+          {{ end }}
+
+{{ define "local_call_to_action" }}
+  <!-- FIXME The social  icons are not showing up on iphone5s, but shows on desktop at the same resolution of 320px wide { { partial "social_follow_everyday" . }} -->
+{{- end }}
+
+
+{{- define "local_js" }}
+
+{{- partial "plugin/load-photoswipe.html" . -}}
+
+
+
+{{- end }}
+
+{{/*<!-- TODO Consider placing the landscape/portfolio nav switch somwehere on the bottom like Pentagram abc link list sorting --> */}}

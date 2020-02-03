@@ -1,0 +1,82 @@
+theme = "dwaynecyrus"
+baseURL = "/"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+# Sets the title of your site that shows up on the browswer tab
+title = "Dwayne Cyrus | Alpha v0.8.0 Navigation"
+
+# Hugo's Section Menu for Lazy Bloggers
+sectionPagesMenu = "lazyBloggers"
+
+homeText = "An organized whole that is perceived as more than the sum of its parts."
+
+copyright = ""
+
+# 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy. Taxonomies cannot contain hypens or uppercase letters
+[taxonomies]
+  author = "authors"
+  guest_author = "guest_authors"
+
+  category = "categories"
+  tag = "tags"
+  keyword = "keywords"
+
+  [menu]
+    [[menu.topBarGlobal]]
+      name = "Artwork"
+      pre = ""
+      url = "/artwork/"
+      weight = ""
+    [[menu.topBarGlobal]]
+      name = "Listen"
+      pre = ""
+      url = "/listen/"
+      weight = ""
+    [[menu.topBarGlobal]]
+      name = "Read"
+      pre = ""
+      url = "/read/"
+      weight = ""
+    [[menu.topBarGlobal]]
+      name = "Watch"
+      pre = ""
+      url = "/watch/"
+
+    [[menu.topBarGlobal]]
+      name = "Contacts"
+      pre = ""
+      url = "/contacts/"
+      weight = ""
+# Local Read content menu
+    [[menu.topBarLocalRead]]
+      name = "Diary"
+      pre = ""
+      url = "/diary/"
+      weight = ""
+    [[menu.topBarLocalRead]]
+      name = "Insights"
+      pre = ""
+      url = "/insight/"
+      weight = ""
+    [[menu.topBarLocalRead]]
+      name = "Links"
+      pre = ""
+      url = "/link/"
+      weight = ""
+    [[menu.topBarLocalRead]]
+      name = "Logs"
+      pre = ""
+      url = "/log/"
+      weight = ""
+    [[menu.topBarLocalRead]]
+      name = "Poems"
+      pre = ""
+      url = "/Poem/"
+      weight = ""
+    [[menu.topBarLocalRead]]
+      name = "Thoughts"
+      pre = ""
+      url = "/Thought/"
+      weight = ""

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    {{- partial "metadata.html" . -}}
+
+    {{- block "site_css" . }}
+      <link rel="stylesheet" href="/plugin/normalize/normalize.css">
+      <link rel="stylesheet" href="/css/master.css">
+      <link rel="stylesheet" href="/css/navigation/primary_top_nav.css">
+      <link rel="stylesheet" href="/css/navigation/secondary_top_nav.css">
+      <link rel="stylesheet" href="/css/navigation/hidden_top_nav.css">
+    {{- end }}
+
+    {{- block "page_specific_css" . }}
+      <link rel="stylesheet" href="/css/hugo-easy-gallery.css">
+    {{- end }}
+  </head>
+
+  <body>
+
+    <div class="label__section-layout">Section Layout: _default/baseof.html</div>
+
+    {{- block "label_page_layout" . }}{{- end }}
+  {{/* <!-- IDEA Convert all CSS files to use hypens over underscores --> */}}
+    <header>
+
+<!-- NOTE Temporary !!!!! -->
+{{ $currentPage := . }}
+{{ if .Site.Menus.lazyBloggers}}
+<ul class="men nav-local-menu">
+  {{ range .Site.Menus.lazyBloggers}}
+  <li class="menu-item">
+
+    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "lazyBloggers" .) ($currentPage.HasMenuCurrent "lazyBloggers" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+<!-- NOTE THE above is temporary!!! -->
+
+
+      {{/* <!-- TODO create partials and blocks for each section of navigation similar to the following:
+
+      TODO Read through the entire Hugo Docs, there's plenty of features that you no nothing about to make the site better.
+
+        {{- block "global_nav_top_container" . }}
+          {{ partial "top_bar_global_nav" . }}
+          {{- block "local_nav_top_container" . }}
+            {{ partial "top_bar_local_nav_blog" . }}
+          {{- end }}
+        {{- end }}
+
+       --> */}}
+      <div id="topBar" class="top-bar">
+        <section id="topBarPrimary" class="top-bar__primary">
+          <div id="primaryNavContainer" class="primary-nav-container">
+            <nav>
+              <ul>
+                <li><a href="#">Primary nav item</a></li>
+                <li><a href="#">Primary nav item</a></li>
+                <li><a href="#">Primary nav item</a></li>
+              </ul>
+            </nav>
+          </div>
+          <a class="top-bar__brandmark" href="/">Brandmark</a>
+          <button id="mobileNavBttn" class="top-bar__mobile-bttn" type="button" name="button">Mobile menu</button>
+          <button id="desktopNavBttn" class="top-bar__desktop-bttn" type="button" name="button">Desktop menu</button>
+        </section>
+        <section class="top-bar__secondary FROSTED GLASS EFFECT HERE?">
+          <div class="secondary-nav-container">
+            <button class="secondary-nav-container__bttn" type="button">Expand me...</button>
+            <div class="secondary-nav-container__content">
+              <nav>
+                <ul class="nav_menu">
+                  <li><a href="#">Local menu item</a></li>
+                  <li><a href="#">Local menu item</a></li>
+                  <li><a href="#">Local menu item</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="secondary-nav-container__title">
+              <a href="/">Secondary navigation title</a>
+            </div>
+          </div>
+        </section>
+        <section id="hiddenNavContainer" class="hidden-nav-container">
+          <nav>
+            <ul class="nav_menu">
+              <li><a href="#">Hidden menu item</a></li>
+              <li><a href="#">Hidden menu item</a></li>
+              <li><a href="#">Hidden menu item</a></li>
+              <li><a href="#">Hidden menu item</a></li>
+              <li><a href="#">Hidden menu item</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+      {{- block "header_page_specific" . }}{{- end }}
+    </header>
+
+    <div class="main-aside-wrapper">
+      <aside>
+        <div class="sticky__aside">
+          {{- block "aside_left_site_wide" . }}{{- end }}
+
+          {{- block "aside_left_section_wide" . }}{{- end }}
+
+          {{- block "aside_left_page_specific" . }}{{- end }}
+        </div>
+      </aside>
+
+      <main>
+        {{- block "main_site_wide" . }}{{- end }}
+
+        {{- block "main_page_specific" . }}{{- end }}
+      </main>
+
+      <aside>
+        <div class="sticky__aside">
+          {{- block "aside_right_site_wide" . }}{{- end }}
+
+          {{- block "aside_right_section_wide" . }}{{- end }}
+
+          {{- block "aside_right_page_specific" . }}{{- end }}
+        </div>
+      </aside>
+    </div><!-- end "main-aside-wrapper" -->
+
+    <footer>
+      {{- block "footer_page_specific" . }}{{- end }}
+
+      {{- block "footer_site_wide" . }}
+        {{- partial "copyright" . -}}
+      {{- end }}
+
+      {{/* <!-- FIXME {{- partial "sitemap" --}} --> */}}
+
+      {{ .Site.Params.copyright | markdownify }}
+      <p>fail fast. learn fast.</p>
+      <p>love. hunt. farm. train. study</p>
+    </footer>
+
+  {{- block "scripts_site_wide" . }}
+
+    {{/* <!-- {{- partial "base_js" -}} --> */}}
+
+    {{/* <!-- {{- partial "feather_icons.html" . -}} --> */}}
+
+    {{/* <!-- {{- partial "stickybits.html" . -}} --> */}}
+
+    {{/* <!-- {{- block "local_scripts" . }}{{- end }} --> */}}
+
+{{/* <!-- NOTE absURL reference code for the future
+
+{{ $js_global_nav_toggle := "js/global_nav_top_bar_toggle.js" | absURL }}
+<script src="{{ $js_global_nav_toggle }}"></script>
+
+{{ $css_global_nav := "css/navigation/global_nav_top_bar.css" | absURL }}
+<link rel="stylesheet" href="{{ $css_global_nav }}">
+ --> */}}
+
+
+    <script src="/js/jquery_development.js"></script>
+    <script src="/js/master.js"></script>
+
+
+  {{- end }}
+
+
+  {{/* <!-- TODO Turn the photoswipe script below into a partial --> */}}
+  {{/* <!-- Load PhotoSwipe js if the load-photoswipe shortcode has been used --> */}}
+{{ if ($.Scratch.Get "photoswipeloaded") }}
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->  */}}
+<script src="/js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+{{ end }}
+
+
+
+
+
+
+
+
+  {{/* <!-- A BUNCH OF NOTES AND STUFF BELOW --> */}}
+
+
+
+
+
+
+
+
+  {{/* <!-- TODO add the ability to click it to close or link somewhere else and that closes it across the site --> */}}
+
+  {{/*<!--   <section class="topbar_notification">
+  Topbar notification</section> --> */}}
+
+
+  {{/* <!-- NOTE Temporary development stuff --> */}}
+
+  {{/* <!-- <div class="dev_label_section_layout">Section Layout: _default/baseof.html</div>
+  <div class="dev_label_page_layout">Site Layout: _default/baseof.html</div> --> */}}
+
+  {{/* <!-- TODO What in the world are we going to do and where are we going to place the search field? Be sure to wrap it in a nav tag. --> */}}
+  {{/* <!-- <form class="search" role="search">
+    <label>
+      Search
+      <input type="search"/>
+    </label>
+    <button type="submit">Submit</button>
+  </form> --> */}}
+
+    {{/* <!-- TODO Design element circles with unique color and outline effects also chnge the menu icon to a fancy orange-brand colorish circle/ring --> */}}
+
+  {{/* <!-- TODO add various notification modules, reference the following website:
+    {{- block "notification_bar_top" . }}
+      <section class="notification_bar_top"></section>
+    {{- end }}
+    Notification popup, etc
+    {{- block "notification_bar_bottom" . }}{{- end }}
+  --> */}}
+
+      {{/* <!-- Header IDEA We should group content by category don't you think, similar to artof manliness.com ================================== --> */}}
+
+  </body>
+</html>

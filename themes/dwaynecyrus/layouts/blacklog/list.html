@@ -1,0 +1,65 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: blacklog/list.html</div>
+{{- end }}
+
+{{/* <!-- TODO markdownify all of your content from front matter that way you can have some controll over the formating of text --> */}}
+
+{{- define "main_page_specific" }}
+{{/* <!-- Hidden Page Title IDEA consider making into a partial as it's repeated throughout the website. --> */}}
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+{{/* <!-- TODO Make the layout look like a calendar grid --> */}}
+<ol class="range-list">
+{{- $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 2 -}}
+{{- range $paginator.Pages }}
+  <li class="range-list__item">
+    <article class="post-container__container">
+      <header class="post-container__header">
+
+        {{- partial "link_title_subtitle.html" . -}}
+
+        <ul class="metadata">
+          {{- partial "content_type.html" . -}}
+          {{- partial "date_published.html" . -}}
+          {{- partial "date_modified.html" . -}}
+          {{- partial "author.html" . -}}
+        </ul>
+      </header>
+
+      <footer class="post-container__footer">
+        <ul class="metadata">
+          {{/* <!-- IDEA Do we actually need the tags, what value will they offer on a calendar view? --> */}}
+          {{ partial "tags.html" . }}
+        </ul>
+      </footer>
+    </article>
+  </li>
+{{- end }}
+</ol>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "pagination_custom" . -}}
+{{- end }}

@@ -1,0 +1,22 @@
+{{- with .Params.guest_authors -}}
+<li class="author__guest">
+  <i data-feather="user"></i>
+  <span>Guest&nbsp;Author:&nbsp;</span>
+  {{- range . }}
+    {{- $href := print (absURL "guest_authors/") (urlize .) -}}
+    <a href="{{ $href }}">{{- . -}}</a>
+  {{- end }}
+</li>
+{{- else -}}
+
+{{- with .Params.authors -}}
+<li class="author">
+  <i data-feather="user"></i>
+  <span>Author:&nbsp;</span>
+  {{- range . }}
+    {{- $href := print (absURL "authors/") (urlize .) -}}
+    <a href="{{ $href }}">{{- . -}}</a>
+  {{- end }}
+{{- end }}
+</li>
+{{- end }}

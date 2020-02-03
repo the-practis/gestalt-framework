@@ -1,0 +1,48 @@
+.primary-nav-container {
+  display: none;
+}
+#primaryNavContainer.nav-menu--open {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  z-index: 10;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 0;
+  background-color: lightgreen;
+}
+
+@media screen and (min-width: 640px) {
+#primaryNavContainer.nav-menu--open {
+    position: fixed;
+    top: 56px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .primary-nav-container {
+    grid-row: 1;
+    grid-column: 2 / span 1;
+    display: block;
+    background-color: lightgreen;
+  }
+  .primary-nav-container nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .primary-nav-container nav ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  .primary-nav-container nav ul li {
+    display: inline-block;
+    margin-right: 16px;
+  }
+  .primary-nav-container nav ul li:last-of-type {
+    margin-right: 0;
+  }
+}
+/* IDEA Consider maxing the height at 48 or 56px across all responsize states  */

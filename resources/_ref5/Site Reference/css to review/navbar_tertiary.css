@@ -1,0 +1,101 @@
+/* .navbarTertiaryScrollHide{
+  position:fixed;
+  top:0;
+  bottom: 0;
+  bottom:-50px;
+  left:0;
+  width:100%;
+  height:50px;
+  background-color:#03a9f4;
+  -webkit-box-shadow:0 8px 17px 0 rgba(0, 0, 0, 0.2);
+	box-shadow:0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+	-moz-transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+  transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+  transform: translateY(0%);
+
+} */
+/* nav.hidden,  */
+/* .navbarTertiaryScrollHide.hidden{
+  bottom:-50px;
+  bottom:0px;
+  transform: translateY(-50);
+}
+.navigationBot {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background-color: orange;
+} */
+
+
+
+
+/* ========================================= sticky -============ */
+
+
+
+
+
+
+/* #stickybit-parent {
+  position: relative;
+  width:100%;
+  height: 1440px;
+  background-color: grey;
+}
+#sticky-thing {
+    background-color: steelblue;
+    width: 200px;
+    height:64px;
+    padding:1rem;
+    color: white;
+    position: sticky;
+}
+body,
+html {
+  color: #000;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  margin: 0;
+  height: 400vh;
+}
+
+header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.top-header {
+  background-color: lightblue;
+}
+
+.toolbar, .child {
+  background-color: lightgreen;
+}
+
+.toolbar.js-is-sticky,
+.child.js-is-sticky {
+background: yellow
+}
+
+article {
+  background-color: lightyellow;
+  height: 200vh;
+}
+.js-is-sticky { background-color: red;
+margin-bottom: 300px;}
+
+
+.child.js-is-stuck {
+  vertical-align: baseline;
+  background-color: violet;
+} */
+/* js-stickybit-parent */

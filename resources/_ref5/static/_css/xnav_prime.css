@@ -1,0 +1,222 @@
+.nav-wrap-top-bar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+}
+/* TODO Make the transition from mobile to desktop layout with @media  */
+.nav-prime {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  z-index: 6;
+  /* background: lightblue; */
+    display: flex;
+    justify-content: space-between;
+}
+.nav-prime .menu-wrap {
+  position:fixed;
+  top:0;
+  right: 0;
+  bottom:0;
+  left: 0;
+  z-index: 6;
+  height: 100%;
+  padding: 50px;
+  color:rgba(245, 245, 245, 1.0);
+  /* font-weight: bold; */
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  background-color: #fff;
+  padding: 50px 2rem;
+  opacity: 0;
+}
+.nav-wrap-top-bar.menu-opened .nav-prime .menu-wrap {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 1.0s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+/* TODO Can you set the exit animation seperatly? Do it. */
+.nav-prime-hide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+  background-color: #fff;
+}
+.nav-prime-hide.hidden {
+  top:-50px;
+}
+.site-brandmark {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 0 0 1rem;
+  position: absolute;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-weight: 700;
+}
+.site-brandmark a {
+  text-decoration: none;
+}
+/* div.navbarPrimaryScrollHide new> .nav-prime-hide */
+.nav-wrap-top-bar.menu-opened .nav-prime-hide {
+  top: 0;
+}
+
+
+
+/* Menu List
+   ========================================================================== */
+.nav-prime .menu {
+  display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+
+/* Brandmark
+   ========================================================================== */
+.site-brandmark {
+  margin: 0 0 0 16px;
+  font-size: 20px;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+  transition-delay: 0.65s;
+  background-color: transparent;
+  z-index: 7;
+  align-items: center;
+  flex-basis: content;
+  position: relative;
+margin: 0;
+}
+.site-brandmark span {
+ color: rgba(29, 28, 28, 1.0);
+ transition: all 0.5s ease-out;
+}
+.site-brandmark span:hover {
+ color: rgba(71, 153, 226, 1.0);
+ transition: all 0.5s ease-out;
+}
+.site-brandmark span span {
+ color: rgba(71, 153, 226, 1.0);
+}
+
+
+/* Menu Icom
+   ========================================================================== */
+.nav-prime-menu-icon  {
+  position: relative;
+  z-index: 7;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+}
+.nav-prime-menu-icon #burger {
+  width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -6px auto 0;
+  top: 50%;
+}
+.nav-prime-menu-icon #burger .bar {
+  width: 100%;
+  height: 3px;
+  display: block;
+  position: relative;
+  background: rgba(29, 28, 28, 1.0);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+  border-radius: 12px;
+}
+.nav-prime-menu-icon #burger .bar.topBar {
+  transform: translateY(0px) rotate(0deg);
+}
+.nav-prime-menu-icon #burger .bar.btmBar {
+  transform: translateY(6px) rotate(0deg);
+}
+
+
+/* Hamburger Icon Open State */
+.navigationTop.menu-opened .nav-prime-menu-icon {
+	 transform: rotate(90deg);
+}
+.navigationTop.menu-opened .nav-prime-menu-icon #burger .bar {
+  height: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+.navigationTop.menu-opened .nav-prime-menu-icon #burger .bar {
+	 transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	 transition-delay: 0.2s;
+}
+.navigationTop.menu-opened .nav-prime-menu-icon #burger .bar.topBar {
+	 /* transform: translateY(4px) rotate(45deg); */
+   transform: translateY(5px) rotate(45deg);
+}
+.navigationTop.menu-opened .nav-prime-menu-icon #burger .bar.btmBar {
+	 /* transform: translateY(2px) rotate(-45deg); */
+   transform: translateY(1px) rotate(-45deg);
+}
+
+
+/* TODO Test using a max-width for navigation and see if it cancelss outs the stutter when widening the page. */
+
+@media screen and (min-width: 1024px) {
+  .nav-prime .menu-wrap {
+    transform: translateY(0);
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+  }
+  .nav-prime .menu-wrap {
+    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    opacity: 1;
+    width: 100%;
+  }
+  .nav-prime .menu {
+    list-style-type: none;
+    height: 50px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    font-size: 0.9375em;
+    line-height: 0.9375em;
+  }
+  .nav-prime .menu-item {
+    margin: 0 0 0 1rem;
+  }
+  .nav-prime .menu-item a {
+    text-decoration: none;
+    color: rgba(29, 28, 28, 1.0);
+    line-height: 1.1;
+  }
+  .nav-prime {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}

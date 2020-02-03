@@ -1,0 +1,19 @@
+/* Layout use display
+   ========================================================================== */
+.page-label {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 100;
+  padding: 0.3rem 0.7rem;
+  background-color: rgba(71, 153, 226, 1.0);
+  border-radius: .4rem;
+  opacity: 0.9;
+}
+.page-label span {
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.08rem;
+  line-height: 1;
+}

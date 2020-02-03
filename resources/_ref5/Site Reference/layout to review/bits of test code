@@ -1,0 +1,132 @@
+<!-- NOTE Section Specific - Link
+   ========================================================================== -->
+
+          <br />
+          <br />
+<hr />
+<h1>Here's a bunch of test codes</h1>
+<div class="home">
+
+{{ range where (where .Site.Site.RegularPages "Params.portfolio_status" "money")  "Params.draft" "false"  }}
+<p>
+  {{ .Title }}
+  </p>
+  {{ end }}
+
+  {{ $posts := (where .Site.RegularPages "Section" "==" "portfolio") }}
+  {{ $postCount := len $posts }}
+  {{ $postCount }}
+<hr />
+
+{{ range first 2 (index .Site.Taxonomies.industries "industry-a") }}
+<p>
+  {{ .Title }}
+  </p>
+  {{ end }}
+
+  <ul>
+    {{ range (index .Site.Taxonomies.industries "industry-a") }}
+    <li>
+
+
+      <a href="industry-a">
+      {{ partial "portfolio_thumbnail" . }}
+
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ range last 4 (index .Site.Taxonomies.discipline "discipline-b") }}
+  <a href="industrya">
+  {{ partial "portfolio_thumbnail" . }}
+  </a>
+  {{ end }}
+<h3>Live Test 0.1.1</h3>
+    {{ range first 5 (where .Pages "Section" "link") }}
+    <article>
+
+      <h1 class="">
+        <a class="" href="{{ .RelPermalink }}">{{- .Title -}}</a>
+      </h1>
+
+      <p>
+        {{- .Summary | truncate 420 -}}
+      </p>
+
+    </article>
+    <div class="spacer-dot"></div>
+    {{ end }}
+
+<hr />
+    <ul>
+
+      {{ range first 2 (where .Site.Pages.ByPublishDate.Reverse "Params.portfolio_status" "primary") }}
+      <li>
+
+        {{ if .Params.portfolio_thumbnail_image }}
+        <a href="{{ .Permalink }}">
+            <div class="thumbnail-image image">
+              <img src="{{ .Params.portfolio_thumbnail_image }}" alt="image from {{ .Title }}">
+            </div>
+            </a>
+</li>
+
+{{ end }}
+</ul>
+
+
+<ul>
+{{range $chap,$tax := .Site.Taxonomies.industries}}{{ $count := .Count }}
+    {{ range first 1 $tax.Pages.ByDate.Reverse}}
+    <li><a href="{{$chap}}">
+      <h1>{{$chap | humanize | title}}<sup>{{ $count }}</sup></h1>
+
+
+{{ partial "portfolio_thumbnail_no_title" . }}
+
+
+    </a></li>
+    {{end}}
+{{end}}
+</ul>
+
+<ul>
+        <!-- Get all posts-->
+        {{ $posts := where .Site.Pages "Type" "portfolio" }}
+
+  <!-- (re)set the counter to 0 -->
+  {{ $.Scratch.Set "tagCounter" 0 }}
+  <!-- increment counter if post contains the current tag-->
+  {{ range $posts}}
+    {{ if in .Params.industries "industry-a" }}
+      {{ $.Scratch.Add "tagCounter" 0.5 }}
+
+    {{ end }}
+  {{ end }}
+
+  <li>{{ $.Scratch.Get "tagCounter" }} articles tagged with TAGNAME</li>
+</ul>
+
+{{ end }}
+
+
+
+<ul>
+    {{ range $chapter, $taxonomy := .Site.Taxonomies.industries }}
+    <li>{{$chapter | urlize}}</a></li>
+    {{ end }}
+  </ul>
+  <ul>
+    {{ range $taxonomy, $chapter := .Site.Taxonomies.industries.ByCount }}
+    {{ $count := .Count }}
+    <li data-count="{{$chapter.Count}}">{{$chapter.Name}} {{ $count }}</li>
+    {{ end }}
+  </ul>
+  <ul>
+  {{ range $name, $taxonomy := .Site.Taxonomies.industries }}
+  {{ $count := .Count }}
+    <li>{{ humanize (string $name) }}{{ $count }}</li>
+{{ end }}
+</ul>
+{{ end }}
+{{ end }}

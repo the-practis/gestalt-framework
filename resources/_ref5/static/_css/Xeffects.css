@@ -1,0 +1,70 @@
+/* body {
+	background: url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat;
+	background-size: cover;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+} */
+
+.rosted-glass {
+	/* width: 30rem; */
+	/* height: 20rem; */
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+	/* border-radius: 5px; */
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	overflow: hidden;
+}
+
+.rosted-glass:before {
+	content: "";
+	position: absolute;
+	background: inherit;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+	filter: blur(10px);
+	margin: -20px;
+}
+
+.rosted-glass {
+  /* width: 30rem; */
+/* height: 20rem; */
+/* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); */
+/* border-radius: 5px; */
+background-color: rgba(255, 255, 255, .85);
+backdrop-filter: blur(5px);
+}
+
+.frosted-glass-light {
+  background-color: rgba(255,255,255,0.9);
+-webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition-property: background-color;
+-webkit-transition-property: background-color, -webkit-backdrop-filter;
+transition-property: background-color, -webkit-backdrop-filter;
+transition-property: background-color, backdrop-filter;
+transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+.frosted-glass-light::after{
+  background-color: rgba(51,51,51,0.1);
+}
+
+.frosted-glass-dark {
+  background-color: rgba(0,0,0,0.75);
+-webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    transition-property: background-color;
+-webkit-transition-property: background-color, -webkit-backdrop-filter;
+transition-property: background-color, -webkit-backdrop-filter;
+transition-property: background-color, backdrop-filter;
+transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+.frosted-glass-dark::after {
+  background-color: rgba(51,51,51,0.75);
+}

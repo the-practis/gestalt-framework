@@ -1,0 +1,87 @@
+.post-prev-next-journal {
+ padding: 0 1rem;
+ margin: 0rem auto 6rem auto;
+ max-width: 512px;
+/* background-color: red; */
+}
+
+.post-prev-next-journal ul {
+  /* NOTE You might need this flex to better control the layout. */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 0 4rem 0;
+  list-style-type: none;
+}
+
+/* IDEA What if you can put css inside a partial and load that partial inlin! */
+
+.post-prev-next-journal ul li {
+  margin: 0 0 3rem 0;
+  font-size: 0.88rem;
+line-height: 1.6;
+list-style-type: none;
+}
+.post-prev-next-journal .title {
+display: none;
+}
+
+.post-prev-next-journal ul li span {
+font-weight: 700;
+}
+
+.post-prev-next-journal ul li a {
+/* display: inline-block; */
+}
+/* .post-nav {
+  max-width:618px;
+} */
+
+/* TODO Wrap all images in <figure> with captions!!! */
+/* ===================================
+== RESPONSIVE STYLES
+/* ================================ */
+@media screen and (min-width: 768px) {
+  .post-prev-next-journal ul li {
+      font-size: 0.8rem;
+    }
+    .post-prev-next-journal {
+     max-width: 618px;
+     padding: 0 1rem;
+  }
+@media screen and (min-width: 1024px) {
+  .post-prev-next-journal {
+   max-width: 688px;
+ }
+  .post-prev-next-journal ul {
+    display: grid;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 0 4rem 0;
+    list-style-type: none;
+    grid-template-columns: repeat(2, 40%);
+    grid-column-gap: 56px;
+    justify-content: center;
+    /* TODO Use flex instead of grid for the last prev/next item */
+  }
+}
+@media screen and (min-width: 1280px) {
+  .post-prev-next-journal {
+   /* max-width: 1024px; */
+
+  }
+.post-prev-next-journal ul {
+    /* max-width: 954px; */
+  }
+  .post-prev-next-journal {
+   padding: 0 1rem;
+   margin: 0rem auto 6rem auto;
+   /* max-width: 700px; */
+}
+.post-prev-next-journal ul {
+
+    max-width: 1024px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 112px;
+  }
+}

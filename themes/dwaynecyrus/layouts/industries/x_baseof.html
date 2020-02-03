@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  {{- block "head" . }}
+    {{- partial "head.html" . -}}
+    {{ $css_portfolio := "/css/portfolio.css" | absURL }}
+    <link rel="stylesheet" href="/css/portfolio.css" />
+  {{- end }}
+
+  <body>
+
+    <div class="body-inner-containr">
+      {{- block "header" . }}
+        
+      {{- end }}
+
+      <div class="main-aside-container">
+
+      {{- block "main" . }}{{- end }}
+
+      </div>
+    </div>
+    {{- block "footer" . }}
+    {{- end }}
+    {{- partial "netlify-cms-login-portal.html" . -}}
+  </body>
+</html>

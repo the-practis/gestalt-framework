@@ -1,0 +1,352 @@
+/* Layout Identifiers ============================================ */
+.layout_label {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.05rem;
+  background-color: black;
+}
+
+.baseof_label {
+  display: block;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.05rem;
+  background-color: #000;
+}
+
+
+/* Global Stuff ================================== */
+* {
+  box-sizing:border-box;
+}
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  position: relative;
+}
+
+h1.hidden_page_title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+  max-width: 680px;
+}
+
+
+
+
+/* Global Main Aside Container ================================== */
+.global_main_aside_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 1;/* TODO Do we need this */
+  max-width: 1440px;
+  padding:0;
+  margin:0 auto;
+  margin-bottom: 3rem;
+}
+
+/* Global Aside */
+.global_aside {
+  display: none;
+  /* background-color: lightblue; */
+}
+
+/* Global Main */
+.global_main {
+  display: inline-block;
+  /* padding: 0 1rem; */
+}
+
+/* Global Aside Mini */
+.global_aside_mini {
+  display: none;
+}
+
+/* Global Footer: Sticky Footer */
+.global_body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Global Footer: Copyright */
+.copyright {
+  font-size: 0.8em;
+}
+
+.copyright .build_number {
+  font-size: 0.8em;
+}
+
+
+/* Sticky Elements =================== */
+.sticky_global_aside {
+    /* width: 100%; */
+  /* min-height: 100px; */
+  /* background: red; */
+}
+
+
+
+/* Range Lists ================================== */
+.range_list {
+  list-style-type: none;
+  padding: 0;
+}
+.range_list_item {
+  margin: 0 0 4.6875rem 0;
+}
+
+ul.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto 4.6875rem auto;
+  list-style-type: none;
+  width: 260px;
+}
+ul.pagination li a {
+text-decoration: none;
+padding: 0 0.8rem;
+font-size: 1rem;
+}
+
+/* Navigation: Pagination ================================== */
+ul.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto 4.6875rem auto;
+  list-style-type: none;
+  width: 260px;
+}
+ul.pagination li a {
+text-decoration: none;
+padding: 0 0.8rem;
+font-size: 1rem;
+}
+
+/* Navigation: Previous/Next ================================== */
+ul.prev_next {
+  display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 2rem;
+max-width: 1024px;
+padding: 0 1rem;
+margin: 0 auto 4.6875rem auto;
+/* font-size: 18px; */
+list-style-type: none;
+}
+.previous {
+justify-self: end;
+text-align: right;
+}
+
+.previous span, .next span {
+display: block;
+}
+
+
+
+
+/* Post Styles ================================== */
+.article_container {
+  /* padding: 0 1rem; */
+    margin: 0 1rem;
+}
+.article_title {
+  font-size: 24px;
+  line-height: 1.4;
+}
+ul.metadata {
+  padding: 0;
+  font-size: 0.875em;
+  list-style-type: none;
+}
+
+
+
+/* Navigation Links to fix TODO Need it? ================================== */
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+
+}
+
+.nav-item {
+  color: #999999;
+  font-size: 0.9rem;
+  margin-right: 1.3rem;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: #666;
+}
+
+.active-nav-item {
+  color: #333;
+}
+
+
+
+
+
+
+
+
+/* Responsive Styles 320px =================== */
+@media screen and (min-width: 320px) {
+  /* .global_aside_mini {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+  } */
+}
+
+
+
+/* Responsive Styles 512px =================== */
+@media screen and (min-width: 512px) {
+  /* .global_aside_mini {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-content: center;
+  } */
+}
+
+
+/* Responsive Styles 768px ================================== */
+@media screen and (min-width: 768px) {
+  html {
+font-size: 17px
+  }
+
+.global_main_aside_container {
+  display: grid;
+  grid-template-columns: 600px 80px;
+  grid-template-rows: auto;
+  grid-column-gap: 40px;
+  justify-content: center;
+    padding: 0 1rem;
+}
+.global_main {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+.global_aside_mini {
+  display: block;
+  grid-column: 2/ span 1;
+  grid-row: 1 / span 1;
+  /* min-width: 40px; */
+  /* margin-right: 24px; */
+  /* width: 100%; */
+  /* height: 500px; */
+  /* background-color: black; */
+}
+}
+
+/* Responsive Styles 1024px =================== */
+@media screen and (min-width: 1024px) {
+  .global_main_aside_container  {
+    grid-template-columns: 140px auto 140px;
+    grid-column-gap: 64px;
+    justify-content: stretch;
+    /* max-width: 1024px; */
+    width: 100%;
+  }
+  .global_aside {
+    display: block;
+    grid-column: 1/ span 1;
+    grid-row: 1 / span 1;
+    /* min-width: 216px; */
+    min-height: 100%;
+  }
+
+  .global_main {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+  }
+  .global_aside_mini {
+    grid-column: 3/ span 1;
+    grid-row: 1 / span 1;
+    /* margin-right: 24px; */
+    justify-self: start;
+  }
+}
+
+/* Responsive Styles 1205px =================== */
+@media screen and (min-width: 1205px) {
+  .global_main_aside_container {
+grid-template-columns: 200px auto 200px;
+}
+}
+
+/* Responsive Styles 1280px =================== */
+@media screen and (min-width: 1280px) {
+  .global_main_aside_container {
+    grid-template-columns: 256px auto 112px;
+    /* grid-column-gap: 64px; */
+    grid-template-columns: 256px auto 256px;
+    /* justify-content: start; */
+    /* max-width: 1024px; */
+  }
+}
+
+/* Responsive Styles 1440px =================== */
+@media screen and (min-width: 1440px) {
+  .global_main_aside_container  { {
+    grid-template-columns: 304px auto 184px;
+grid-template-columns: 304px auto 304px;
+    /* grid-column-gap: 64px; */
+    /* justify-content: start; */
+    max-width: 1440px;
+  }
+}

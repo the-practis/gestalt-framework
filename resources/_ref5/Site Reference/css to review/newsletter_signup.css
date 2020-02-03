@@ -1,0 +1,21 @@
+.newsletter-signup > #mc_embed_signup input.email {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    border: 1px solid rgba(71, 153, 226, 1.0);
+    color: rgba(34, 40, 49, 1.0);
+    background-color: transparent;
+    height: 3rem;
+  }
+
+.newsletter-signup > #mc_embed_signup .button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: rgba(245, 245, 245, 1.0);
+    background-color: rgba(71, 153, 226, 1.0);
+    height: 3rem;
+    margin: 0.8rem 0 0 0;
+    line-height: 32px;
+    padding: 0 18px;
+    transition: all 0.23s ease-in-out 0s;
+  }

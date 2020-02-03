@@ -1,0 +1,112 @@
+.nav-local {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  /* border-bottom: solid 1px rgba(29, 28, 28, 0.03);   */
+}
+.nav-local-open-menu {
+  color: rgba(29, 28, 28, 1.0);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 0.9375em;
+  font-weight: 700;
+  background: transparent;
+  /* The webkit below fixes the flickering on tap Safari IDEA Should i make this a global element and apply it to everything? */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+button.nav-local-open-menu:active,
+.active, .nav-local-open-menu:hover {
+  /* background-color: #555; */
+  background-color: transparent;
+}
+.nav-local-open-menu:after {
+  content: '\002B';
+  color: rgba(29, 28, 28, 1.0);
+  font-weight: 700;
+  float: right;
+  margin-left: 5px;
+}
+.nav-local-open-menu.active:after {
+  content: "\2212";
+}
+/* ================================================================== */
+
+.nav-local .menu-wrap
+/* .navbar-secondary-content  */
+{
+  font-size: 0.9375rem;
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  /* background-color: #f1f1f1; */
+}
+.nav-local-title {
+  display: none;
+}
+.nav-local .menu {
+list-style-type: none;
+padding: 0 1rem 1.5rem 1rem;
+margin: 0;
+}
+.nav-local .menu-item {
+  line-height: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+
+/* TODO Place all responsive styles in onesheet i think. */
+@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 600px) { */
+  .nav-local-open-menu {
+    display: none;
+  }
+  .nav-local .menu-wrap
+/* .navbar-secondary-content  */
+{
+height: 50px;
+max-height: 100%;
+display: flex;
+max-width: 1024px;
+margin: 0 auto;
+}
+.nav-local {
+margin: 0 auto;
+}
+.nav-local-title {
+  display: flex;
+  font-size: 0.9375rem;
+  margin: 0;
+  float: none;
+align-items: center;
+}
+
+.nav-local .menu {
+  list-style-type: none;
+  height: 50px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+  font-size: 0.9375em;
+  line-height: 0.9375em;
+  display: flex;
+padding: 0;
+}
+.nav-local .menu-item {
+  margin: 0 0 0 1rem;
+  font-weight: 400;
+}
+.nav-local .menu-item a {
+  text-decoration: none;
+  color: rgba(29, 28, 28, 1.0);
+  line-height: 1.1;
+}
+}

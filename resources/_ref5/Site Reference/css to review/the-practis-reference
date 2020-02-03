@@ -1,0 +1,190 @@
+hr, hr.half, hr.quarter {
+  height: 1px;
+  width: 100%;
+  margin: 2rem 0 1rem 0;
+  background-color: rgba(34, 40, 49, 1.0);
+  border: none;
+}
+hr.half {
+  width: 50%;
+
+}
+hr.quarter {
+  width: 25%;
+}
+.dot {
+   display: block;
+  height: 6px;
+ width: 6px;
+ margin: 0;
+ background-color: rgba(29, 28, 28, 0.25);
+ border-radius: 50%;
+}
+.dot-spacer {
+   display: block;
+  height: 6px;
+ width: 6px;
+ margin: 3rem auto;
+ background-color: rgba(29, 28, 28, 0.2);
+ border-radius: 50%;
+}
+
+
+
+------------------------------------
+
+
+
+html {
+}
+h1, h2, h3, h4, h5, h6, p {
+  /* max-width: 24em; */
+  color: rgba(34, 40, 49, 1.0);
+-webkit-hyphens: manual;
+    -ms-hyphens: manual;
+        hyphens: manual;
+}
+h1, h2, h3, h4, h5, h6 {
+    /* margin: 0.4rem 0; */
+  }
+/* TODO Fix the type use apples measurements as a source */
+h1 {
+  /* font-size: 1.45rem;
+  line-height: 2.0rem;
+  letter-spacing: 0.013em; */
+}
+h2 {
+  /* margin: 0.8em 0; */
+  font-size: 1.325rem;
+  line-height: 2.194118rem;
+  letter-spacing: 0.016em;
+}
+h3 {
+  /* margin: 0.8em 0; */
+  font-size: 1.2rem;
+  line-height: 1.960784rem;
+  letter-spacing: 0.019em;
+}
+.headline {
+  font-size: 1.11rem;
+  line-height: 1.725490rem;
+  letter-spacing: -0.024em;
+}
+.subhead {
+  font-size: 1.0388235rem;
+  line-height: 1.568627rem;
+  letter-spacing: -0.016em;
+}
+.large-title {
+  font-size: 1.85rem;
+  line-height: 2.215686rem;
+  letter-spacing: 0.011em;
+}
+/* TODO Make this sticky on scroll and maybe align with back button on mobile */
+.publish-date-day {
+  margin: 0 0 3rem 0;
+  font-weight: 700;
+  line-height: 1rem;
+  text-transform: capitalize;
+}
+p {
+  max-width: 34em;
+  font-size: 1rem;
+  line-height: 1.725490rem;
+  letter-spacing: -0.024em;
+}
+/* NOTE Callout is a short string of text connected by a line, arrow, or similar graphic to a feature of an illustration or technical drawing (instructional diagrams, like drafting drawings), and giving information about that feature. The term is also used to describe a short piece of text set in larger type than the rest of the page and intended to attract attention. */
+p.callout {
+  font-size: 0.941177rem;
+  line-height: 1.647059rem;
+  letter-spacing: -0.020em;
+}
+/* NOTE Footnotes are the text that has little reference symbols at the front, to relate to some sort of copy above it */
+p.footnote {
+  font-size: 0.764706rem;
+  line-height: 1.647059rem;
+  letter-spacing: -0.006em;
+}
+/* NOTE Caption is a title or brief explanation appended to an article, illustration, cartoon, or poster. */
+p.caption-1 {
+  font-size: 0.705882rem;
+  line-height: 0.941176rem;
+  letter-spacing: 0em;
+}
+p.caption-2 {
+  font-size: 0.647059rem;
+  line-height: 1.019608rem;
+  letter-spacing: 0.006em;
+}
+p::selection {
+  color: rgba(245, 245, 245, 1.0);
+  background-color: rgba(71, 153, 226, 1.0);
+}
+strong, em {
+  font-weight: 700;
+}
+blockquote {
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid rgba(71, 153, 226, 1.0);
+  border-radius: 4px;
+}
+figcaption {
+  font-size: ;
+}
+a {
+  /* font-weight: 700; */
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: rgba(71, 153, 226, 1.0);
+  border-bottom: 2px solid transparent;
+}
+a:hover,
+a:active {
+  color: rgba(71, 153, 226, 1.0);
+  border-bottom: 2px solid rgba(34, 40, 49, 1.0);
+}
+a.back-bttn {
+  margin: 0 0 3rem 0;
+}
+img {
+  width: 100%;
+}
+.gallery-single .title-rounds {
+  /* margin: 0 0 0.0rem 0; */
+  font-size: 3.43rem;
+  letter-spacing: 4px;
+      line-height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gallery-list article .day-count h1 {
+
+  /* margin: 0 0 0.0 0; */
+  font-size: 8rem;
+  letter-spacing: 0.033333em;
+  line-height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gallery-list article .day-count h1 .timeRefDays {
+  display: block;
+  margin: 0 0 3rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 1;
+  text-align: center;
+}
+
+
+.gallery-list .day-count .hours,
+.gallery-list .day-count .timeRefHours,
+.gallery-list .day-count .minutes,
+.gallery-list .day-count .timeRefMinutes,
+.gallery-list .day-count .seconds,
+.gallery-list .day-count .timeRefSeconds {
+  display: none;
+}

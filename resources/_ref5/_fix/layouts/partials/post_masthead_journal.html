@@ -1,0 +1,32 @@
+<section class="post-masthead">
+
+    <ul class="meta-top-a">
+      {{ with .Params.series }}
+      <li class="series">
+        <span>Series:</span>
+        {{ range . }}
+        {{ $href := print (absURL "series/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+        {{ with .Params.categories }}
+      <li class="categories">
+        <!-- TODO Update the journal type metafrom categories -->
+        <span>Journal Type:</span>
+        {{ range . }}
+        {{ $href := print (absURL "categories/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+
+    <h1 class="post-hero-headline">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <time datetime="{{ $dateTime }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+      </h1>
+
+</section>

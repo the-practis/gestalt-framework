@@ -1,0 +1,31 @@
+  {{ define "main" }}
+  <div class="page-label">
+      <span>Layout:&nbsp;/_default/list/</span>
+  </div>
+
+
+
+
+  {{ range .Pages.ByPublishDate.Reverse }}
+  <div class="post-body-copy">
+
+    <ul>
+      <li>
+        <a href=" {{ .Permalink }}">
+          {{- .Title -}}
+        </a>
+      </li>
+    </ul>
+
+
+  </div>
+  {{ end }}
+
+
+
+  {{ end }}
+
+
+  {{ define "local_call_to_action" }}
+
+  {{ end }}

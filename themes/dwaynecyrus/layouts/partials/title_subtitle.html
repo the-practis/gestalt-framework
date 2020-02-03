@@ -1,0 +1,6 @@
+<h1 class="post-container__title">{{- .Title -}}</h1>
+{{- if eq .Params.subtitleDisplay true }}
+<p class="post-container__subtitle">
+  <span>Subtitle:&nbsp;{{ .Params.subtitle }}</span>
+</p>
+{{- end }}

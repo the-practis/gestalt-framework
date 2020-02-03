@@ -1,0 +1,82 @@
+
+
+
+
+{{ else }}
+
+<h3>Round 02</h3>
+{{ if eq $myVar2 $myRd2 }}
+{{ range where .Site.Pages "Params.layout" "round_two" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>/
+{{ end }}
+
+{{ else }}
+
+<h3>Round 01</h3>
+{{ if eq $myVar1 $myRd1 }}
+{{ range where .Site.Pages "Params.layout" "round_one" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>/
+{{ end }}
+
+
+=============================================
+{{ $myVar1 := (.Params.round_number) }}
+{{ $myVar2 := (.Params.round_two) }}
+{{ $myVar3 := (.Params.round_three) }}
+{{ $myRd1 := "Round 01" }}
+{{ $myRd2 := "Round 02" }}
+{{ $myRd3 := "Round 03" }}
+{{ $myVar2 }}
+<h3>Round 03</h3>
+{{ if eq $myVar1 $myRd3 }}
+{{ range where .Site.Pages "Params.layout" "round_three" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}
+
+{{ else }}
+
+<h3>Round 02</h3>
+{{ if eq $myVar1 $myRd2 }}
+{{ range where .Site.Pages "Params.layout" "round_two" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}
+
+{{ else }}
+
+<h3>Round 01</h3>
+{{ if eq $myVar1 $myRd1 }}
+{{ range where .Site.Pages "Params.layout" "round_one" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>/
+{{ end }}
+
+{{ else }}
+
+Not Here
+{{ end }}
+{{ end }}
+{{ end }}
+
+=============================================
+<h3>Year1string</h3>
+{{ $year1 := "string" }}
+/{{ $year1}}
+<h3>Equals True False</h3>
+{{ $varC := "cat" }}
+{{ $varD := "dog" }}
+{{ if eq $varC $varD }}
+True
+{{else}}
+false
+{{end}}
+
+
+<h3>Round 01</h3>
+{{ if eq $myVar1 $myRd1 }}
+{{ range where .Site.Pages "Params.layout" "round_one" }}
+<a href="{{ .Permalink }}">{{ .Title }}</a>/
+{{ end }}
+{{ end }}
+
+
+
+{{ $currentRoundNumber := (.Params.round_number) }}

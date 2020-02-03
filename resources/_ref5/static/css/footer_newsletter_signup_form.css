@@ -1,0 +1,38 @@
+.footer-signup-form-content {
+  max-width: 1280px;
+  padding: 0 1rem;
+  margin: 0 auto 4rem auto;
+}
+.newsletter-signup {
+  max-width: 618px;
+  padding: 0;
+  margin: 0 auto;
+}
+.newsletter-signup h3 {
+  text-align: center;
+}
+.newsletter-signup > #mc_embed_signup input.email {
+  display: block;
+margin: 0 auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    border: 1px solid rgba(71, 153, 226, 1.0);
+    color: rgba(34, 40, 49, 1.0);
+    background-color: transparent;
+    height: 2.6rem;
+    max-width: 420px;
+  }
+
+.newsletter-signup > #mc_embed_signup .button {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-align: center;
+    color: rgba(245, 245, 245, 1.0);
+    background-color: rgba(71, 153, 226, 1.0);
+    height: 2.5rem;
+    margin: 0.8rem 0 0 0;
+    line-height: 32px;
+    padding: 0 1.5rem;
+    transition: all 0.23s ease-in-out 0s;
+  }

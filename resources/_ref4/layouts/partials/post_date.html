@@ -1,0 +1,6 @@
+<li class="post_publish_date">
+   {{ $publishDateTime := .PublishDate.Format "2006-01-02" }}
+   {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+   <span>Published:&nbsp;</span>
+   <time datetime="{{ $publishDateTime }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+ </li>

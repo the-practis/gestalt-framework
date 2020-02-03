@@ -1,0 +1,47 @@
+<section class="local_top_bar_nav frosted-glass-light">
+<div class="local_top_bar_nav_inner_container">
+
+
+  <button id="navLocalExpand" class="local_top_bar_nav_expand"></button>
+
+  <div class="hidden_local_top_bar_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazy_bloggers}}
+    <ul class="nav_menu">
+      {{ range .Site.Menus.lazy_bloggers}}
+      <li class="nav_menu_item">
+
+        <a class="{{if or ($currentPage.IsMenuCurrent "lazy_bloggers" .) ($currentPage.HasMenuCurrent "lazy_bloggers" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+
+
+  <div class="revealed_local_top_bar_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazy_bloggers}}
+    <ul class="nav_menu">
+      {{ range .Site.Menus.lazy_bloggers}}
+      <li class="nav_menu_item">
+
+        <a class="{{if or ($currentPage.IsMenuCurrent "lazy_bloggers" .) ($currentPage.HasMenuCurrent "lazy_bloggers" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div><!-- end menu warp -->
+
+
+
+  <a href="/" class="local_top_bar_nav_title">
+    <div>
+      <span>Local Navigation</span>
+    </div>
+  </a>
+
+</div><!-- end menu-container -->
+</section><!-- end nav local -->

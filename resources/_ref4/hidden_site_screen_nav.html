@@ -1,0 +1,16 @@
+<nav id="siteScreenNav" class="site_screen_nav">
+
+  <section class="hidden_site_screen_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazy_bloggers }}
+    <ul class="nav_menu">
+      {{ range .Site.Menus.lazy_bloggers }}
+      <li class="nav_menu_item">
+        <a class="{{if or ($currentPage.IsMenuCurrent "lazy_bloggers" .) ($currentPage.HasMenuCurrent "lazy_bloggers" .) }} active_nav_menu_item{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+
+</nav>

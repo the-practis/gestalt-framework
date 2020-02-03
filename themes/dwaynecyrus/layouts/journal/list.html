@@ -1,0 +1,90 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: journal/list.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+{{/* <!-- Hidden Page Title IDEA consider making into a partial as it's repeated throughout the website. --> */}}
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<ol class="range-list">
+{{- $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 2 -}}
+{{- range $paginator.Pages }}
+  <li class="range-list__item">
+    <article class="post-container__container">
+      <header class="post-container__header">
+
+        <h2 class="post-container__title">
+          <a href="{{ .Permalink }}">
+            {{- $publishDateTime := .PublishDate.Format "2006-01-02" -}}
+            {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" -}}
+            <time datetime="{{ $publishDateTime }}">
+              {{- .PublishDate.Format "Monday — January 2, 2006" -}}
+            </time>
+          </a>
+        </h2>
+        {{- if eq .Params.subtitleDisplay true }}
+        <p class="post-container__subtitle">
+          <span>Subtitle:&nbsp;{{ .Params.subtitle }}</span>
+        </p>
+        {{- end }}
+
+        <ul class="metadata">
+          {{- partial "content_type.html" . -}}
+          {{- partial "date_modified.html" . -}}
+          {{- partial "author.html" . -}}
+          {{- partial "read_time.html" . -}}
+        </ul>
+      </header>
+
+      {{/* <!--
+        {{ partial "thumbnail_image.html" . }}
+
+        IDEA Can this thumbnail exists somewhere in the asides, perhaps it's a drawing like your drawing class representing the feelings/experiences of the day. IT may even include your artwork of the day in the aside. The artwork of  the day can also be considered for the "Log" posts instead.
+
+      TODO Have a rating system that is based on smile emoji icons from fontawesome. Be sure to include a scaled 1-5 or 17 rating of the day similar to the system Corrinna (therapist) introduced you to in the work sheet, mmost likely to be used on the "Log" post, not here. --> */}}
+
+      <section class="post-container__main">
+        <p>{{- .Summary | truncate 280 -}}<a href="#">continue reading</a></p>
+      </section>
+
+      <footer class="post-container__footer">
+        <ul class="metadata">
+          {{/* <!-- TODO Research a good limit for tags to be used on the web with articles --> */}}
+          {{ partial "tags.html" . }}
+          {{ partial "character_count.html" . }}
+          {{ partial "word_count.html" . }}
+        </ul>
+      </footer>
+    </article>
+  </li>
+{{- end }}
+</ol>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "pagination_custom" . -}}
+{{- end }}

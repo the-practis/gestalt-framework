@@ -1,0 +1,86 @@
+img {
+  width: 100%;
+}
+
+/* Markdown
+   ========================================================================== */
+/* NOTE Alwasy leave 1% wiggle room, the gallery plugin has a preference. */
+.img-half {
+  width: 48%;
+}
+
+.img-third {
+  width: 32%;
+}
+
+.img-quarter {
+  width: 24%;
+}
+
+/* Articles
+   ========================================================================== */
+.post-hero-image .feature-image,
+.post-hero-image .thumbnail-image,
+.post-thumbnail-image .feature-image,
+.post-thumbnail-image .thumbnail-image {
+  margin: 0 auto 0.8rem auto;
+  max-width: 618px;
+}
+
+/* Everydayss
+   ========================================================================== */
+.gallery .box {
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 177.777777%;
+  /* padding-top: 100%; */
+}
+
+@media only screen and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .pg-everyday .social-icons ul li {
+    flex-basis: 16.666667%;
+    /* padding: 1rem; */
+    justify-content: center;
+    /* justify-items: center; */
+  }
+
+  .social-icons ul li svg {
+    max-height: 1.5rem;
+  }
+
+  .gallery-round-title {
+    max-width: 618px;
+    margin-left: 0 auto;
+  }
+
+  .pg-everyday article time {
+    max-width: 618px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .page-everyday .hero-title time {
+    font-size: 40px;
+  }
+
+  .gallery-container .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .gallery-container .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .page-everyday .hero-title time {
+    font-size: 48px;
+    letter-spacing: 0.3em;
+  }
+}

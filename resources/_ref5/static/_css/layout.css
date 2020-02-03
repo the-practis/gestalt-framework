@@ -1,0 +1,72 @@
+* {
+  /* box-sizing: border-box; */
+  /* border: solid blue 1px; */
+}
+
+/* .body-content {
+  padding: 0rem 0 0 0;
+  margin: 100px 0 0 0;
+} */
+.aside-content {
+  /* display: none; */
+}
+
+/* NOTE StickyBits FIXME */
+.stickybits-parent-here {
+  /* display: none; */
+}
+
+.pg-article {
+  /* background-color: pink; */
+  /* NOTE Option to shift the enire justification of the content. */
+}
+
+.range-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.range-list-item {
+  margin: 0 0 4rem 0;
+}
+
+/* TODO Have a class to */
+/* TODO Have class turn on aside */
+/* @media only screen and (min-width: 1280px) {
+  .pg-aside-active {
+    display: grid;
+    grid-template-columns: 280px 688px;
+    grid-template-rows: repeat(4, auto);
+    grid-column-gap: 48px;
+    grid-column-gap: 56px;
+    grid-row-gap: 0;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1024px;
+    margin: 100px auto 0 auto;
+  }
+  .pg-aside-active > header {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+  .pg-aside-active > main {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+  .pg-aside-active > aside {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+  .pg-aside-active > section.local-call-to-action {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+  .pg-aside-active > footer {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+  }
+  .aside-content {
+    display: block;
+    width: 100%;
+  }
+} */

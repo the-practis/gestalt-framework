@@ -1,0 +1,118 @@
+
+.secondary-nav-container {
+  position: relative;
+  height: 48px;
+  background-color: white;
+}
+/* .local_top_bar_nav_expand */
+.secondary-nav-container__bttn {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+/* .local_top_bar_nav_expand:after  */
+.secondary-nav-container__bttn:after {
+  content: '\002B';
+  float: right;
+  /* TODO Set the width to match that of the menu icon/text above */
+  width:;
+  padding: 0 16px;
+}
+/* Button Open State */
+/* .local_top_bar_nav_expand.expand:after  */
+.secondary-nav-container__bttn.reveal-content:after {
+  content: "\2212";
+}
+/* hidden_local_top_bar_nav_container  */
+.secondary-nav-container__content {
+  max-height: 0; /*IDEA Do we need the max-height, cant overflow do it all?*/
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: violet;
+}
+/* .local_top_bar_nav_title div */
+.secondary-nav-container__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 16px;
+  /* background: gray; */
+}
+.secondary-nav-container__title a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+@media screen and (min-width: 320px) {}
+@media screen and (min-width: 640px) {
+  .secondary-nav-container__bttn:after,
+  .secondary-nav-container__title {
+    padding: 0 20px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .secondary-nav-container__bttn:after,
+  .secondary-nav-container__title {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .secondary-nav-container__bttn {
+    display: none;
+  }
+  .secondary-nav-container__content {
+    max-height: 100%;
+  }
+  .secondary-nav-container__content nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .secondary-nav-container__content nav ul {
+    padding: 0 24px;
+    list-style-type: none;
+  }
+  .secondary-nav-container__content nav ul li {
+    display: inline-block;
+    margin-right: 16px;
+  }
+  .secondary-nav-container__content nav ul li:last-of-type {
+    margin-right: 0;
+  }
+}
+
+/* NOTE Reference styles for the "frosted effect like Apple" */
+.frosted-glass-light {
+/*   background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter; */
+}
+
+.frosted-glass-light::after {
+/*   background-color: rgba(51, 51, 51, 0.1); */
+}
+
+.frosted-glass-dark {
+/*   background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter; */
+}
+
+.frosted-glass-dark::after {
+/*   background-color: rgba(51, 51, 51, 0.75); */
+}

@@ -1,0 +1,66 @@
+.post-prev-next {
+  padding: 0 1rem;
+  margin: 0rem auto 6rem auto;
+  max-width: 512px;
+}
+
+.post-prev-next ul {
+  /* NOTE You might need this flex to better control the layout. */
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  /* margin: 0 0 4rem 0; */
+  list-style-type: none;
+}
+
+.post-prev-next ul li {
+  margin: 0 0 2rem 0;
+  font-size: 15px;
+  /* line-height: 1.6; */
+  /* list-style-type: none; */
+}
+
+.post-prev-next .title {
+  display: none;
+}
+
+.post-prev-next ul li span {
+  font-weight: 700;
+  display: block;
+}
+
+/* ==========================================================================
+/* Responsive Styles
+  ======================================================================== */
+@media screen and (min-width: 768px) {
+  .post-prev-next {
+    max-width: 618px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .post-prev-next {
+    max-width: 1024px;
+    padding: 0;
+  }
+
+  .pg-aside-active .post-prev-next ul span {
+    display: block;
+  }
+
+  .post-prev-next ul {
+    /* NOTE You might need this flex to better control the layout. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: start;
+    grid-column-gap: 4rem;
+    width: 100%;
+    padding: 0;
+    /* margin: 0 0 4rem 0; */
+    /* list-style-type: none; */
+  }
+
+  .post-prev-next ul li span {
+    /* display: inline-block; */
+    margin: 0 0.5rem 0 0;
+  }

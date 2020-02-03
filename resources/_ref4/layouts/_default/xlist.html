@@ -1,0 +1,55 @@
+{{ define "main" }}
+<div class="label">
+    _default/list
+</div>
+<h1 class="hidden_page_title"></h1>
+<ol class="range_list">
+{{ $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 3}}
+{{ range $paginator.Pages }}
+  <li class="range_list_item">
+    <article class="">
+      <header class="article_header">
+{{ partial "post/feature_image.html" . }}
+        <ul class="post_meta_list">
+            <!-- NOTE Place the post meta partials inside here -->
+            {{ partial "post/post_type.html" . }}
+            {{ partial "post/post_category.html" . }}
+            {{ partial "post/post_date.html" . }}
+            </ul>
+        <a href="{{ .Permalink }}">
+          <h2 class="">{{- .Title -}}</h2>
+        </a>
+        <ul class="post_meta_list">
+            <!-- NOTE Place the post meta partials inside here -->
+            {{ partial "post/post_author.html" . }}
+            {{ partial "post/post_read_time.html" . }}
+            {{ partial "post/post_update.html" . }}
+            {{ partial "post/post_series.html" . }}
+            </ul>
+      </header>
+
+      <section class="article_main">
+        <p>
+          {{ .Summary | truncate 200 }}
+        </p>
+      </section>
+
+      <footer class="article_footer">
+          <ul class="post_meta_list">
+              <!-- NOTE Place the post meta partials inside here -->
+              {{ partial "post/post_tag.html" . }}
+              {{ partial "post/post_character_count.html" . }}
+              {{ partial "post/post_word_count.html" . }}
+
+              </ul>
+        </footer>
+    </article>
+  </li>
+{{ end }}
+</ol>
+{{ end }}
+
+
+{{ define "footer_local" }}
+  {{ partial "footer/custom_pagination.html" . }}
+{{ end }}

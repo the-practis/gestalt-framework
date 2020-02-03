@@ -1,0 +1,42 @@
+{{/* <!-- Local Navigation Bar ================================== --> */}}
+<section class="local_top_bar_nav frosted-glass-light">
+  <div class="local_top_bar_nav_inner_container">
+
+    <button id="navLocalExpand" class="local_top_bar_nav_expand"></button>
+
+    {{/* <!-- Local Navigation Mobile ================================== --> */}}
+    <div class="hidden_local_top_bar_nav_container">
+      {{ $currentPage := . }}
+      {{ if .Site.Menus.lazyBloggers}}
+      <ul class="nav_menu">
+        {{ range .Site.Menus.lazyBloggers}}
+        <li class="nav_menu_item">
+          <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "lazyBloggers" .) ($currentPage.HasMenuCurrent "lazyBloggers" .) }} active_nav_menu_item{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+
+    {{/* <!-- Local Navigation Desktop TODO Copy how apple handles a small width on desktop ================================== --> */}}
+    <div class="revealed_local_top_bar_nav_container">
+      {{ $currentPage := . }}
+      {{ if .Site.Menus.lazyBloggers}}
+      <ul class="men nav_menu">
+        {{ range .Site.Menus.lazyBloggers}}
+        <li class="nav_menu_item">
+          <a class="{{if or ($currentPage.IsMenuCurrent "lazyBloggers" .) ($currentPage.HasMenuCurrent "lazyBloggers" .) }} active_nav_menu_item{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+
+    <a href="/" class="local_top_bar_nav_title">
+      <div>
+        <span>Local Navigation</span>
+      </div>
+    </a>
+
+  </div>
+</section>

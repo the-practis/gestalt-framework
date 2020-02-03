@@ -1,0 +1,104 @@
+# Netlify CMS https://www.netlifycms.org
+
+# Git Gateway is a Netlify open source project that allows you to add editors to your site CMS.
+backend:
+  name: git-gateway
+  branch: public # Branch to update (optional; defaults to master)
+
+# TODO Figure out how exactly the "accept_roles:" settting worksnuuu.
+
+
+# The code below enables the Editorial Workflow
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+
+
+# These lines should *not* be indented
+media_folder: "static/img/uploads" # Media files will be stored in the repo under static/img/uploads
+public_folder: "/img/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+# TODO Media library settings, figure out how this works.
+
+
+
+
+
+
+
+# URL to the published site, may be used by the CMS for various functionality.
+# site_url: https://hugoblue.netlify.com
+
+
+# The CMS UI will include a link in the fixed area at the top of the page, allowing content authors to easily return to your main site.
+# display_url: https://hugoblue.netlify.com
+
+# URL to the published site, may be used by the CMS for various functionality.
+# site_url: https://hugoblue.netlify.com
+site_url: https://www.dwaynecyrus.com
+
+
+# The CMS UI will include a link in the fixed area at the top of the page, allowing content authors to easily return to your main site.
+# display_url: https://hugoblue.netlify.com
+display_url: https://www.dwaynecyrus.com
+
+
+
+
+
+
+
+# The CMS UI will change the logo displayed at the top of the login page
+# TODO logo_url: https://your-site.com/images/logo.svg
+
+
+show_preview_links: false
+
+# Allows you to change how filenames for entries are created and sanitized. Only allowing characters that are (0-9, a-z, A-Z, _, -, ~).
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
+
+
+
+# TODO Explore how each and every widget functions and the filter settings, also make everytime of widget possible so they can be removed on a per site basis.
+collections:
+  - name: "article" # Used in routes, e.g., /admin/collections/article
+    label: "Articles" # Used in the UI
+    folder: "content/article" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+
+    format: "toml-frontmatter"
+    frontmatter_delimiter: "+++"
+
+    slug: "{{slug}}"
+    # Filename template, e.g., YYYY-MM-DD-title.md
+    # Deploy preview links provide a way to view live content when it has not been published.
+
+    # preview_path: "article/{{year}}/{{month}}/{{title}}"
+    # preview_path_date_field: publishDate
+
+    fields: # The fields for each document, usually in front matter
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "article"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Brief Description", name: "description", widget: "string"}
+      - {label: "Publish Date", name: "publishDate", widget: "datetime"}
+      # - {label: "Part of a Series?", name: "series", widget: "string"}
+
+      - label: "Series"
+        name: "series"
+        widget: "select"
+        multiple: true
+        options: ["man", "woman"]
+
+      - label: "Category"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        options: ["left", "center", "right"]
+
+      # - {label: "Category", name: "categories", widget: "string"}
+
+      - {label: "Body", name: "body", widget: "markdown"}

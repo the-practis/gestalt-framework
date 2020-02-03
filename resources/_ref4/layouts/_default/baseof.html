@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+
+<head class="site_head">
+{{ block "head" . }}
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="Resource-type" content="Document" />
+
+  {{ printf "<!--Hugo Build Date: %s-->" hugo.BuildDate | safeHTML }}
+  {{ printf "<!--Hugo Commit Hash: %s-->" hugo.CommitHash | safeHTML }}
+  {{ hugo.Generator }}
+
+  {{ $title := print .Title " | " .Site.Title }}
+  {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+  <title>{{ $title }}</title>
+
+  {{ $css_normalize := "/css/vendor/normalize.css" | absURL }}
+  <link rel="stylesheet" href="{{ $css_normalize }}" />
+
+  {{ $css_base := "/css/base.css" | absURL }}
+  <link rel="stylesheet" href="{{ $css_base }}" / />
+
+  {{ $css_site_top_bar_nav := "/css/header/site_top_bar_nav.css" | absURL }}
+  <link rel="stylesheet" href="{{ $css_site_top_bar_nav }}" />
+
+  <!-- TODO Hidden screen nav, build from ground up the entire nav local and site { { $css_site_screen_nav := "/css/header/site_screen_nav.css" | absURL }}
+  <link rel="stylesheet" href="{ { $css_site_screen_nav }}" /> -->
+
+  {{ $css_local_top_bar_nav := "/css/header/local_top_bar_nav.css" | absURL }}
+  <link rel="stylesheet" href="{{ $css_local_top_bar_nav }}" />
+
+  {{ block "page_css" . }}{{ end }}
+
+  {{ end }}
+</head>
+
+<body class="site_body">
+  <section class="top_bar_notification">
+    {{ block "top_bar_notification" . }} <p> I am a top bar notification </p>{{ end }}
+    </section>
+  <div class="label_baseof">
+    <p>
+      _default/baseof
+      </p>
+  </div>
+
+  <header class="site_header">
+  {{ block "header" . }}
+
+
+
+      <section id="siteTopBarNavHide" class="top_bar_nav ">
+        {{ block "top_bar_nav" . }}
+          {{ partial "site_top_bar_nav.html" . }}
+          {{ partial "local_top_bar_nav.html" . }}
+        {{ end }}
+
+        {{ block "local_header_content" .}}
+        {{ end }}
+    {{ end }}
+    </header>
+
+<div class="site_main_aside_wrapper">
+  <aside class="site_side">
+  {{ block "aside" . }}
+
+    {{ end }}
+    </aside>
+
+  <main class="site_main">
+  {{ block "main" . }}
+
+      {{ end }}
+    </main>
+
+  <aside class="site_aside">
+  {{ block "aside_mini" . }}
+
+    {{ end }}
+    </aside>
+</div>
+
+  <footer class="site_footer">
+    {{ block "footer_local" . }}
+
+    {{ end }}
+  {{ block "footer" . }}
+
+      {{ partial "copyright.html" . }}
+    {{ end }}
+    <section class="bottom_bar_notification">
+      {{ block "bottom_bar_notification" . }}
+
+      {{ end }}
+      </section>
+    </footer>
+
+
+      {{- block "scripts" . }}
+      {{ $js_jquery := "js/vendor/jquery.js" | absURL }}
+      <script src="{{ $js_jquery }}"></script>
+
+      <!-- NOTE site_top_bar_nav_hide.js requires JQuery -->
+      {{ $js_site_top_bar_nav_hide := "js/header/site_top_bar_nav_hide.js" | absURL }}
+      <script src="{{ $js_site_top_bar_nav_hide }}"></script>
+
+      {{ $js_site_top_bar_nav_toggle := "js/header/site_top_bar_nav_toggle.js" | absURL }}
+      <script src="{{ $js_site_top_bar_nav_toggle }}"></script>
+
+      {{ $js_hidden_site_screen_nav_toggle := "js/header/hidden_site_screen_nav_toggle.js" | absURL }}
+      <script src="{{ $js_hidden_site_screen_nav_toggle }}"></script>
+
+      {{ $js_local_top_bar_nav_expand := "js/header/local_top_bar_nav_expand.js" | absURL }}
+      <script src="{{ $js_local_top_bar_nav_expand }}"></script>
+
+      <!-- NOTE Use `jquery.stickybits.js` below if JQuery isn't loaded before stickybits.js loads -->
+      <!-- {{ $js_jquery_stickybits := "js/jquery.stickybits.js" | absURL }}
+      <script src="{{ $js_jquery_stickybits }}"></script> -->
+
+      {{ $js_stickybits := "js/vendor/stickybits.js" | absURL }}
+      <script src="{{ $js_stickybits }}"></script>
+
+      {{ end }}
+
+</body>
+
+</html>

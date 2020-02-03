@@ -1,0 +1,65 @@
+{{ define "main" }}
+<div class="page-label">
+    <span>Layout:&nbsp;/journal/list/</span>
+</div>
+
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<ul class="list-range-wrap range-list">
+    {{/* <!-- FIXME Figure out how to paginate this list and then apply to the journal list --> */}}
+    {{ range (.Data.Pages.GroupByPublishDate "Monday, 02 January 2006" ) }}
+    <li>
+
+      <p class="publish-date-day">
+        <time>{{ .Key }}</time>
+      </p>
+
+        <ul class="group-by-day">
+          {{ range .Pages.ByPublishDate.Reverse }}
+          <li class="range-list-item">
+
+            <article>
+              <header class="post-header">
+
+
+                <div>
+                  <h1 class="link-title post-hero-headline">
+                    <a href="{{ .Params.sourceLink | default .Permalink }}" target="_blank">
+                      {{ .Title }}</a>
+                  </h1>
+                  <!-- TODO Make the dot pulse and give it hover text saying permalink on hover of list item -->
+                  <a class="permalink-dot" href="{{ .Permalink }}"><div></div></a>
+                </div>
+
+
+              </header>
+              <section class="post-body-copy">
+                {{ .Content }}
+              </section>
+
+            </article>
+
+          </li>
+        {{ end }}
+        </ul>
+      {{ end }}
+      </li>
+  </ul>
+
+</div>
+{{ end }}
+
+
+{{ define "aside" }}
+{{ end }}
+
+{{ define "local_call_to_action" }}
+  {{ partial "call_to_action/nav_pagination_custom" . }}
+{{ end }}
+
+{{ define "footer" }}
+{{ end }}
+
+{{ define "scripts" }}
+{{ end }}

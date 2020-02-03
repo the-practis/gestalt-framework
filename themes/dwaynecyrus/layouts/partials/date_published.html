@@ -1,0 +1,8 @@
+<li class="publish-date">
+  {{/* <!-- IDEA Figure out how this date system works, you may have unecessary code here --> */}}
+   {{- $publishDateTime := .PublishDate.Format "2006-01-02" -}}
+   {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" -}}
+   <i data-feather="calendar"></i>
+   <span>Published:&nbsp;</span>
+   <time datetime="{{- $publishDateTime -}}">{{- .PublishDate.Format "January 2, 2006" -}}</time>
+ </li>

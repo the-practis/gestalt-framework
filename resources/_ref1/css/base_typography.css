@@ -1,0 +1,93 @@
+html {
+
+font-family: atten-new, sans-serif;
+/* font-family: rubrik-edge-new, sans-serif; */
+/* NOTE Dont use font-family: futura-pt, sans-serif; */
+/* font-family: rubik, sans-serif; */
+/* font-family: ubuntu, sans-serif; */
+font-size: 16px;
+  font-weight: 400;
+  font-weight: 300; /* book style */
+  font-weight: normal;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.4;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1.hidden_page_title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+  /* max-width: 680px; */
+  max-width: 624px;
+}
+
+
+
+/* Responsive Styles =================== */
+@media screen and (min-width: 320px) {}
+
+@media screen and (min-width: 320px) {}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    /* font-size: 17px */
+  }
+  /* IDEA Keep type to a maximum of 17px */
+  h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+    max-width: 40rem;
+    max-width: 624px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    /* font-size: 18px */
+  }
+  h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+    max-width: 38rem;
+    max-width: 36rem;
+    max-width: 624px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 18px
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 19px
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 20px
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    /* font-size: 21px */
+  }
+}

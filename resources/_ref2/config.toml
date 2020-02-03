@@ -1,0 +1,38 @@
+theme = "dwaynecyrus"
+baseURL = "/"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+# Sets the title of your site that shows up on the browswer tab
+title = "Dwayne Cyrus Beta v0.1.0"
+
+# Hugo's Section Menu for Lazy Bloggers
+sectionPagesMenu = "lazyBloggers"
+
+# 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy. Taxonomies cannot contain hypens or uppercase letters
+[taxonomies]
+  authors = "authors"
+  guestAuthors = "guestAuthors"
+
+  source = "sources"
+  sourceAuthors = "sourceAuthors"
+  sourceLink = "sourceLink"
+
+  portfolioAuthor = "portfolioAuthors"
+  portfolio_client = "clients"
+  portfolio_discipline = "disciplines"
+  portfolio_industry = "industries"
+
+  category = "categories"
+  tag = "tags"
+  keyword = "keywords"
+
+# Types of navigation menus
+[menu]
+# Sample primary navigation
+  [[menu.lazyBloggers]]
+    name = "Articles"
+    pre = ""
+    url = "/article/"
+    weight = ""

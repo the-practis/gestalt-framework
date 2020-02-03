@@ -1,0 +1,125 @@
+.social-icons-gallery h2 {
+  text-align: center;
+}
+.pg-everyday article {
+  margin: 0 0 3rem 0
+}
+.pg-everyday .dot-spacer:last-child {
+    display: block;
+  }
+.pg-everyday article {
+  margin: 0 0 1.5rem 0
+}
+
+.pg-everyday article .title-rounds {
+
+  margin: 0 0 0.0rem 0;
+  font-size: 3.43rem;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pg-everyday article time {
+  display: block;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.pg-everyday article p {
+  margin: 0 0 3rem 0;
+}
+
+
+.pg-everyday nav.nav-content-switch {
+  margin: 0 0 0.5rem 0;
+}
+
+.pg-everyday .gallery-title {
+
+  margin: 0 0 2rem 0;
+  font-size: 2.25rem;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pg-everyday .gallery-container {
+  margin: 0 1rem 3rem 1rem;
+}
+
+
+
+
+
+
+.pg-everyday .archive-list {
+  padding: 0 1rem;
+  margin: 0 0 4rem 0;
+
+}
+
+.pg-everyday .archive-list h1 {
+  padding: 0;
+  margin: 0 0 1em 0;
+  text-align: center;
+
+}
+
+.pg-everyday .archive-list h3.round-title {
+
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.03rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.pg-everyday .archive-list p.description {
+
+  margin: 0rem 0 0.0rem 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.pg-everyday .archive-list ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1.3rem;
+
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+
+
+
+
+
+/* 18px 12px  .pg-everyday .day-count {
+  text-align: center;
+  margin-bottom: 20px;
+} */
+/* .pg-everyday .day-count .timeel {
+  display: inline-block;
+  padding: 10px;
+  background: #151515;
+  margin: 0;
+  color: white;
+  min-width: 2.6rem;
+  margin-left: 13px;
+  border-radius: 10px 0 0 10px;
+} */
+/* .pg-everyday .day-count span[class*="timeRef"] {
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+  background: #e8c152;
+  color: black;
+} */

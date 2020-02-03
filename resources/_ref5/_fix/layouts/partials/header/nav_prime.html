@@ -1,0 +1,32 @@
+      <section class="navbar-primary new> nav-prime">
+
+        <div class="navbar-primary-icons new> site-brandmark ">
+          {{/* <!-- Place your logo text, image (png/jpg), or svg inside the <a> tag --> */}}
+          <a class="icon site-logo new> blank" href="/">
+            <span>Hugo<span>Blue</span></span>
+          </a>
+        </div>
+
+        <div class="menu-mobile new> menu-wrap">
+          {{ $currentPage := . }}
+          {{ if .Site.Menus.nav_primary_sample }}
+          <ul class="menu">
+            {{ range .Site.Menus.nav_primary_sample }}
+            <li class="menu-item">
+                  <!-- FIXME Current page highlighting in navigation menus -->
+                  <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "nav_primary_sample" .) ($currentPage.HasMenuCurrent "nav_primary_sample" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div><!-- end menu-mobile for navbar-primary -->
+
+        <div class="burger-container new> nav-prime-menu-icon">
+          <div id="burger">
+            <div class="bar topBar"></div>
+            <div class="bar btmBar"></div>
+          </div>
+        </div><!-- end burger-container -->
+
+      </section>

@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="page-indicator">
+  <p>
+    <span>Layout:&nbsp;/product/list</span>
+  </p>
+</div>
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+<div class="top-headroom"></div>
+
+<main id="main" class="main" role="main">
+  <div class="main-content page-home">
+
+
+
+    <section class="section section-example">
+      <div class="section-content">
+
+        <h2 class="product-eyebrow typography-callout ">HugoBlue</h2>
+        <h3 class="product-headline typography-product-headline-elevated ">Your Hugo framework.</h3>
+
+        <ul class="links-inline">
+            <!-- TODO These list items should have and arrow facing right. https://www.apple.com/ca/mac/ -->
+            <li>
+        		<a href="/ca/imac/" data-analytics-title="" data-analytics-region="" class="icon-wrapper typography-intro-elevated"><span class="icon-copy">Learn more<span class="visuallyhidden">about iMac</span></span><span class="icon icon-after more"></span></a>			</li>
+        	<li>
+        		<a href="/ca/shop/goto/imac" data-analytics-title="buy - imac" data-analytics-region="learn more" class="icon-wrapper typography-intro-elevated"><span class="icon-copy">Buy<span class="visuallyhidden">iMac</span></span><span class="icon icon-after more"></span></a>			</li>
+         </ul>
+         <!-- NOTE Product image goes here, put one in the future -->
+         <figure class="imac-image" data-progressive-image=""></figure>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="dot"></div>
+
+</main>
+{{ end }}

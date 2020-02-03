@@ -1,0 +1,63 @@
+<section class="post-masthead">
+
+    <ul class="meta-top-a">
+      {{ with .Params.series }}
+      <li class="series">
+        <span>Series:</span>
+        {{ range . }}
+        {{ $href := print (absURL "series/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+        {{ with .Params.categories }}
+      <li class="categories">
+        <span>Categories:</span>
+        {{ range . }}
+        {{ $href := print (absURL "categories/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+      <li class="publish-date">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <span>Published: </span><time datetime="{{ $dateTime }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+      </li>
+    </ul>
+
+<a href="{{ .Permalink }}">
+    <h1 class="post-hero-headline">{{ .Title }}</h1>
+</a>
+    <ul class="meta-top-b">
+      {{ with .Params.guest_authors }}
+      <li class="guest-author">
+        <span>By guest author:</span>
+        {{ range . }}
+        {{ $href := print (absURL "guest_authors/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ else }}
+
+      {{ with .Params.authors }}
+      <li class="author">
+        <span>By</span>
+        {{ range . }}
+        {{ $href := print (absURL "authors/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      {{ end }}
+      </li>
+      {{ end }}
+
+      <li class="read-time">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <span>Read&nbsp;Time:&nbsp;</span>{{ .ReadingTime }}&nbsp;Minutes
+      </li>
+    </ul>
+
+</section>

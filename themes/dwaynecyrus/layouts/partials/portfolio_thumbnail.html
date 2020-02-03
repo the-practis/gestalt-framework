@@ -1,0 +1,25 @@
+<a href="{{ .Permalink }}">
+<figure>
+  {{ if .Params.portfolio_image_thumbnail }}
+  <div class="thumbnail-image image">
+    <img src="{{ .Params.portfolio_image_thumbnail }}" alt="image from {{ .Title }}">
+  </div>
+  {{ end }}
+
+
+
+  <figcaption>
+    {{ if .Params.portfolio_name }}
+    <p class="portfolio-title">{{- .Params.portfolio_name -}}</p>
+    {{ else }}
+    <p class="portfolio-title">{{- .Title -}}</p>
+    {{ end }}
+
+    {{ if .Params.portfolio_tldr }}
+    <p class="portfolio_tldr">
+    {{ .Params.portfolio_tldr  }}
+    </p>
+    {{ end }}
+  </figcaption>
+</figure>
+</a>

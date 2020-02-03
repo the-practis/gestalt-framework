@@ -1,0 +1,73 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: news/list.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<h1 class="hidden_page_title">{{ .Title }}</h1>
+
+<ol class="range-list">
+{{- $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 2 -}}
+{{- range $paginator.Pages }}
+  <li class="range-list__item">
+    <article class="post-container__container">
+      <header class="post-container__header">
+
+        {{- partial "thumbnail_image.html" . -}}
+
+        <h1>
+          <a href="{{ .Permalink }}">{{- .Title -}}</a>
+        </h1>
+
+        <ul class="metadata">
+          {{- partial "content_type.html" . -}}
+          {{- partial "category.html" . -}}
+          {{- partial "date_published.html" . -}}
+          {{- partial "date_modified.html" . -}}
+          {{- partial "author.html" . -}}
+          {{- partial "read_time.html" . -}}
+        </ul>
+      </header>
+
+      <section class="post-container__main">
+        <p>{{- .Summary | truncate 280 -}}<a href="#">continue reading not this do more like Apple Newsroom</a></p>
+      </section>
+
+      <footer class="post-container__footer">
+        <ul class="metadata">
+          {{- partial "tags.html" . -}}
+        </ul>
+      </footer>
+    </article>
+  </li>
+{{- end }}
+</ol>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Press Kit</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "pagination_custom" . -}}
+{{- end }}

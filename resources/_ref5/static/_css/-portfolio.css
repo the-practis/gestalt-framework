@@ -1,0 +1,206 @@
+/* .portfolio-single-view {
+  background: pink;
+} */
+.portfolio-single-view .content-view-switch {
+
+  margin: 0 auto;
+}
+.portfolio-single-view .article-content h1,
+.portfolio-single-view .article-content h2,
+.portfolio-single-view .article-content h3 {
+  margin: 3rem 0 0.5rem 0;
+}
+.portfolio-single-view .article-content h1 + p,
+.portfolio-single-view .article-content h2 + p,
+.portfolio-single-view .article-content h3 + p {
+  margin: 0.5rem 0 1rem 0;
+}
+.portfolio-single-view article header ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.portfolio-single-view article header h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+.portfolio-single-view article header .portfolio-item-description {
+  font-size: 1.066667rem;
+  font-weight: 700;
+  text-align: center;
+  max-width: 25em;
+  margin: 0.4rem auto 1rem auto;
+}
+{{/* /* NOTE Never use "display:contents" when using the gallery shortcode, it fucks shit up. */ */}}
+.portfolio-single-view .box {
+  display:contents;
+  padding: ;
+  margin: ;
+  width: ;
+}
+
+.portfolio-single-view figure {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border: none;
+}
+.portfolio-single-view figure a {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.portfolio-single-view figure figcaption p {
+color: rgba(29, 28, 28, 1.0);
+font-size: 0.85rem;
+}
+
+
+/* .portfolio-list-view {
+  background: pink;
+} */
+.portfolio-list-view .main-headroom {
+  /* display: flex; */
+flex-direction: column;
+/* flex-wrap: nowrap; */
+justify-content: center
+/* align-items: center;
+height: 6rem;
+padding: 0 0 2rem 0;; */
+  }
+  .portfolio-list-view .portfolio-view {
+font-size: 1.1rem;
+    }
+.portfolio-list-view .content-view-switch {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 4rem;
+  padding: 0 0 1.5rem 0;
+  }
+
+
+  .portfolio-list-view .portfolio-order {
+      align-self: flex-end;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  .portfolio-list-view .push-right {
+      justify-content: flex-end;
+      /* background: red; */
+  }
+  .portfolio-list-view .portfolio-order.push-right {
+      justify-content: flex-end;
+      /* background: yellow; */
+
+  }
+
+
+.portfolio-list-view .list-range-wrap > ul{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  padding:0;
+  margin:0;
+  list-style-type: none;
+}
+.portfolio-list-view .list-range-wrap > ul > li {
+margin:0;
+padding: 0;
+}
+
+.portfolio-list-view .list-range-wrap h1,
+.portfolio-list-view .count-something h1 {
+      text-transform: capitalize;
+}
+.portfolio-list-view .list-range-wrap h1 sup {
+      margin: 0 0 0 0.4rem;
+}
+.portfolio-list-view figure {
+  display: inline-block;
+  padding: 0rem;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  border: none;
+}
+.portfolio-list-view .thumbnail-image {
+  position: relative;
+  padding: 0;
+  margin: 0 0 0.4rem 0;
+  /* z-index: 2; */
+}
+.portfolio-list-view figcaption {
+    position: relative;
+    /* height:5.5rem; */
+    /* height: 0; */
+    /* padding: 0.8em; */
+    line-height: 1.5;
+  }
+.portfolio-list-view .portfolio-title {
+  padding: 0;
+  margin: 0;
+    opacity: 1;
+    /* font-size: 0.9rem; */
+    transition-property: all;
+transition-duration: 0.2s;
+transition-timing-function: linear;
+transition-delay: 0s;
+}
+.portfolio-list-view .portfolio-item-description {
+  display: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition-property: all;
+transition-duration: 0.2s;
+transition-timing-function: linear;
+transition-delay: 0s;
+}
+.list-range-wrap a:hover,
+.list-range-wrap a:active {
+  border: none;
+
+}
+.list-range-wrap > ul > li:hover .portfolio-title {
+  /* transform: translateY(-3rem);
+    opacity: 0; */
+
+}
+.list-range-wrap > ul > li:hover .portfolio-item-description {
+  /* transform: translateY(-1.8rem);
+  opacity: 1; */
+}
+/* NOTE Turn back on later with resonsive styles no need on mobile */
+
+
+/* .portfolio-list-view-industry-specific {
+  background: pink;
+} */
+.portfolio-list-view-industry-specific .content-view-switch {
+  /* display: flex; */
+  flex-direction: row;
+  /* flex-wrap: nowrap; */
+  justify-content: space-between;
+  align-items: flex-end;
+  /* height: 4rem; */
+  /* padding: 0 0 1.5rem 0; */
+}
+.portfolio-list-view-industry-specific .count-something h1 {
+  margin: 0;
+line-height: 1em;
+}

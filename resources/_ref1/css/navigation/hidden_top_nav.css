@@ -1,0 +1,21 @@
+.hidden-nav-container {
+  display: none;
+}
+
+@media screen and (min-width: 1280px) {
+/* Hidden Top Navigation Menu */
+#hiddenNavContainer.nav-menu--open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 64px 0;
+  width: 100vw;
+  background-color: lightgreen;
+}
+}

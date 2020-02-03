@@ -1,0 +1,102 @@
+<section class="local_top_bar_nav frosted-glass-light">
+<div class="local_top_bar_nav_inner_container">
+
+
+  <button id="navLocalExpand" class="local_top_bar_nav_expand"></button>
+
+  <div class="hidden_local_top_bar_nav_container">
+
+
+    <ul class="nav_menu">
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/disciplines/alphabetical/" title="Disciplines ABC">Disciplines ABC</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/industries/alphabetical/" title="Industries Alpha">Industries Alpha</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class=" active" href="/portfolio/" title="Portfolio Archive">Portfolio Archive</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/diary/" title="Diary">Diary</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/insight/" title="Insights">Insights</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/link/" title="Links">Links</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/log/" title="Log">Log</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/portfolio-gallery/" title="Portfolio-galleries">Portfolio-galleries</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/portfolio-story/" title="Portfolio-stories">Portfolio-stories</a>
+
+      </li>
+
+      <li class="nav_menu_item">
+
+        <a class="" href="/thought/" title="Thought">Thought</a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="revealed_local_top_bar_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazyBloggers}}
+    <ul class="men nav-local-menu">
+      {{ range .Site.Menus.lazyBloggers}}
+      <li class="menu-item">
+
+        <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "lazyBloggers" .) ($currentPage.HasMenuCurrent "lazyBloggers" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+  </div>
+
+
+
+  <a href="/" class="local_top_bar_nav_title">
+    <div>
+      <span>Local Navigation</span>
+    </div>
+  </a>
+
+</div>
+</section>

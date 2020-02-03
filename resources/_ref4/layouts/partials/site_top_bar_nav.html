@@ -1,0 +1,50 @@
+<nav id="siteTopBarNav" class="site_top_bar_nav">
+      <!-- NOTE: Place your logo text, image (png/jpg), or svg inside the <a> tag -->
+  <section class="site_top_bar_brandmark ">
+    <a href="/">{{ .Site.Title }}</a>
+  </section>
+
+
+  <section class="hidden_site_top_bar_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazy_bloggers }}
+    <ul class="nav_menu">
+      {{ range .Site.Menus.lazy_bloggers }}
+      <li class="nav_menu_item">
+        <a class="{{if or ($currentPage.IsMenuCurrent "lazy_bloggers" .) ($currentPage.HasMenuCurrent "lazy_bloggers" .) }} active_nav_menu_item{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+
+
+  <section class="revealed_site_top_bar_nav_container">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.lazy_bloggers }}
+    <ul class="nav_menu">
+      {{ range .Site.Menus.lazy_bloggers }}
+      <li class="nav_menu_item">
+        <a class="{{if or ($currentPage.IsMenuCurrent "lazy_bloggers" .) ($currentPage.HasMenuCurrent "lazy_bloggers" .) }} active_nav_menu_item{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+
+<!-- TODO: Remove the padding on the nabar  by time it hits 1440?? or just keep the horizontal paddings -->
+
+  <section id="siteNavBurgerContainer" class="burger-container">
+    <div id="burger">
+      <div class="bar topBar"></div>
+      <div class="bar btmBar"></div>
+    </div>
+  </section>
+
+  <!-- TODO Hidden screen nav, build from ground up the entire nav local and site <section id="siteScreenNavBurgerContainer" class="site_screen_nav_burger_container">
+    <div id="burger">
+      <div class="bar topBar"></div>
+      <div class="bar btmBar"></div>
+    </div>
+  </section> -->
+</nav>

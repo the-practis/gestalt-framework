@@ -1,0 +1,119 @@
+# theme = "hugoDX"
+theme = "gestalt"
+
+baseURL = "https://zeroblue.netlify.com"
+
+title = "Zero"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+# Hugo's Section Menu for Lazy Bloggers
+sectionPagesMenu = "lazy_bloggers"
+
+# TODO The defualt base off should include the local nav and aside layout
+
+# Types of navigation menus
+[menu]
+# Sample primary navigation
+  [[menu.nav_top_bar_primary]]
+    name = "Articles"
+    pre = ""
+    url = "/article/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Contact"
+    pre = ""
+    url = "/contact/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Events"
+    pre = ""
+    url = "/event/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Gallery"
+    pre = ""
+    url = "/gallery/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Journal"
+    pre = ""
+    url = "/journal/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Link"
+    pre = ""
+    url = "/link/"
+    weight = ""
+  [[menu.nav_top_bar_primary]]
+    name = "Portfolio"
+    pre = ""
+    url = "/portfolio/"
+    weight = ""
+
+# Sample aside navigation
+  [[menu.nav_aside]]
+    name = "Aside Menu Item 1"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_aside]]
+    name = "Aside Menu Item 2"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_aside]]
+    name = "Aside Menu Item 3"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+
+
+# Changes how the URL is displayed TODO Get this working
+[permalinks]
+  post = "test/:filename/test"
+  # portfolio = ":filename/"
+  portfolio-gallery = "portfolio/:filename"
+  portfolio-story = "portfolio/:filename/story"
+  # disciplines = "loveportfolio/:filename/"
+
+[params]
+  welcomeMessage = "Welcome to HugoBlue."
+
+
+
+# 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy.
+# Taxonomies cannot contain hypens and uppercase letters
+[taxonomies]
+  author = "authors"
+
+  category = "categories"
+  guest_author = "guest_authors"
+  journal_type = "journal_types"
+
+  portfolio_author = "portfolio_authors"
+  portfolio_client = "clients"
+  portfolio_discipline = "disciplines"
+  portfolio_industry = "industries"
+
+
+
+
+
+  # collection = "collections"
+
+
+
+  # type_of_work = "industries"
+
+  # portfolio_content_switch_type = "portfolio_content_switch_type"
+
+
+  # portfolio_project_id = "portfolio_project_id"
+  # portfolio_status = "portfolio_status"
+  # project_type = "discipline"
+  series = "series"
+  source = "sources"
+  source_author = "source_authors"
+  tag = "tags"

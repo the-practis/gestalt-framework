@@ -1,0 +1,47 @@
+theme = "dwaynecyrus"
+# baseURL = "https://dwaynecyrus.com/"
+baseURL = "/"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+title = "My New Hugo Site"
+
+# Hugo's Section Menu for Lazy Bloggers
+sectionPagesMenu = "lazyBloggers"
+
+[permalinks]
+  # blog = "/:filename/"
+# See https://feathericons.com/
+# The value of pre is the icon name
+
+[params]
+copyrightText = "Copyright © 2020 Dwayne Cyrus™"
+homeText = "An organized whole that is perceived as more than the sum of its parts."
+
+containerMaxWidth = "700px"
+dateFormat = "Jan 2, 2006"
+
+# 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy.
+# Taxonomies cannot contain hypens or uppercase letters
+[taxonomies]
+  authors = "authors"
+  guestAuthors = "guestAuthors"
+client = "clients"
+discipline = "disciplines"
+industry = "industries"
+  portfolio_author = "portfolio_authors"
+  portfolio_client = "clients"
+  portfolio_discipline = "disciplines"
+  portfolio_industry = "industries"
+
+  category = "categories"
+  tag = "tags"
+  keyword = "keywords"
+
+  [menu]
+    [[menu.global]]
+      name = "Insights"
+      pre = "edit"
+      url = "/insight/"
+      weight = 2

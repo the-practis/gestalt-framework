@@ -1,0 +1,22 @@
+.contact-list ul {
+  padding: 0;
+  margin:0;
+  list-style-type: none;
+}
+.contact-list ul li {
+  margin: 0 0 1.5rem 0;
+}
+.contact-form {
+  margin: 0 0 6rem 0;
+}
+.contact-form article > header {
+  margin: 0;
+}
+
+.contact-list h2 {
+  margin:0;
+}
+
+.contact-list p {
+  margin: 0;
+}

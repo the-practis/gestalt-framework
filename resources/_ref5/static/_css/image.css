@@ -1,0 +1,62 @@
+img {
+  width: 100%;
+
+}
+
+
+
+/* Markdown
+   ========================================================================== */
+/* NOTE Alwasy leave 1% wiggle room, the gallery plugin has a preference. */
+.img-half {
+  width: 48%;
+}
+.img-third {
+  width: 32%;
+}
+.img-quarter {
+  width: 24%;
+}
+
+
+
+/* Articles
+   ========================================================================== */
+.post-hero-image .feature-image,
+.post-hero-image .thumbnail-image,
+.post-thumbnail-image .feature-image,
+.post-thumbnail-image .thumbnail-image
+ {
+  margin: 0 auto 0.8rem auto;
+  max-width: 768px;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+/* .pg-everyday {
+  background-color: pink;
+} */
+.pg-everyday .social-icons ul li {
+
+    flex-basis: 16.666667%;
+    /* padding: 1rem; */
+    justify-content: center;
+    /* justify-items: center; */
+}
+.social-icons ul li svg {
+    max-height: 1.5rem;
+
+  }
+  .gallery-round-title {
+    max-width: 618px;
+    margin-left: 0 auto;
+  }
+  .pg-everyday article time {
+max-width: 618px;
+margin: 0 auto;
+    text-align: left;
+}

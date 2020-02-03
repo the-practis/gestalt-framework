@@ -1,0 +1,148 @@
+/* * {
+  box-sizing:border-box;
+} */
+body {
+/* TODO Does the create Sticky footer, can I use a grid solution instead?  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* end of sticky footer */
+  margin: 0;
+}
+header {
+  position: relative;
+}
+.global_container_main_aside {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 16px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  /* background-color: lightgrey; */
+  display: none;
+}
+.global_container_main{
+  display: inline-block;
+  padding-top: 6rem;
+  /* background-color: lightblue */
+}
+.global_container_aside_left,
+.global_container_aside_right {
+  display: none !important;
+}
+
+.global_container_footer {
+  /* background-color: #d5c4a1; */
+}
+
+
+/* TODO Add in the widths of popular device like the pixel, samsung, iphone, one plus, motorola? */
+/* Responsive Styles
+   ======================================================= */
+@media screen and (min-width: 320px) {}
+
+
+@media screen and (min-width: 640px) {
+  .global_container_main_aside {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+.global_container_main_aside {
+  padding: 0 48px;
+}
+}
+
+@media screen and (min-width: 960px) {
+  .global_container_main_aside  {
+    display: grid;
+    grid-template-columns: 40px auto 40px;
+    grid-template-rows: auto;
+    grid-column-gap: 36px;
+    /* justify-content: center; */
+  }
+
+  .global_container_main {
+    grid-column: 2 / span 1;
+    justify-self: center;
+
+  }
+  .global_container_aside_right {
+    display: block;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    min-height: 100%;
+    padding-top: 6rem;
+    /* background-color: lightpink; */
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .global_container_main_aside  {
+    grid-template-columns: 64px auto 64px;
+    grid-column-gap: 2rem;
+      padding: 0 48px;
+  }
+  .global_container_main {
+    padding-top: 6rem;
+  }
+  .global_container_aside_right {
+    padding-top: 6rem;
+}
+}
+/* iPad 11" Landscape 1194x834 TODO You will need styles for the ipad specifically and then desktop, do this for other widths as well. */
+@media screen and (min-width: 1194px) {
+  .global_container_main_aside {
+    grid-template-columns: 160px auto 160px;
+    grid-column-gap: 2.5rem;
+}
+.global_container_aside_left {
+  display: block;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  min-height: 100%;
+  padding-top: 6rem;
+  /* background-color:  lightgreen; */
+}
+}
+
+
+@media screen and (min-width: 1280px) {
+  .global_container_main_aside {
+    grid-template-columns: 192px auto 192px;
+    grid-template-columns: 180px auto 180px;
+    padding: 0 56px;
+  }
+}
+
+
+@media screen and (min-width: 1366px) {
+  .global_container_main_aside {
+    grid-column-gap: 3rem;
+  }
+}
+
+/* Responsive Styles 1440px =================== */
+@media screen and (min-width: 1440px) {
+  .global_container_main_aside  {
+    justify-content: stretch;
+    grid-template-columns: 180px auto auto;
+    /* grid-column-gap: 4rem; */
+    max-width: 1440px;
+padding: 0 64px;
+
+/* grid-template-columns: 264px auto 264px; */
+/* IDEA Maybe keep the 264px... */
+/* IDEA Consider going down to 12-12.5rem width for the asides */
+    /* grid-column-gap: 64px; */
+    /* justify-content: start; */
+    max-width: 1440px;
+  }
+}

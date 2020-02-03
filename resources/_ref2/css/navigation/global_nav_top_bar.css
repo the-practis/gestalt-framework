@@ -1,0 +1,561 @@
+/* Top Navbar (Global & Local) Container =================== */
+  .top_bar_nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    height: 48px;
+    z-index: 8;
+    background-color: #fff;
+    /* background-color: lightblue; */
+  }
+
+  .top_bar_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+  }
+
+  /* Top Navbar Container: Scroll Hide State */
+  .top_bar_nav.hidden {
+    top: -48px;
+  }
+
+  .top_bar_nav.hidden .site_top_bar_nav.menu-opened.hidden {
+    top: 0px;
+  }
+
+  /* .menu-opened.hidden {
+    top: 0;
+  } */
+
+  /* .site_top_bar_nav, */
+  .site_top_bar_nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    /* TODO Hidden screen nav, build from ground up the entire nav local and site
+    display: inline-flex;
+    width: auto;
+  background:
+  lightgreen;
+   */
+
+     /* font-family: nunito-sans, sans-serif; */
+     font-style: normal;
+     font-weight: bold;
+     font-weight: 700;
+     text-decoration: none;
+     text-transform: capitalize;
+  }
+
+
+
+  .site_top_bar_nav.menu-opened {
+    position: fixed;
+    top:0;
+  }
+/* NOTE Fixes the local menu from moving up when toggling the ment */
+  .site_top_bar_nav.menu-opened + .local_top_bar_nav {
+    margin-top: 48px;
+  }
+
+
+/* Brandmark Icon and/or Wordmark  =================== */
+.site_top_bar_brandmark {
+  min-width: max-content;
+
+  max-width: 1024px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  position: absolute;
+
+  height: 48px;
+
+  display: flex;
+
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  z-index: 7;
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  width: 100%;
+
+  font-weight: 700;
+
+  margin: 0 0 0 16px;
+
+  font-size: 18px;
+
+  background-color:
+  transparent;
+
+  z-index: 7;
+
+  align-items: center;
+
+  flex-basis: content;
+
+  position: relative;
+
+  margin: 0;
+
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+      transition-delay: 0s;
+
+  transition-delay: 0s;
+
+  transition-delay: 0.65s;
+
+  padding: 0 16px;
+  /* TODO Hidden screen nav, build from ground up the entire nav local and site
+  display: inline-flex;
+  max-width: min-content;
+background:
+lightblue;
+ */
+}
+
+.site_top_bar_brandmark a {
+  color: #1D1C1C;
+  font-family: nunito-sans, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-weight: 700;
+  /* line-height: 1.6; */
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+
+
+/* Brandmark Icon and/or Wordmark: Menu Open State =================== */
+.top_bar_nav.menu-opened .site_top_bar_brandmark a,
+.site_top_bar_nav.menu-opened .site_top_bar_brandmark a  {
+  color: #fff;
+}
+
+.top_bar_nav.menu-opened .site_top_bar_brandmark span span,
+.site_top_bar_nav.menu-opened .site_top_bar_brandmark span span  {
+  color: rgba(71, 153, 226, 1.0);
+}
+
+
+
+/* Global Top Nav Bar Menu Icon  =================== */
+/* TODO Change the menu icon into a permalink dot that expands into the four dots on click in an X layout (4corners) */
+.global_nav_menu_bttn_container {
+  position: relative;
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: center;
+
+  align-items: center;
+  z-index: 7;
+  height: 48px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.burger_container {
+  display: flex;
+
+flex-direction: row;
+
+justify-content: center;
+
+align-items: center;
+}
+
+/* .dot_container {
+  display: block;
+  position: relative;
+} */
+.dot_container {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  background: transparent;
+}
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot_a {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.dot_b {
+  position: absolute;
+  top:0;
+  right:0;
+}
+.dot_c {
+  position: absolute;
+  bottom:0;
+  right:0;
+}
+.dot_d {
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+
+.dot_container:hover .dot-a {
+    position: absolute;
+  top: calc(50% - 12.5px);
+  left: calc(50% - 12.5px);
+}
+.dot_container:hover .dot-c {
+    position: absolute;
+  bottom: calc(50% - 12.5px);
+  right: calc(50% - 12.5px);
+}
+.site_top_bar_nav.menu-opened .burger-container {
+  transform: rotate(45deg);
+
+}
+
+
+/* Menu Icon - Hamburger =================== */
+.burger-container {
+  /* position: relative;
+  z-index: 7;
+  height: 50px;
+  padding: 0 12px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99); */
+
+}
+
+.burger-container #burger {
+  /* width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -6px auto 0;
+  top: 50%; */
+}
+
+.burger-container #burger .bar {
+  /* width: 100%;
+  height: 3px;
+  display: block;
+  position: relative;
+  background: rgba(29, 28, 28, 1.0);
+  border-radius: 12px; */
+}
+
+.burger-container #burger .bar {
+  /* transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s; */
+}
+
+.burger-container #burger .bar.topBar {
+  /* transform: translateY(0px) rotate(0deg); */
+}
+
+.burger-container #burger .bar.btmBar {
+  /* transform: translateY(6px) rotate(0deg); */
+}
+
+/* Menu Icon - Hamburger: Menu Open State */
+.site_top_bar_nav.menu-opened .burger-container {
+  /* transform: rotate(90deg); */
+}
+
+.site_top_bar_nav.menu-opened .burger-container #burger .bar {
+  /* height: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s; */
+}
+
+.site_top_bar_nav.menu-opened .burger-container #burger .bar {
+  /* transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.2s; */
+}
+
+.site_top_bar_nav.menu-opened .burger-container #burger .bar.topBar {
+  /* transform: translateY(4px) rotate(45deg); */
+  /* transform: translateY(5px) rotate(45deg); */
+}
+
+.site_top_bar_nav.menu-opened .burger-container #burger .bar.btmBar {
+  /* transform: translateY(2px) rotate(-45deg); */
+  /* transform: translateY(1px) rotate(-45deg); */
+}
+
+.site_top_bar_nav.menu-opened .burger-container #burger .bar {
+  /* background-color: #fff; */
+}
+
+
+
+
+
+.nav_menu {
+  padding-left: 0;
+    font-family: nunito-sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+.site_top_bar_nav.menu-opened .mobile_site_top_bar_nav_container .nav_menu li {
+  margin-bottom: 2rem;
+}
+
+/* Menu List: Mobile =================== */
+.site_top_bar_nav .mobile_site_top_bar_nav_container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  padding: 48px;
+  background-color: rgba(29, 28, 28, 1.0);
+  /* background-color: pink; */
+  padding: 48px 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  opacity: 0;
+}
+
+ .mobile_site_top_bar_nav_container  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  align-items: end;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 0 0 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+ .mobile_site_top_bar_nav_container  .nav_menu_item a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Menu List: Mobile Open State */
+/* .site_top_bar_nav.menu-opened .site_top_bar_nav .menu-mobile, */
+.site_top_bar_nav.menu-opened .mobile_site_top_bar_nav_container {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.30s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.site_top_bar_nav.menu-opened .mobile_site_top_bar_nav_container .nav_menu li a {
+  font-size: 24px;
+}
+
+
+/* Menu List: Desktop Nav =================== */
+.site_top_bar_nav .desktop_site_top_bar_nav_container {
+  display: none;
+}
+
+/* Menu List: Hidden Desktop Nav =================== */
+.hidden_site_top_bar_nav_container {
+  display: none;
+}
+
+
+
+/* ====================================================== */
+/* Responsive Styles
+/* ====================================================== */
+@media screen and (min-width: 768px) {
+  /* Brandmark Icon and/or Wordmark  =================== */
+  .site_top_bar_brandmark {
+
+    padding: 0 20px;
+  }
+  /* Global Top Nav Bar Menu Icon  =================== */
+
+  .global_nav_menu_bttn_container {
+
+    padding: 14px 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .site_top_bar_brandmark {
+
+    padding: 0 24px;
+  }
+
+  /* Global Top Nav Bar Menu Icon  =================== */
+
+  .global_nav_menu_bttn_container {
+
+    padding: 14px 24px;
+  }
+  /* Navbar */
+  .site_top_bar_nav {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Menu Icon - Hamburger */
+  .burger-container {
+    /* NOTE Option to hide the Ueno style menu */
+    /* IDEA the logo and menu of the global bar stay on scroll and move outwords to accomodate the local bar */
+    /* IDEA Better idea the local menu shrinks in to accomodate the logo and menu icon */
+    display: none;
+    display: block;
+  }
+.burger-container #burger{
+      /* display: block; */
+      /* TODO Turn on when you have the hidden menu setup */
+    }
+  /* NOTE This symbol was alive. } */
+
+  /* Menu List - Mobile */
+  .site_top_bar_nav .mobile_site_top_bar_nav_container {
+    display: none;
+  }
+
+  /* Menu List - Desktop */
+  .site_top_bar_nav .desktop_site_top_bar_nav_container {
+    display: grid;
+justify-content: end;
+    width: 100%;
+    /* padding: 0 1rem 0 0; */
+  }
+
+ .desktop_site_top_bar_nav_container .nav_menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+  }
+
+  .site_top_bar_nav .desktop_site_top_bar_nav_container .nav_menu_item {
+    padding: 0;
+    margin: 0 0.5rem;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .site_top_bar_nav .desktop_site_top_bar_nav_container .nav_menu_item:last-child {
+    margin: 0 0 0 0.5rem;
+  }
+
+  .site_top_bar_nav .desktop_site_top_bar_nav_container .nav_menu_item a {
+    text-decoration: none;
+    color: rgba(29, 28, 28, 1.0);
+  }
+
+  /* Menu List: Hidden Desktop =================== */
+ .hidden_site_top_bar_nav_container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+    padding: 50px;
+    background-color: rgba(29, 28, 28, 1.0);
+    background-color: pink;
+    padding: 50px 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    opacity: 0;
+  }
+
+ .hidden_site_top_bar_nav_container  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    align-items: end;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0 0 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+ .hidden_site_top_bar_nav_container  .nav_menu_item a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  /* Menu List - Hiden Desktop Open State */
+  /* .site_top_bar_nav.menu-opened .site_top_bar_nav .menu-mobile, */
+  .site_top_bar_nav.menu-opened .hidden_site_top_bar_nav_container {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.30s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  }
+
+}
+
+@media screen and (min-width: 1600px) {
+  .site_top_bar_brandmark {
+
+    padding: 0px;
+  }
+
+    /* Global Top Nav Bar Menu Icon  =================== */
+
+    .global_nav_menu_bttn_container {
+
+      padding: 14px 0 14px 24px;
+    }
+}

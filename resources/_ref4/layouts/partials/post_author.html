@@ -1,0 +1,20 @@
+{{ with .Params.guestAuthors }}
+<li class="post_guest_author">
+  <span>Guest Author:&nbsp;</span>
+  {{ range . }}
+  {{ $href := print (absURL "guestAuthors/") (urlize .) }}
+    <a href="{{ $href }}">{{ . }}</a>
+  {{ end }}
+</li>
+{{ else }}
+
+{{ with .Params.authors }}
+<li class="post_author">
+  <span>Author:&nbsp;</span>
+  {{ range . }}
+  {{ $href := print (absURL "authors/") (urlize .) }}
+    <a href="{{ $href }}">{{ . }}</a>
+  {{ end }}
+  {{ end }}
+</li>
+{{ end }}

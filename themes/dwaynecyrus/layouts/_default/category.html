@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="page-info">
+    <span>Layout:&nbsp;/_default/category/</span>
+</div>
+
+
+  <ul class="range-list">
+  <!-- { { range .Pages.ByPublishDate.Reverse }} -->
+  {{ $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 12}}
+  {{ range $paginator.Pages }}
+    <li class="range-list-item">
+      <article class="">
+        <header>
+          <a href="{{ .Permalink }}">
+            <h1 class="headline-hero">{{- .Title -}}</h1>
+          </a>
+        </header>
+        <div class="article-content">
+          <p>
+            {{ .Summary | truncate 280 }}
+          </p>
+        </div>
+      </article>
+    </li>
+  {{ end }}
+  </ul>
+{{ end }}
+
+{{- define "footer" }}
+  <!-- { {- partial "navigation/nav-pagination.html" . -}} -->
+  <!-- { {- partial "footer.html" . -}} -->
+{{- end }}

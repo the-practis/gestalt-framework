@@ -1,0 +1,102 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: portfolio/gallery_view.html</div>
+{{- end }}
+
+{{- define "main_page_specific" }}
+{{/* <!-- TODO Clean all of this HTML and CSS up! --> */}}
+
+<div class="layout_label">
+    <span>Layout:&nbsp;portfolio/gallery_view</span>
+</div>
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<main id="main" class="site_main > ">
+
+
+
+  <ul class="gallery-story-nav">
+    {{ $view := .Params.portfolio_project_id}}
+    {{ range where .Site.Pages "Params.portfolio_project_id" $view }}
+    <li>
+      <a href=" {{ .Permalink }}">{{- .Params.portfolio_content_tier_name -}}</a>
+    </li>
+    {{ end }}
+  </ul>
+
+
+<article>
+
+  <header>
+
+    {{ if .Params.portfolio_image_feature }}
+    <div class="feature-image image">
+      <img src="{{ .Params.portfolio_image_feature }}" alt="image from {{ .Title }}">
+    </div>
+    {{ end }}
+
+    {{ if .Params.portfolio_project_name }}
+    <h1 class="portfolio-title">{{- .Params.portfolio_project_name -}}</h1>
+    {{ else }}
+    <h1 class="portfolio-title">{{- .Title -}}</h1>
+    {{ end }}
+
+    <ul class="meta">
+      {{ with .Params.clients }}
+      <li class="clients">
+        <span>clients:</span>
+        {{ range . }}
+        {{ $href := print (absURL "clients/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+      {{ with .Params.disciplines }}
+      <li class="disciplines">
+        <span>disciplines:</span>
+        {{ range . }}
+        {{ $href := print (absURL "disciplines/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+      {{ with .Params.industries }}
+      <li class="industries">
+        <span>industries:</span>
+        {{ range . }}
+        {{ $href := print (absURL "industries/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+
+
+
+    <p class="portfolio-tldr">
+      {{ .Params.description  }}
+      </p>
+
+
+</header>
+
+<div class="article-content">
+{{ .Content }}
+</div>
+
+</article>
+
+
+
+</main>
+{{ end }}
+
+
+
+{{ define "scripts"}}
+    <!-- TODO Make script types you can repeat -->
+    <!-- { { partial "_script.html" . }} -->
+    {{ partial "gallery_scripts.html" . }}
+{{ end }}

@@ -1,0 +1,9 @@
+.footer-copyright-content .copyright {
+  font-size: 0.8rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.footer-copyright-content .build-version {
+  font-size: 0.65rem;
+}

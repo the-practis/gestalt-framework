@@ -1,0 +1,20 @@
+<section class="post-hero-image">
+  {{ if .Params.article_thumbnail_image }}
+
+
+
+    <div class="thumbnail-image">
+        <img src="{{ .Params.article_thumbnail_image }}" alt="image from {{ .Title }}">
+    </div>
+    {{ else }}
+
+
+    {{ if .Params.article_feature_image }}
+    <div class="feature-image">
+        <img src="{{ .Params.article_feature_image }}" alt="image from {{ .Title }}">
+    </div>
+    {{ end }}
+
+
+  </section>
+  {{ end }}

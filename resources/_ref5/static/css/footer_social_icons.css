@@ -1,0 +1,81 @@
+.social-icons-follow-content {
+  padding: 0rem 1rem;
+  /* margin-bottom: 1.5rem; */
+  margin: 0 0 4rem 0;
+}
+.social-icons-follow-content .section-content {
+  max-width: 1280px;
+  padding: 0rem;
+  margin: 0 auto 3rem auto;
+}
+.social-icons-follow-content svg {
+  height: 32px;
+  fill: rgba(34, 40, 49, 1.0);
+}
+.social-icons-follow-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+    align-items: center;
+  margin: 0;
+  list-style-type: none;
+}
+.social-icons-follow-content li {
+  display: flex;
+  flex-basis: 25%;
+  /* padding: 1rem; */
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons-follow-content li a {
+vertical-align:;
+}
+
+.social-icons-follow-content p {
+  margin-top: 1rem;
+  text-align: center;
+}
+.social-icons-follow-content p svg {
+  margin: 0rem 0.4rem -0.588235rem 0;
+}
+
+
+/* ===================================
+== RESPONSIVE STYLES
+/* ================================ */
+@media screen and (min-width: 600px) {
+  .social-icons-follow-content svg{
+    height: 40px;
+  }
+  .social-icons-follow-content li {
+    flex-basis: 20%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .social-icons-follow-content svg{
+    height: 40px;
+  }
+  .social-icons-follow-content li {
+    flex-basis: 16.6666666667%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .social-icons-follow-content svg{
+    height: 40px;
+  }
+  .social-icons-follow-content li {
+    flex-basis: 10%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .social-icons-follow-content svg{
+    height: 32px;
+  }
+  .social-icons-follow-content li {
+    flex-basis: 6.25%;
+  }
+}

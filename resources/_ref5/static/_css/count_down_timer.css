@@ -1,0 +1,20 @@
+.countdown {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.countdown .timeel {
+  display: inline-block;
+  padding: 10px;
+  background: transparent;
+  margin: 0;
+  color: rgba(29, 28, 28, 1.0);
+  min-width: 2.6rem;
+  margin-left: 13px;
+  border-radius: none;
+}
+.countdown span[class*="timeRef"] {
+  border-radius: none;
+  margin-left: 0;
+  background: transparent;
+  color: rgba(29, 28, 28, 1.0);
+}

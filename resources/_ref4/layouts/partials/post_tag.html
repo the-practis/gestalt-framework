@@ -1,0 +1,9 @@
+{{ with .Params.tags }}
+<li class="post_tag">
+<span>#:</span>
+{{ range . }}
+{{ $href := print (absURL "tags/") (urlize .) }}
+<a class="" href="{{ $href }}">{{- . -}}</a><span class="end-comma">,&nbsp</span>
+{{ end }}
+</li>
+{{ end }}

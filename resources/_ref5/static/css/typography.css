@@ -1,0 +1,494 @@
+/* Global
+   ========================================================================== */
+html {
+  position: relative;
+  color: rgba(34, 40, 49, 1.0);
+  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+  /* TODO Add a few more backup fonts to load and test them with a live demo to make sure the not bad */
+  font-size: 1.0625rem;
+  font-size: 16px;
+  background-color: #fff;
+  /* background-color: pink; */
+  /* NOTE Below adds anti-alising, clears up the type for readibility */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+  quotes: "“""”";
+}
+
+body, input, textarea, select, button {
+  font-synthesis: none;
+  -moz-font-feature-settings: 'kern';
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  text-align: left;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  /* font-size: 1.0625rem; */
+  /* font-weight: lighter; */
+  /* font-weight: 300; */
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  /* background-color: #DFDCDC; */
+}
+
+ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, hgroup, p, blockquote, figure, form, fieldset, input, legend, pre, abbr, button {
+  margin: 0;
+  padding: 0;
+}
+
+h1+*, h2+*, h3+*, h4+*, h5+*, h6+* {
+  /* margin-top: .8em; */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(29, 28, 28, 1.0);
+}
+
+.pg-home h2,
+.pg-home h3,
+.pg-home h4 {
+  max-width: 618px;
+  margin: 0 auto;
+}
+
+.pg-home h4 {
+  max-width: 512px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.pg-home .recent-posts {
+  margin: 0 auto;
+}
+
+p {
+  max-width: 512px;
+  margin: 0 auto;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.hidden-page-title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+/* Post Global
+  ========================================================================== */
+.post-header {
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+/* FIXME Layout */
+/* Post Title */
+.post-hero-headline {
+  padding: 0 1rem;
+  /* margin: 0 auto; */
+  margin: 0.5rem auto;
+  max-width: 512px;
+  font-size: 30px;
+  font-size: 22px;
+  line-height: 1.13353;
+  font-weight: 700;
+  letter-spacing: .006em;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Post Body Copy */
+.post-body-copy h1, .post-body-copy h2, .post-body-copy h3 {
+  max-width: 512px;
+  padding: 0 1rem 0rem 1rem;
+  margin: 2.176471rem auto 1.176471rem auto;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .012em;
+  line-height: 1.21053;
+}
+
+.post-body-copy h2 {
+  font-size: 20px;
+}
+
+.post-body-copy h3 {
+  font-size: 18px;
+}
+
+.post-body-copy {
+  margin: 0 0 2.8125rem 0;
+}
+
+.post-body-copy p:last-child {
+  padding-bottom: 0rem;
+}
+
+.post-body-copy ul {
+  padding: 0 0 0 2rem;
+  margin: 0 auto 1rem auto;
+  max-width: 512px;
+}
+
+.post-masthead {
+  margin-top: 1rem;
+}
+
+/* Post Meta Copy */
+.post-masthead .meta-top-a,
+.post-masthead .meta-top-b {
+  padding: 0 1rem;
+  margin: 0.5rem auto;
+  /* font-size: 0.88rem; */
+  /* font-size: 0.8125rem; */
+  font-size: 15px;
+  line-height: 1.6;
+  text-transform: capitalize;
+  list-style-type: none;
+  max-width: 512px;
+}
+
+.post-masthead .meta-top-a a,
+.post-masthead .meta-top-b a,
+.post-word-char-count a,
+.post-masthead a {
+  text-decoration: none;
+}
+
+.post-masthead .meta-top-a span,
+.post-masthead .meta-top-b span {
+  font-weight: 700;
+}
+
+.post-word-char-count {
+  margin: 0 auto 4rem auto;
+  font-size: 0.8125rem;
+  font-size: 15px;
+  max-width: 512px;
+  margin-top: 1rem;
+}
+
+.post-word-char-count span {
+  font-weight: 700;
+}
+
+.post-word-char-count span.end-comma:last-child {
+  display: none;
+}
+
+.post-word-char-count ul {
+  padding: 0 1rem;
+  margin: 0 auto;
+  /* font-size: 0.88rem; */
+  line-height: 1.6;
+  text-transform: capitalize;
+  list-style-type: none;
+}
+
+.callout-copy {
+  font-size: 18px;
+  max-width: 512px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.pg-journal-post .post-hero-headline {
+  font-size: 22px;
+}
+
+.pg-journal-post .post-hero-headline time span {
+  display: block;
+}
+
+/* Section Specific - Link
+   ========================================================================== */
+.pg-link-list .group-by-day .post-header>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.pg-link-list .post-hero-headline {
+  margin: 0.4rem 0;
+}
+
+.pg-link-list .permalink-dot div {
+  display: block;
+  height: 12px;
+  width: 12px;
+  margin: 0 2rem;
+  background-color: transparent;
+  border: solid rgba(71, 153, 226, 1.0);
+  border-radius: 50%;
+}
+
+.pg-link-list .permalink-dot div:hover {
+  background-color: rgba(71, 153, 226, 1.0);
+}
+
+.pg-link-list .permalink-dot:hover, .permalink-dot:active {
+  color: rgba(71, 153, 226, 1.0);
+  border-bottom: 2px solid transparent;
+}
+
+.pg-link-list .group-day .spacer-dot:last-child {
+  display: none;
+}
+
+.pg-link-list .link-title {
+  font-size: 22px;
+  padding: 0 1rem;
+  /* margin: 0 auto;
+
+margin: 0.5rem auto;
+
+max-width: 512px;
+
+font-size: 30px;
+
+font-size: 22px;
+
+line-height: 1.13353;
+
+font-weight: 700;
+
+letter-spacing: .006em;
+
+font-family: 'Ubuntu', sans-serif; */
+}
+
+.pg-link-list .permalink-dot {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.pg-link-list .range-list>.range-list-item {
+  margin-bottom: 9.375rem;
+}
+
+.publish-date-day {
+  max-width: 512px;
+  padding: 0 1rem;
+  font-weight: 700;
+  margin: 0 auto;
+  margin-bottom: 2.8125rem;
+  font-size: 15px;
+}
+
+.pg-link-list .post-header div {
+  max-width: 512px;
+  margin: 0 auto;
+}
+
+.pg-link-list .range-list-item .post-header {
+  margin: 0 0 1rem 0;
+}
+
+/* Everyday
+    ========================================================================== */
+.page-everyday .gallery-round-title div {
+  max-width: 512px;
+  /* text-align: center; */
+}
+
+.page-everyday .hero-title h1 {
+  font-size: 4rem;
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 1;
+  margin: 0 auto;
+  margin-bottom: 2.8125rem;
+  max-width: 1024px;
+}
+
+.page-everyday .hero-title time {
+  font-size: 18px;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(29, 28, 28, 1.0);
+  margin: 0 auto;
+  display: block;
+}
+
+.page-everyday .gallery-title {
+  max-width: 618px;
+  margin: 0 auto 2.8125rem auto;
+  text-align: center;
+}
+
+.countup .timeel {
+  display: none;
+}
+
+.page-everyday .post-header .countup .days {
+  display: block;
+  margin: 0 auto;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.page-everyday .archive-list .gallery-title {
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.page-everyday .archive-list .gallery-title {
+  margin-bottom: 2rem;
+}
+
+.page-everyday .hero-title h2 {
+  margin: 0 auto;
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  text-transform: uppercase;
+  /* font-size: 4rem;
+  padding: 0 1rem;
+  text-align: center;
+  line-height: 1;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  margin-bottom: 2.8125rem;
+  max-width: 1024px; */
+}
+
+.page-everyday .hero-title time {
+  /* font-size: 18px;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(29, 28, 28, 1.0);
+  margin: 0 auto;
+  display: block; */
+}
+
+/* Responsive
+    ========================================================================== */
+/* TODO Rem and em everything! */
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 17px;
+  }
+
+  .post-hero-headline,
+  .post-body-copy h1, .post-body-copy h2, .post-body-copy h3, .post-body-copy h4,
+  .post-masthead .meta-top-a,
+  .post-masthead .meta-top-b,
+  .post-body-copy p,
+  .post-body-copy ul,
+  .post-word-char-count,
+  /* .sc-journal-post .post-prev-next, */
+  .publish-date-day,
+  .pg-link-list .post-header div {
+    max-width: 618px
+  }
+
+  /* Everydays */
+  .page-everyday .hero-title h1 {
+    font-size: 7.8rem;
+  }
+
+  .page-everyday .round-title {
+    font-size: 1.6rem;
+  }
+
+  .page-everyday .archive-list .description {
+    font-size: 1rem;
+  }
+
+  .pg-home h4 {
+    max-width: 618px;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+
+  .callout-copy {
+    font-size: 20px;
+  }
+
+  .post-hero-headline {
+    font-size: 32px;
+  }
+
+  .post-body-copy {
+    margin: 0 0 4.6875rem 0;
+  }
+
+  .post-body-copy h1 {
+    font-size: 28px;
+  }
+
+  .post-body-copy h2 {
+    font-size: 26px;
+  }
+
+  .post-body-copy h3 {
+    font-size: 24px;
+  }
+
+  .post-hero-headline,
+  .post-body-copy h1, .post-body-copy h2, .post-body-copy h3,
+  .post-masthead .meta-top-a,
+  .post-masthead .meta-top-b,
+  /* .post-body-copy p, */
+  .post-body-copy ul,
+  .post-word-char-count,
+  /* .sc-journal-post .post-prev-next, */
+  .publish-date-day,
+  .pg-link-list .post-header div {
+    /* max-width: 560px; */
+    /* font-weight: 400; */
+    padding: 0;
+  }
+
+  .post-body-copy p {
+    padding: 0 0rem 1rem 0rem;
+  }
+
+  .pg-link-list .link-title {
+    padding: 0;
+  }
+
+  .post-header-thumbnail {
+    margin: 0 0 0.5rem 0;
+  }
+
+  /* Everydays */
+  .page-everyday .hero-title h1 {
+    font-size: 12rem;
+  }
+
+  .pg-home h4 {
+    /* max-width: 512px; */
+    padding: 0;
+    /* margin: 0 auto; */
+  }
+}

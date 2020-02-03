@@ -1,0 +1,144 @@
+/* NOTE Only for development ====================== */
+.dev-label__page-layout {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  background-color: black;
+  z-index: 100;
+}
+.dev-label__section-layout {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+  background-color: black;
+  z-index: 100;
+}
+/* Layout ====================== */
+* {
+  box-sizing: border-box;
+}
+header {
+  /* position: relative; */
+}
+main {
+  /* height: 2000px;
+  background: red; */
+}
+
+/* Image ====================== */
+img, svg {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+/* Top bar containing the primary, secondary, and hidden navigation content ====================== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Hide menu on scroll up animation */
+  transform: translate(0, 0);
+  transition: all 0.5s ease-out 0s;
+}
+/* Hide menu on scroll down animation */
+#topBar.hide-nav-bar{
+   -webkit-transform: translate(0, -48px);
+   -moz-transform: translate(0, -48px);
+   -ms-transform: translate(0, -48px);
+   transform: translate(0, -48px);
+   transition: all 0.4s ease-in 0s;
+}
+.top-bar__primary {
+  display: grid;
+  grid-template-rows: 48px;
+  grid-template-columns: 120px 120px;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: pink;
+  /* opacity: 0.4; */
+}
+
+.top-bar__brandmark,
+.top-bar__mobile-bttn,
+.top-bar__desktop-bttn {
+  z-index: 30;
+}
+.top-bar__brandmark {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  align-self: center;
+}
+.top-bar__mobile-bttn,
+.top-bar__desktop-bttn {
+  grid-row: 1;
+  grid-column: 2 / span 1;
+}
+.top-bar__desktop-bttn {
+  display: none;
+}
+
+
+@media screen and (min-width: 320px) {}
+@media screen and (min-width: 640px) {
+  /* Hide menu on scroll animation */
+  #topBar.hide-nav-bar{
+     -webkit-transform: translate(0, -56px);
+     -moz-transform: translate(0, -56px);
+     -ms-transform: translate(0, -56px);
+     transform: translate(0, -56px);
+  }
+  .top-bar__primary {
+    grid-template-rows: 56px;
+    grid-template-columns: 144px 144px;
+    padding: 0 20px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .top-bar__primary {
+    grid-template-columns: 160px 160px;
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  /* Hide menu on scroll animation */
+  #topBar.hide-nav-bar{
+     -webkit-transform: translate(0, -64px);
+     -moz-transform: translate(0, -64px);
+     -ms-transform: translate(0, -64px);
+     transform: translate(0, -64px);
+  }
+  .top-bar__primary {
+    grid-template-rows: 64px;
+    grid-template-columns: 160px 1fr 160px;
+    /* grid-template-columns: 180px 180px; */
+  }
+  .top-bar__desktop-bttn {
+    grid-row: 1;
+    grid-column: 3 / span 1;
+  }
+  .top-bar__desktop-bttn {
+    display: block;
+  }
+  .top-bar__mobile-bttn {
+    display: none;
+  }
+}
+@media screen and (min-width: 1600px) {
+  /* Main Top Navigation */
+  /* TODO Turn me on and set after the site has been built at 1440 and completed/released */
+  /* #topBar {
+    padding: 0;
+  } */
+}
+/* TODO Consider keeping your main top menu at 40-48px similar to apple's site */

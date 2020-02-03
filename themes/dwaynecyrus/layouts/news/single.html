@@ -1,0 +1,67 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: insight/single.html</div>
+{{- end }}
+
+
+
+{{- define "header_page_specific" }}
+  {{- partial "feature_image.html" . -}}
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<article class="post-container__container">
+  <header class="post-container__header">
+
+    <h1 class="post-container__title">{{- .Title -}}</h1>
+
+    <ul class="metadata">
+      {{- partial "content_type.html" . -}}
+      {{- partial "category.html" . -}}
+      {{- partial "date_published.html" . -}}
+      {{- partial "date_modified.html" . -}}
+      {{- partial "author.html" . -}}
+      {{- partial "read_time.html" . -}}
+    </ul>
+  </header>
+
+  <section class="post-container__main">
+    {{ .Content }}
+  </section>
+
+  <footer class="post-container__footer">
+    <ul class="metadata">
+      {{ partial "tags.html" . }}
+      {{ partial "character_count.html" . }}
+      {{ partial "word_count.html" . }}
+    </ul>
+  </footer>
+</article>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "prev_next" . -}}
+{{- end }}

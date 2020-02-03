@@ -1,0 +1,37 @@
+
+<section class="post-journal-masthead">
+  <div class="post-journal-masthead">
+
+
+    <ul class="meta-top-a">
+      {{ with .Params.series }}
+      <li class="series">
+        <span>Series:</span>
+        {{ range . }}
+        {{ $href := print (absURL "series/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+        {{ with .Params.categories }}
+      <li class="categories">
+        <span>Categories/Journal Type:</span>
+        {{ range . }}
+        {{ $href := print (absURL "categories/") (urlize .) }}
+        <a href="{{ $href }}">{{ . }}</a>
+        {{ end }}
+      </li>
+      {{ end }}
+
+      <li class="publish-date">
+        {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+        <span>Published: </span><time datetime="{{ $dateTime }}">{{ .PublishDate.Format "January 2, 2006" }}</time>
+      </li>
+    </ul>
+
+    <h1 class="headline-hero">{{- .Title -}}</h1>
+
+  </div>
+</section>

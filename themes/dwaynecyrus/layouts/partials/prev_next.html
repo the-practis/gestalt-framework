@@ -1,0 +1,15 @@
+<ul class="prev-next">
+  <li class="prev-next__previous">
+    {{- with .PrevInSection }}
+    <i data-feather="arrow-left"></i>
+    <span>Previous:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+    {{- end }}
+  </li>
+
+  <li class="prev-next__next">
+    {{- with .NextInSection }}
+    <i data-feather="arrow-right"></i>
+    <span>Next:&nbsp;</span><a href="{{.Permalink}}">{{- .Title -}}</a>
+    {{- end }}
+  </li>
+</ul>

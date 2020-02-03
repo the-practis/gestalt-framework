@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="journal-list list-range">
+
+  <div class="main-headroom"></div>
+
+  <ul class="list-range-wrap">
+    {{/* <!-- FIXME Figure out how to paginate this list and then apply to the journal list --> */}}
+    {{ range (.Data.Pages.GroupByPublishDate "Monday, 02 January 2006" ) }}
+    <li>
+
+      <p class="publish-date-day">
+        <time>{{ .Key }}</time>
+      </p>
+
+        <ul class="group-by-day">
+          {{ range .Pages.ByPublishDate.Reverse }}
+          <li>
+
+            <article>
+              <header>
+
+                {{ if .Params.journal_thumbnail_image }}
+                <a href="{{ .Permalink }}">
+                  <div class="thumbnail-image">
+                      <img src="{{ .Params.journal_thumbnail_image }}" alt="image from {{ .Title }}">
+                  </div>
+                  {{ end }}
+                </a>
+
+                <ul class="meta-top-a">
+                  {{ with .Params.series }}
+                  <li class="series">
+                    <span>Series:</span>
+                    {{ range . }}
+                    {{ $href := print (absURL "series/") (urlize .) }}
+                    <a href="{{ $href }}">{{ . }}</a>
+                    {{ end }}
+                  </li>
+                  {{ end }}
+
+                  {{ with .Params.categories }}
+                  <li class="categories">
+                    <span>Categories:</span>
+                    {{ range . }}
+                    {{ $href := print (absURL "categories/") (urlize .) }}
+                    <a href="{{ $href }}">{{ . }}</a>
+                    {{ end }}
+                  </li>
+                  {{ end }}
+                </ul>
+
+
+                <a href="{{ .RelPermalink }}">
+                  <h1 class="link-title">
+                    {{ $dateTitle := .PublishDate.Format "2006-01-02" }}
+                    {{ $dateTitleFormat := .Site.Params.dateFormat | default "Jan 2, 2006 15:04 -0400" }}
+                    <time datetime="{{ $dateTitle }}">@ {{ .PublishDate.Format "15:04" }}</time>
+                  </h1>
+                </a>
+
+              </header>
+              <p>
+                {{ .Summary | truncate 280 }}<a href="{{ .RelPermalink }}">continue</a>
+              </p>
+            </article>
+
+          </li>
+          <div class="dot-spacer"></div>
+        {{ end }}
+        </ul>
+      {{ end }}
+      </li>
+  </ul>
+
+  <!-- TODO Add pagination here.... maybe, what for? -->
+</div>
+  {{ end }}

@@ -1,0 +1,85 @@
+  .site_screen_nav_burger_container {
+    display:  none;
+  }
+
+/* Responsive Styles 1024px =================== */
+@media screen and (min-width: 1024px) {
+
+
+  /* Menu Icon - Hamburger */
+  .site_screen_nav_burger_container {
+    display: block;
+position: relative;
+z-index: 7;
+height: 50px;
+padding: 0 1rem;
+cursor: pointer;
+user-select: none;
+-webkit-tap-highlight-color: transparent;
+background-color:
+transparent;
+transform: rotate(0deg);
+transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+/*  */
+position: absolute;
+top: 0;
+right: 0;
+/*  */
+}
+
+.site_screen_nav_burger_container #burger {
+  width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -6px auto 0;
+  top: 50%;
+}
+.site_screen_nav_burger_container #burger .bar {
+  width: 100%;
+  height: 3px;
+  display: block;
+  position: relative;
+  background: rgba(29, 28, 28, 1.0);
+  border-radius: 12px;
+}
+
+.site_screen_nav_burger_container #burger .bar {
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+
+.site_screen_nav_burger_container #burger .bar.topBar {
+  transform: translateY(0px) rotate(0deg);
+}
+
+.site_screen_nav_burger_container #burger .bar.btmBar {
+  transform: translateY(6px) rotate(0deg);
+}
+
+
+
+
+.hidden_site_screen_nav_container {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 6;
+padding: 50px;
+background-color:
+rgba(29, 28, 28, 1.0);
+background-color: pink;
+padding: 50px 2rem;
+transform: translateY(-100%);
+transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+opacity: 0;
+}
+
+.site_screen_nav.menu-opened .hidden_site_screen_nav_container {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.30s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}

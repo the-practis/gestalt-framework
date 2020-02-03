@@ -1,0 +1,17 @@
+<section class="navbar-primary new> nav-aside">
+  <div class="menu-mobile new> menu-wrap">
+    {{ $currentPage := . }}
+    {{ if .Site.Menus.nav_primary_sample }}
+    <ul class="menu">
+      {{ range .Site.Menus.nav_primary_sample }}
+      <li class="menu-item">
+        <a class="{{if or ($currentPage.IsMenuCurrent "nav_primary_sample" .) ($currentPage.HasMenuCurrent "nav_primary_sample" .) }} menu-item-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">
+          {{- .Name -}}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+
+</section>

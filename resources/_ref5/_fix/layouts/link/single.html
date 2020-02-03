@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="page-label">
+    <span>Layout:&nbsp;/article/list/</span>
+</div>
+
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<!-- TODO Add the sticky here and slide it over -->
+<div class="publish-date-day">
+  {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+  {{ $dateFormat := .Site.Params.dateFormat | default "Monday, Jan 2, 2006" }}
+  <time datetime="{{ $dateTime }}">{{ .PublishDate.Format "Monday — 02 January 2006" }}</time>
+</div>
+
+<article class="sc-article-post">
+
+    <header class="post-header">
+      <section class="post-masthead">
+      <h1 class="post-hero-headline">
+        <a href="{{ .Params.sourceLink | default .Permalink }}" target="_blank">
+          {{ .Title }}</a>
+      </h1>
+      </section>
+    </header>
+
+
+    <section class="post-body-copy">
+      {{ .Content }}
+    </section>
+
+
+    <footer class="post-footer">
+      {{ partial "post_word_char_count" . }}
+    </footer>
+
+</article>
+
+{{ end }}

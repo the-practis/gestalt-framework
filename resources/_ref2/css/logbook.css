@@ -1,0 +1,37 @@
+/* Shared */
+.post_container {
+  max-width: 38rem;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+.post_header {
+  margin: 0 0 1rem 0;
+}
+.post_title {
+  padding: 0.4em 0;
+  margin: 0;
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.post_metadata {
+  padding: 0;
+  margin: 0;
+  font-size: 0.875em;
+  list-style-type: none;
+}
+.post_content {
+  margin: 0 0 1.2rem 0;
+}
+
+/* Single */
+
+/* List */
+.post_list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.post_list_item {
+  margin: 0 0 4rem 0;
+}

@@ -1,0 +1,12 @@
+.nav-prev-next-portfolio .previous {
+  display: none;
+}
+.nav-prev-next-portfolio ul {
+  display: flex;
+    justify-content: center;
+  padding: 0;
+ margin: 0 auto;
+ text-align: center;
+  list-style-type: none;
+}
+/* TODO Remove the "nav" form all titles and classes */

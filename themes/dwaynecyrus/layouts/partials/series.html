@@ -1,0 +1,16 @@
+{{- with .Params.series -}}
+<li>
+ <span class="series-title">
+   <i data-feather="book"></i>
+   <span>Series&nbsp;Title:&nbsp;</span>
+     {{- range . }}
+     {{- $href := print (absURL "series/") (urlize .) -}}
+     <a href="{{ $href }}">{{- . -}}</a>,
+     {{ end }}
+ </span>
+ {{- end }}
+
+ {{- if .Params.series -}}
+  <span class="series-part">Part&nbsp;{{- .Params.seriesPart -}}</span>
+ </li>
+ {{- end }}

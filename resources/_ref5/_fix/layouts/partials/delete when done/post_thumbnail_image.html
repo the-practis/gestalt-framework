@@ -1,0 +1,21 @@
+
+  {{ if .Params.article_thumbnail_image }}
+  <section class="post-thumbnail-image">
+  <a href="{{ .Permalink }}">
+  <div class="post-thumbnail-image-content">
+
+    <div class="thumbnail-image">
+        <img src="{{ .Params.article_thumbnail_image }}" alt="image from {{ .Title }}">
+    </div>
+    {{ else }}
+
+    {{ if .Params.article_feature_image }}
+    <div class="thumbnail-image">
+        <img src="{{ .Params.feature_thumbnail_image }}" alt="image from {{ .Title }}">
+    </div>
+    {{ end }}
+
+  </div>
+    </a>
+    </section>
+  {{ end }}

@@ -1,0 +1,27 @@
+/* TODO Add the if active turn blue feature to all nav */
+
+.nav-local-switch > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:flex-start;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.nav-local-switch ul li {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.nav-local-switch ul li::after {
+  order:;
+  content: ".";
+  padding: 0;
+  margin: 0 0.4rem 0 0.2rem;
+  font-size: 1.6rem;
+  vertical-align: baseline;
+}
+.nav-local-switch ul li:last-child::after {
+  opacity: 0;
+}

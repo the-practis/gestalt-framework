@@ -1,0 +1,67 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: industries/taxonomy.html.htm</div>
+{{- end }}
+
+{{- define "main_page_specific" }}
+{{/* <!-- TODO Clean all of this HTML and CSS up! Are we using the correct naming for custom taxonomy terms? --> */}}
+
+  <div class="layout_label">
+      <span>Layout:&nbsp;industries/taxonomy.html.html</span>
+  </div>
+
+  <h1 class="hidden-page-title">{{ .Title }}</h1>
+
+  <main id="main" class="site_main > ">
+
+
+    <h4>Portfolio Sorting Menu:</h4>
+      <ul class="portfolio-sorting">
+        {{ range where .Site.Pages "Params.portfolio_sort" "active" }}
+        <li>
+          <a href="{{ .Permalink }}">{{ .Params.portfolio_sort_name }}</a>
+        </li>
+      {{ end }}
+      </ul>
+
+  <h4>Portfolio Filter Menu:</h4>
+  <ul class="portfolio-ordering">
+    {{ range where .Site.Pages "Params.portfolio_ordering" "active" }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Params.portfolio_ordering_name }}</a>
+    </li>
+  {{ end }}
+  </ul>
+
+
+  <h4>Industry Sorting Menu:</h4>
+    <ul class="portfolio-sorting">
+      {{ range where .Site.Pages "Params.industry_ordering" "active" }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Params.industry_ordering_name }}</a>
+      </li>
+    {{ end }}
+    </ul>
+
+
+
+
+{{ $ere := "industries" }}
+{{ $hello := .Title }}
+{{ $def := "education" }}
+
+<section class="portfolio-grid">
+  <ul>
+{{ range first 10 .Data.Pages.ByTitle }}
+<li>
+  {{ if eq (eq .Type $ere) (eq .Type $hello) }}
+    <a href="{{ .Permalink }}">{{ partial "portfolio_thumbnail" . }}</a>
+  {{ end }}
+  </li>
+{{ end }}
+</ul>
+</section>
+
+</main>
+
+
+{{ end }}

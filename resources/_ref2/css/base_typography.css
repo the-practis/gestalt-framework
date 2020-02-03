@@ -1,0 +1,109 @@
+
+
+html {
+  font-family: rubrik-edge-new, sans-serif;
+  /* font-family: rubrik-new, sans-serif; */
+  font-weight: 400;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  /* letter-spacing: 0.01rem; */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1.hidden_page_title {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+  /* max-width: 680px; */
+  max-width: 624px;
+}
+
+
+
+/* Global Footer: Copyright */
+.copyright {
+  font-size: 0.8em;
+}
+
+.copyright .build_number {
+  font-size: 0.8em;
+}
+
+
+
+
+
+
+
+/* Post Styles ================================== */
+
+.article_title {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+
+
+
+
+
+
+/* NOTE Global Padding Control */
+.global_main {
+  /* padding: 0 16px; */
+}
+@media screen and (min-width: 320px) {
+.global_main{
+/* padding: 0 20px; */
+}
+}
+
+
+
+/* Responsive Styles 320px =================== */
+@media screen and (min-width: 320px) {
+
+}
+
+
+
+/* Responsive Styles 512px =================== */
+@media screen and (min-width: 512px) {
+}
+
+
+/* Responsive Styles 768px ================================== */
+@media screen and (min-width: 768px) {
+  html {
+font-size: 17px
+  }
+  /* IDEA Keep type to a maximum of 17px */
+  h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+    max-width: 40rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+/* font-size: 18px */
+  }
+  h1, h2, h3, h4, h5 ,h6, p, ol, ul {
+    /* max-width: 680px; */
+    max-width: 38rem;
+  }
+}

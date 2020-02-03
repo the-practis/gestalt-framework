@@ -1,0 +1,41 @@
+
+  {{ define "main" }}
+  <div class="page-label">
+
+      <span>Layout:&nbsp;/gallery/list/</span>
+
+  </div>
+
+  <h1 class="hidden-page-title">{{ .Title }}</h1>
+
+<main class="main-content-container">
+<div class="archive-list">
+
+  <h1 class="gallery-title">{{ .Title }} Archive</h1>
+
+    <ul>
+    {{ range where .Site.Pages "Params.everydays" "primary" }}
+      <li>
+        {{ if .Params.gallery_thumbnail_image }}
+        <a href="{{ .Permalink }}">
+          <div class="">
+              <img src="{{ .Params.gallery_thumbnail_image }}" alt="image from {{ .Params.round_number }}">
+          </div>
+
+        </a>
+
+    {{ end }}
+
+      {{ if .Params.description }}
+        <a href="{{ .Permalink }}"><h3 class="round-title">{{- .Params.round_number -}}</h3></a>
+        <p class="description">{{ .Params.description }}
+
+          </p>
+
+        {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+  </div>
+</main>
+{{ end }}

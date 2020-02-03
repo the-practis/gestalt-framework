@@ -1,0 +1,32 @@
+<div class="navbar-secondary frosted-glass-light frosted-glass-dark">
+
+  <button class="navbarSecondaryExpand"><a href="/journal/">Journals</a></button>
+    <div class="navbar-secondary-content">
+
+
+        <div class="menu-mobile">
+          <div class="local-nav-title">
+          Title Here
+        </div>
+<!-- TODO Adds a search fields to this menu when opened in some places -->
+<!-- TODO Have a FAQ and Questions Answered page like garyvee -->
+        <!-- TODO make the menu items reference local information that is page specific. -->
+        {{ $currentPage := . }}
+        {{ if .Site.Menus.nav_local_journal }}
+        <ul class="menu">
+          {{ range .Site.Menus.nav_local_journal }}
+          <li class="menu-item">
+            <a class="{{if or ($currentPage.IsMenuCurrent "nav_local_journal" .) ($currentPage.HasMenuCurrent "nav_local_journal" .) }} menu-item-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">
+              {{- .Name -}}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+
+
+
+    </div><!-- end navbar-secondary-content -->
+
+</div><!-- end navbar-secondary -->

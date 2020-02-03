@@ -1,0 +1,294 @@
+# NOTE Turn on the following and coment out the other 'baseURL' for HUGO build command.
+# baseURL = "/"
+# relativeURLs = true
+# uglyURLs = true
+
+baseURL = "https://hugoblue.netlify.com"
+
+# Website title
+title = "Dwayne Cyrus"
+
+googleAnalytics = "UA-144432953-2"
+
+# TODO You will turn this on once you have made the transition to a theme.
+# theme = "hugoBlue"
+
+# Declares the type of front matter we are using
+MetaDataFormat = "toml"
+
+# Declares the default language of your content
+DefaultContentLanguage = "en"
+
+# Declares the default language of your code
+languageCode = "en-us"
+
+
+[permalinks]
+  link = "/:year/:month/:day/:title/"
+  journal = "/:section/portfolio/:title/"
+  discipline-a = "/money/:title/"
+
+# Hugo's Section Menu for Lazy Bloggers
+SectionPagesMenu = "nav_sections"
+
+# Types of navigation menus
+[menu]
+  # Sample primary navigation, using the main links for HugoBlue
+  [[menu.nav_primary_sample]]
+    name = "Articles"
+    pre = ""
+    url = "/article/"
+    weight = "2"
+  # [[menu.nav_primary_sample]]
+  #   name = "Everydays"
+  #   pre = ""
+  #   url = "/everyday/"
+  #   weight = ""
+  [[menu.nav_primary_sample]]
+      name = "Journal"
+      pre = ""
+      url = "/journal/"
+      weight = "3"
+  [[menu.nav_primary_sample]]
+      name = "Links"
+      pre = ""
+      url = "/link/"
+      weight = "1"
+  # [[menu.nav_primary_sample]]
+  #     name = "Portfolio"
+  #     pre = ""
+  #     url = "/portfolio/"
+  #     weight = ""
+  # [[menu.nav_primary_sample]]
+  #     name = "Resumes"
+  #     pre = ""
+  #     url = "/links/"
+  #     weight = ""
+  [[menu.nav_primary_sample]]
+      name = "Contact"
+      pre = ""
+      url = "/contact/"
+      weight = "4"
+  # Sample secondary navigation
+  [[menu.nav_local_sample]]
+    name = "Local Nav 1"
+    pre = ""
+    url = "/"
+    weight = ""
+  [[menu.nav_local_sample]]
+    name = "Local Nav 2"
+    pre = ""
+    url = "/"
+    weight = ""
+  [[menu.nav_local_sample]]
+    name = "Local Nav 3"
+    pre = ""
+    url = "/"
+    weight = ""
+  # Local navigation for Everydays
+  [[menu.nav_local_everyday]]
+    name = "Round 1"
+    pre = ""
+    url = "/everyday/round-1/primary/"
+    weight = ""
+  [[menu.nav_local_everyday]]
+    name = "Round 2"
+    pre = ""
+    url = "/everyday/round-2/primary/"
+    weight = ""
+  [[menu.nav_local_everyday]]
+    name = "Round 3"
+    pre = ""
+    url = "/everyday/round-3/primary/"
+    weight = ""
+  [[menu.nav_local_everyday]]
+    name = "Round 4"
+    pre = ""
+    url = "/everyday/round-4/primary/"
+    weight = ""
+    # Local navigation for Article
+    [[menu.nav_local_article]]
+      name = "Birds of Prey"
+      pre = ""
+      url = "/#0/"
+      weight = ""
+    [[menu.nav_local_article]]
+      name = "Big Cats"
+      pre = ""
+      url = "/#0/"
+      weight = ""
+    [[menu.nav_local_article]]
+      name = "Insects"
+      pre = ""
+      url = "/#0/"
+      weight = ""
+    # Local navigation for Journal
+    [[menu.nav_local_journal]]
+      name = "Archive"
+      pre = ""
+      url = "/#0/"
+      weight = ""
+    [[menu.nav_local_journal]]
+      name = "List the Years?"
+      pre = ""
+      url = "/#0/"
+      weight = ""
+
+  # Local navigation for Link
+  [[menu.nav_local_link]]
+    name = "Archive"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_local_link]]
+    name = "List the Years?"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+
+  # Local navigation for Link
+  [[menu.nav_local_portfolio]]
+    name = "All"
+    pre = ""
+    url = "/portfolio/"
+    weight = "1"
+  [[menu.nav_local_portfolio]]
+    name = "Type of Work"
+    pre = ""
+    url = "/portfolio/discipline/"
+    weight = "2"
+  [[menu.nav_local_portfolio]]
+    name = "Type of Client"
+    pre = ""
+    url = "/portfolio/industry/"
+    weight = "3"
+
+  # Local navigation for Link
+  [[menu.nav_local_contact]]
+    name = "Newsletter"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_local_contact]]
+    name = "Social Links"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_local_contact]]
+    name = "#AskCyrus"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+  [[menu.nav_local_contact]]
+    name = "General Question"
+    pre = ""
+    url = "/#0/"
+    weight = ""
+
+# Custom Parameters
+    [params]
+    # TODO Does this even work?
+      # dateFormat = "Jan 2, 2006 15:04 -0700"
+      # Favicon
+      favicon = ""
+# Social follow links
+    500px = ""
+    artstation = "#0"
+    behance = "#0"
+    deviantart = "#0"
+    discord = ""
+    discourse = ""
+    dribbble = "#0"
+    facebook = "#0"
+    facebook_messenger = ""
+    git = ""
+    github = ""
+    gitkraken = ""
+    gitlab = ""
+    gitter = ""
+    hacker_news = ""
+    instagram = ""
+    linkedin = ""
+    mailchimp = ""
+    mastodon = ""
+    medium = ""
+    pinterest = ""
+    reddit = ""
+    snapchat = ""
+    tumblr = "#0"
+    twitter = ""
+    vimeo = ""
+    youtube = ""
+    email = ""
+# --------------------- ABOVE THIS LINE ARE APPROVED -----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # 'Tag' and 'category' are Hugo's default taxonomies and only need to be declared if your going to use a custom taxonomy.
+  # It is important that your taxonomies are at the end of your config.toml file
+  # Taxonomies cannot contain hypens and uppercase letters
+  # [taxonomies]
+  #   category = "categories"
+  #   series = "series"
+  #   tag = "tags"
+
+
+
+
+
+
+[taxonomies]
+  author = "authors"
+  category = "categories"
+  client = "clients"
+  client_type = "industry"
+  collection = "collections"
+  discipline = "discipline"
+  guest_author = "guest_authors"
+  type_of_work = "industries"
+  keyword = "keywords"
+  portfolio_content_switch_type = "portfolio_content_switch_type"
+  portfolio_project_id = "portfolio_project_id"
+  portfolio_status = "portfolio_status"
+  project_type = "discipline"
+  series = "series"
+  source = "sources"
+  source_author = "source_authors"
+  tag = "tags"
+
+
+
+
+
+
+
+
+
+# TODO: Set your configurations based on environments Reference: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+
+# IDEA: Can you set a rule that changes the base url when you initiate hugo server, i think it has to do with environments

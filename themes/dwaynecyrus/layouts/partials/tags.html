@@ -1,0 +1,10 @@
+{{- with .Params.tags -}}
+<li class="tags">
+  <i data-feather="hash"></i>
+  <span>Tags:&nbsp;</span>
+  {{- range . }}
+    {{- $href := print (absURL "tags/") (urlize .) -}}
+    <a class="" href="{{ $href }}">{{- . -}}</a>
+  {{- end }}
+</li>
+{{- end }}

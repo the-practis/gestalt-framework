@@ -1,0 +1,10 @@
+{{- with .Params.categories }}
+<li class="category-type">
+  <i data-feather="filter"></i>
+  <span>Category:&nbsp;</span>
+  {{- range . }}
+  {{- $href := print (absURL "categories/") (urlize .) -}}
+    <a href="{{ $href }}">{{- . -}}</a>
+  {{- end }}
+</li>
+{{- end }}

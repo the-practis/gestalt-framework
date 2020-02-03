@@ -1,0 +1,28 @@
+<a href="{{ .Permalink }}">
+<figure>
+  {{ if .Params.portfolio_thumbnail_image }}
+  <div class="thumbnail-image image">
+    <img src="{{ .Params.portfolio_thumbnail_image }}" alt="image from {{ .Title }}">
+  </div>
+  {{ end }}
+
+
+
+  <figcaption>
+    <!-- { { if .Params.portfolio_name }}
+    <p class="portfolio-title">{ {- .Params.portfolio_name -}}</p>
+    { { else }}
+    <p class="portfolio-title">{ {- .Title -}}</p>
+    { { end }} -->
+
+    <p class="portfolio-title">{{- .Params.portfolio_project_name -}}</p>
+
+    {{ if .Params.discipline }}
+    <p class="portfolio-item-description">
+    {{/* <!-- Figure out how to set a limit of characters for the description --> */}}
+    {{ .Params.description  }}
+    </p>
+    {{ end }}
+  </figcaption>
+</figure>
+</a>

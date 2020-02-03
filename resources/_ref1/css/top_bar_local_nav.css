@@ -1,0 +1,288 @@
+/* Expand Button and Link
+  ========================================================================== */
+.local_top_bar_nav_title {
+  color: rgba(29, 28, 28, 1.0);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .011em;
+  border-bottom: none;
+}
+
+.local_top_bar_nav_expand {
+  cursor: pointer;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  /* NOTE The webkit below fixes the flickering on tap Safari */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.local_top_bar_nav_title div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  height: 50px;
+  padding: 0 0 0 1rem;
+  white-space: nowrap;
+
+}
+
+button.local_top_bar_nav_expand:active,
+.local_top_bar_nav_expand:hover {
+  background-color: transparent;
+}
+
+.local_top_bar_nav_expand:after {
+  content: '\002B';
+  color: rgba(29, 28, 28, 1.0);
+  font-weight: 700;
+  float: right;
+  width: 50px;
+  margin-left: 5px;
+}
+
+/* Button Open State */
+.local_top_bar_nav_expand.expand:after {
+  content: "\2212";
+}
+
+/* Menu - Desktop
+  ========================================================================== */
+
+/* Desktop Menu Styles */
+.revealed_local_top_bar_nav_container {
+  display: none;
+}
+
+/* Menu - Mobile
+  ========================================================================== */
+ .hidden_local_top_bar_nav_container {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.local_top_bar_nav .nav_menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.local_top_bar_nav .nav_menu_item a {
+  line-height: 2.5rem;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(29, 28, 28, 1.0);
+}
+
+.local_top_bar_nav .nav_menu_item a:link,
+.local_top_bar_nav .nav_menu_item a:visited {
+  color: rgba(29, 28, 28, 1.0);
+  border-bottom: none;
+}
+
+/* Nav Bar
+  ========================================================================== */
+.local_top_bar_nav {
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  /* border-bottom: solid 1px rgba(29, 28, 28, 0.03);   */
+}
+
+.frosted-glass-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+
+.frosted-glass-light::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.frosted-glass-dark {
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+
+.frosted-glass-dark::after {
+  background-color: rgba(51, 51, 51, 0.75);
+}
+
+/* Portfolio
+  ========================================================================== */
+.page-portfolio .nav-local-bar {
+  height: 50px;
+}
+
+.page-portfolio .hidden_local_top_bar_nav_container {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.page-portfolio .nav-local-menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 0;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.page-portfolio .nav-local-menu .nav_menu_item a {
+  font-weight: 700;
+}
+
+.page-portfolio .local_top_bar_nav_title div {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.page-portfolio .nav-local-sort-order ul {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  padding: 2rem 0 0 0;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-around;
+  list-style-type: none;
+  text-transform: capitalize;
+  max-width: 304px;
+  padding: 2rem 0 2rem 0;
+  display: none;
+}
+
+/* TODO PLace all styles stuff in a file that is the same as the page name */
+.page-portfolio figcaption p {
+  color: rgba(29, 28, 28, 1.0);
+}
+
+.page-portfolio .portfolio-title {
+  padding: 0 1rem 0.4rem 1rem;
+}
+
+.page-portfolio .portfolio-item-description {
+  font-weight: 400;
+}
+
+.portfolio-grid {
+  margin: 0 0 5rem 0;
+}
+
+/* ==========================================================================
+/* Responsive Styles
+  ======================================================================== */
+@media screen and (min-width: 1024px) {
+
+  /* Menu - Mobile */
+ .hidden_local_top_bar_nav_container,
+.local_top_bar_nav_expand {
+    display: none;
+  }
+
+ .local_top_bar_nav_inner_container {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .local_top_bar_nav {
+    margin: 0 auto;
+    padding: 0 1rem 0 0;
+  }
+
+  .local_top_bar_nav_title {
+    display: flex;
+    /* font-size: 0.9375rem;
+    font-size: 16px; */
+    margin: 0;
+    float: none;
+    align-items: center;
+    /* font-size: 17px; */
+  }
+
+  /* Desktop Menu Styles */
+  .revealed_local_top_bar_nav_container {
+    display: block;
+  }
+  .revealed_local_top_bar_nav_container .nav_menu {
+    display: flex;
+    list-style-type: none;
+    height: 50px;
+    padding: 0 1rem;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    font-size: 0.9375em;
+    line-height: 0.9375em;
+    display: flex;
+    padding: 0;
+
+    max-width: 100%;
+
+margin: 0 4rem;
+
+padding: 0 5rem;
+  }
+
+  .revealed_local_top_bar_nav_container .nav_menu_item {
+    margin: 0 0 0 1rem;
+    font-weight: 400;
+  }
+
+  .revealed_local_top_bar_nav_container .nav_menu_item a {
+    text-decoration: none;
+    color: rgba(29, 28, 28, 1.0);
+    line-height: 1.1;
+  }
+}
+/* TODO Fix the padding, it needs to added to the local local_top_bar_nav_inner_container, and the max width needs to be moved to the local_top_bar_nav */
+/* TODO Refactor the code below to be as minimal as possible. You should be able to just have one menu list that is used in both mobile and desktop views */
+
+
+@media screen and (min-width: 1280px) {
+  /* TODO Check if this is in anyway right or work well */
+.local_top_bar_nav_title div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  height: 50px;
+  padding: 0;
+  white-space: nowrap;
+
+  margin-left: 5rem;

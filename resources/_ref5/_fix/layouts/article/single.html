@@ -1,0 +1,49 @@
+{{ define "main" }}
+<div class="page-label">
+    <span>Layout:&nbsp;/article/single/</span>
+</div>
+
+<!-- TODO Wrap all images in a firgure tag with caption reveal on have like newroom for apple -->
+<article class="sc-article-post">
+
+    <header class="post-header">
+
+      <div><!-- FIXME When you remove the div wrap in wraps around the article masthead content instead of being seperated by two sections -->
+        {{ partial "post_hero_image" . }}
+        </div>
+      {{ partial "post_masthead" . }}
+    </header>
+
+
+    <section class="post-body-copy">
+
+      <!-- <div class="stickybits-parent-here parent-">
+        <div class="stickybits-child-here child">
+
+        </div> -->
+          {{ .Content }}
+      <!-- </div> -->
+
+    </section>
+
+    <footer class="post-footer">
+      {{ partial "post_word_char_count" . }}
+    </footer>
+
+</article>
+
+{{ end }}
+
+
+{{ define "aside" }}
+{{ end }}
+
+{{ define "local_call_to_action" }}
+  {{ partial "call_to_action/post_prev_next" . }}
+{{ end }}
+
+{{ define "footer" }}
+{{ end }}
+
+{{ define "scripts" }}
+{{ end }}

@@ -1,0 +1,426 @@
+/* NOTE For Development ====================== */
+.dev_label_page_layout /* Rename this class */ {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  background-color: black;
+  z-index: 10;
+}
+.dev_label_section_layout /* Rename this class */ {
+  display: block;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  background-color: #000;
+  z-index: 10;
+}
+/* IDEA Temporary styles for development ====================== */
+.site_main {
+  height:2000px;
+  /* background-color: darkgrey; */
+    border: 1px dashed black;
+}
+.site_footer {
+  height: 64px;
+  background-color: grey;
+}
+
+/* Layout ====================== */
+* {
+  box-sizing: border-box;
+}
+header {
+  position: relative;
+}
+
+/* Main Top Navigation ====================== */
+#topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  /* height: 48px; */
+  height: 100%;
+  /* Hide menu animation */
+  transform: translate(0, 0%);
+   transition: all 0.5s ease-out 0s;
+  /* FIXME You have an unnecessary extra middle column on the grid, it's only needed when the width hits 1280px */
+  display: grid;
+grid-template-columns: 120px 1fr 120px;
+grid-template-rows: 48px 40px;
+}
+#topBar .brandmark {
+  grid-column: 1;
+grid-row: 1;
+  z-index: 4;
+}
+
+#mainTopMenu {
+  grid-column: 2;
+grid-row: 1;
+}
+#mainTopMenu nav {
+  display: none;
+}
+#topBar.open_menu nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 64px 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+}
+
+/* Hide menu animation */
+#topBar.hide-nav-bar{
+   -webkit-transform: translate(0, -100%);
+   -moz-transform: translate(0, -100%);
+   -ms-transform: translate(0, -100%);
+   transform: translate(0, -100%);
+   transition: all 1s ease-in 0s;
+}
+/* Hidden Top Navigation Menu ====================== */
+#hiddenTopMenu {
+  display: none;
+}
+
+/* Local Top Navigation Menu ====================== */
+
+#botBar {
+  grid-column: 1 / span 3;
+grid-row: 2;
+position: relative;
+/* IDEA How much of these next two lines do we need? */
+width: 100%;
+z-index: 5;
+/*  */
+  width: 100%;
+  /* height: 40px; */
+  height: 100%;
+  background-color: tomato;
+  background-color: white;
+}
+
+
+
+
+/* =============================================================================================================================
+FIXME NEED to clean up this code, it's messy and just ugh... --> */
+.local_top_bar_nav_title {
+  color: rgba(29, 28, 28, 1.0);
+  font-size: 16px;
+  /* font-weight: 700; */
+  /* letter-spacing: .011em; */
+  border-bottom: none;
+}
+/* FIXME On desktop local menu does not show up. */
+.local_top_bar_nav_expand {
+  cursor: pointer;
+  width: 100%;
+  height: 48px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  /* NOTE The webkit below fixes the flickering on tap Safari */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.local_top_bar_nav_title div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  height: 48px;
+  padding: 0 16px;
+  white-space: nowrap;
+}
+
+button.local_top_bar_nav_expand:active,
+.local_top_bar_nav_expand:hover {
+  background-color: transparent;
+}
+
+.local_top_bar_nav_expand:after {
+  content: '\002B';
+
+color: green;
+
+      font-size: 20px;
+      font-weight: 700;
+      float: right;
+      width: 18px;
+      margin-left: 0;
+      padding-left: 0 16px;
+      padding: 0 16px;
+}
+
+/* Button Open State */
+.local_top_bar_nav_expand.expand:after {
+  content: "\2212";
+}
+
+/* Menu - Mobile
+  ========================================================================== */
+ .hidden_local_top_bar_nav_container {
+  padding: 0 12px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.local_top_bar_nav .nav_menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+
+.local_top_bar_nav .nav_menu_item a {
+  line-height: 2.5rem;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(29, 28, 28, 1.0);
+}
+
+.local_top_bar_nav .nav_menu_item a:link,
+.local_top_bar_nav .nav_menu_item a:visited {
+  color: rgba(29, 28, 28, 1.0);
+  border-bottom: none;
+}
+
+/* FIXME End of the local menu styles, fix this stuff in code pen for clarity
+============================================================================================================================= */
+
+.frosted-glass-light {
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+
+.frosted-glass-light::after {
+  background-color: rgba(51, 51, 51, 0.1);
+}
+
+.frosted-glass-dark {
+  background-color: rgba(0, 0, 0, 0.75);
+  -webkit-transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, -webkit-backdrop-filter;
+  transition-property: background-color, backdrop-filter;
+  transition-property: background-color, backdrop-filter, -webkit-backdrop-filter;
+}
+
+.frosted-glass-dark::after {
+  background-color: rgba(51, 51, 51, 0.75);
+}
+
+/* Responsive Styles
+  ======================================================================== */
+@media screen and (min-width: 768px) {
+  .local_top_bar_nav_expand:after {
+        padding: 0 20px;
+  }
+  .local_top_bar_nav_title div {
+    padding: 0 20px;
+}
+}
+
+@media screen and (min-width: 1024px) {
+  .local_top_bar_nav_expand:after {
+        padding: 0 24px;
+  }
+  .local_top_bar_nav_title div {
+    padding: 0 24px;
+}
+  /* Menu - Mobile */
+  .local_top_bar_nav_expand,
+ .hidden_local_top_bar_nav_container {
+    display: none;
+  }
+
+ .local_top_bar_nav_inner_container {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .local_top_bar_nav {
+    margin: 0 auto;
+    padding: 0 1rem 0 0;
+  }
+
+  .local_top_bar_nav_title {
+    display: flex;
+    /* font-size: 0.9375rem;
+    font-size: 16px; */
+    margin: 0;
+    float: none;
+    align-items: center;
+    /* font-size: 17px; */
+  }
+  .local_top_bar_nav .nav_menu {
+  height: 48px;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* align-content: ; */
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+/* TODO Fix the padding, it needs to added to the local local_top_bar_nav_inner_container, and the max width needs to be moved to the local_top_bar_nav */
+/* TODO Refactor the code below to be as minimal as possible. You should be able to just have one menu list that is used in both mobile and desktop views */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Header Menu Buttons ====================== */
+#mobileNavBttn, #desktopNavBttn {
+  grid-column: 3;
+  grid-row 1;
+  z-index: 4;
+}
+#desktopNavBttn {
+  display: none;
+}
+
+
+
+
+/* NOTE Image ====================== */
+img, svg {
+  width: 100%;
+}
+img {
+  display: block;
+}
+
+/* NOTE Responsive Styles ====================== */
+@media screen and (min-width: 320px) {}
+@media screen and (min-width: 640px) {
+  /* Main Top Navigation */
+  #topBar {
+    padding: 0 20px;
+    /* height: 56px; */
+    grid-template-rows: 56px 48px;
+  }
+}
+@media screen and (min-width: 960px) {
+  /* Main Top Navigation */
+  #topBar {
+    padding: 0 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  /* Main Top Navigation */
+  #topBar {
+    /* height: 64px; */
+    grid-template-rows: 64px 48px;
+  }
+  /* Main Navigation Menu */
+  #mainTopMenu nav {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #mainTopMenu nav ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  #mainTopMenu nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  #mainTopMenu nav ul li:last-of-type {
+    margin-right: 0;
+  }
+  /* Header Menu Buttons */
+  #mobileNavBttn {
+    display: none;
+  }
+  #desktopNavBttn {
+    display: block;
+  }
+  /* Hidden Top Navigation Menu */
+  #hiddenTopMenu.open_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 64px 0;
+    width: 100vw;
+    background-color: lightgreen;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  /* Main Top Navigation */
+  /* TODO Turn me on and set after the site has been built at 1440 and completed/released */
+  /* #topBar {
+    padding: 0;
+  } */
+}
+/* TODO Consider keeping your main top menu at 40-48px similar to apple's site */

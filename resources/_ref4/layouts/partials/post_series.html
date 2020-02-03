@@ -1,0 +1,17 @@
+{{ with .Params.series }}
+<p>
+ <span class="post_series">
+   <span>Series Title:&nbsp;</span>
+     {{ range . }}
+     {{ $href := print (absURL "series/") (urlize .) }}
+     <a href="{{ $href }}">{{ . }}</a>&nbsp;Series,
+     {{ end }}
+ </span>
+ {{ end }}
+
+ {{ if .Params.series }}
+ <span class="post_series_part">
+ Part {{ .Params.seriesPart }}
+ </span>
+ </p>
+ {{ end }}

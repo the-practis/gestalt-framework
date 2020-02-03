@@ -1,0 +1,81 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: everyday/list.html</div>
+{{- end }}
+
+  {{/* <!-- TODO Clean all of this HTML and CSS up! --> */}}
+
+{{- define "header_page_specific" }}
+  {{- partial "feature_image.html" . -}}
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<h1 class="hidden_page_title">{{ .Title }}</h1>
+
+
+
+<article class="sc-article-post">
+
+  <header class="post-header">
+    <div class="hero-title">
+      <h2>
+        <time>{{ partial "timer_countup_everyday.html" . }}</time>
+        Consecutive Days
+    </h2>
+  </header>
+
+  <section class="post-body-copy">
+    <p>copy beeplecrap</p>
+    <p>
+      These pictures are all done from start to finish every day. The purpose of this project is to help me get better at different things. By posting the results online, I'm "less" likely to throw down a big pile of ass-shit even though most of the time I still do because I suck ass.
+    </p>
+
+      <p>
+      I am currently on my 12th round of everydays. This year I'll be doing a render everyday using Cinema 4D and mostly Octane, instead of trying to learn new software, will be focusing on some of the fundamentals like color, composition, value etc.... :)
+      </p>
+  </section>
+
+  <footer class="post-footer">
+  </footer>
+
+</article>
+
+<div class="archive-list">
+
+  <h1 class="gallery-title">{{ .Title }} Archive</h1>
+
+    <ul>
+    {{ range where .Site.Pages "Params.everydays" "primary" }}
+      <li>
+        {{ if .Params.gallery_thumbnail_image }}
+        <a href="{{ .Permalink }}">
+          <div class="">
+              <img src="{{ .Params.gallery_thumbnail_image }}" alt="image from {{ .Params.round_number }}">
+          </div>
+
+        </a>
+
+    {{ end }}
+
+      {{ if .Params.description }}
+        <a href="{{ .Permalink }}"><h3 class="round-title">{{- .Params.round_number -}}</h3></a>
+        <p class="description">{{ .Params.description }}
+
+          </p>
+
+        {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+  </div>
+
+{{ end }}
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "prev_next" . -}}
+
+  {{ $js_countup_timer_everyday := "js/countup-timer-everyday.js" | absURL }}
+<script src="{{ $js_countup_timer_everyday }}"></script
+{{- end }}

@@ -1,0 +1,80 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: _default/list.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+{{/* <!-- Hidden Page Title IDEA consider making into a partial as it's repeated throughout the website. --> */}}
+<h1 class="hidden-page-title">{{ .Title }}</h1>
+
+{{/* <!-- TODO Make the warning label use fit inside of a notification bar at the top, it's a good use case. --> */}}
+<p><em>Warning:</em> This page is using the default list layout.<p>
+
+  <ol class="range-list">
+  {{- $paginator := .Paginate (.Data.Pages.ByPublishDate.Reverse) 2 -}}
+  {{- range $paginator.Pages }}
+    <li class="range-list__item">
+      <article class="post-container__container">
+        <header class="post-container__header">
+
+          {{- partial "thumbnail_image.html" . -}}
+
+          <h1>
+            <a href="{{ .Permalink }}">{{- .Title -}}</a>
+          </h1>
+
+          <ul class="metadata">
+            {{- partial "content_type.html" . -}}
+            {{- partial "category.html" . -}}
+            {{- partial "date_published.html" . -}}
+            {{- partial "date_modified.html" . -}}
+            {{- partial "author.html" . -}}
+            {{- partial "read_time.html" . -}}
+            {{- partial "series" . -}}
+          </ul>
+        </header>
+
+        <section class="post-container__main">
+          <p>{{- .Summary | truncate 280 -}}<a href="#">continue reading</a></p>
+        </section>
+
+        <footer class="post-container__footer">
+          <ul class="metadata">
+            {{/* <!-- TODO Research a good limit for tags to be used on the web with articles --> */}}
+            {{- partial "tags.html" . -}}
+            {{- partial "character_count.html" . -}}
+            {{- partial "word_count.html" . -}}
+          </ul>
+        </footer>
+      </article>
+    </li>
+  {{- end }}
+  </ol>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "pagination_custom" . -}}
+{{- end }}

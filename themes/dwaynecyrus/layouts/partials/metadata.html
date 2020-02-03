@@ -1,0 +1,39 @@
+{{/* <!-- TODO Learn how <base> tag works. Also learn about BlackFriday Markdown -->
+<!-- <base href="/index.html"> --> */}}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<meta name="Resource-type" content="Document" />
+
+{{/* <!-- NOTE: the Site's title, and if there is a page title, that is set too --> */}}
+{{- $title := print .Title " | " .Site.Title -}}
+{{- if .IsHome }}{{- $title = .Site.Title -}}{{- end }}
+<title>{{- $title -}}</title>
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Add a favicon. Add some Hugo code that pulls in the keywords --> */}}
+
+{{- printf "<!--Hugo Build Date: %s-->" hugo.BuildDate | safeHTML -}}
+{{- printf "<!--Hugo Commit Hash: %s-->" hugo.CommitHash | safeHTML -}}
+{{- hugo.Generator -}}
+
+{{- block "head_meta" . }}
+{{- end }}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Figure out how the RSS feeds work, and to add links to them like DaringFireball.com --> */}}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Set the CSS and JS files to use Hugo Pipes https://regisphilibert.com/blog/2018/07/hugo-pipes-and-asset-processing-pipeline/ --> */}}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Learn how each Hugo Internal works. NOTE: Create usecase examples of each one, get more info at https://gohugo.io/templates/internal/ --> */}}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Learn how the `HUGO_ENV="production"` works. 'NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command --> */}}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Be sure to learn how this works. NOTE: This enables Google Analytics when in production for testing. --> */}}
+
+{{/* <!-- TODO: When using Hugo Pipes have CSS load based one current page --> */}}
+
+{{/* <!-- TODO: Can you embed a font with a site so it dies not require google fonts? --> */}}
+
+{{/* <!-- TODO: (Reference Hugo-blue-temp or Ananke Theme) Figure out how this works with the above Hugo_ENV codes. --> */}}

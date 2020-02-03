@@ -1,0 +1,285 @@
+/* Brandmark
+  ========================================================================== */
+.site-brandmark {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-weight: 700;
+  margin: 0 0 0 16px;
+  font-size: 18px;
+  background-color: transparent;
+  z-index: 7;
+  align-items: center;
+  flex-basis: content;
+  position: relative;
+  margin: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+  transition-delay: 0.65s;
+  padding: 0 0 0 1rem;
+}
+
+.site-brandmark a {
+  text-decoration: none;
+}
+
+.site-brandmark span {
+  color: rgba(29, 28, 28, 1.0);
+  transition: all 0.5s ease-out;
+}
+
+.site-brandmark span:hover {
+  color: rgba(71, 153, 226, 1.0);
+  transition: all 0.5s ease-out;
+}
+
+.site-brandmark span span {
+  color: rgba(71, 153, 226, 1.0);
+}
+
+/* Menu Open State */
+.nav-top-bar.menu-opened .site-brandmark span {
+  color: #fff;
+}
+
+.nav-top-bar.menu-opened .site-brandmark span span {
+  color: rgba(71, 153, 226, 1.0);
+}
+
+/* Menu Icon - Hamburger
+  ========================================================================== */
+.burger-container {
+  position: relative;
+  z-index: 7;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  /* margin-right: 6px; */
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+.burger-container #burger {
+  width: 18px;
+  height: 8px;
+  position: relative;
+  display: block;
+  margin: -6px auto 0;
+  top: 50%;
+}
+
+.burger-container #burger .bar {
+  width: 100%;
+  height: 3px;
+  display: block;
+  position: relative;
+  background: rgba(29, 28, 28, 1.0);
+  border-radius: 12px;
+}
+
+.burger-container #burger .bar {
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+
+.burger-container #burger .bar.topBar {
+  transform: translateY(0px) rotate(0deg);
+}
+
+.burger-container #burger .bar.btmBar {
+  transform: translateY(6px) rotate(0deg);
+}
+
+/* Menu Open State */
+.nav-top-bar.menu-opened .burger-container {
+  transform: rotate(90deg);
+}
+
+.nav-top-bar.menu-opened .burger-container #burger .bar {
+  height: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+
+.nav-top-bar.menu-opened .burger-container #burger .bar {
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.2s;
+}
+
+.nav-top-bar.menu-opened .burger-container #burger .bar.topBar {
+  /* transform: translateY(4px) rotate(45deg); */
+  transform: translateY(5px) rotate(45deg);
+}
+
+.nav-top-bar.menu-opened .burger-container #burger .bar.btmBar {
+  /* transform: translateY(2px) rotate(-45deg); */
+  transform: translateY(1px) rotate(-45deg);
+}
+
+.nav-top-bar.menu-opened .burger-container #burger .bar {
+  background-color: #fff;
+}
+
+/* Menu - Mobile
+  ========================================================================== */
+.nav-prime .menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  padding: 50px;
+  /* color:rgba(245, 245, 245, 1.0); */
+  background-color: rgba(29, 28, 28, 1.0);
+  padding: 50px 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  opacity: 0;
+}
+
+.nav-prime .menu-mobile .menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  align-items: end;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 0 0 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-prime .menu-mobile .menu .menu-item a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Menu Open State */
+.nav-top-bar.menu-opened .nav-prime .menu-mobile {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.30s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+
+/* Menu - Desktop
+  ========================================================================== */
+.nav-prime .menu-desktop {
+  display: none;
+}
+
+/* Navbar
+  ========================================================================== */
+.nav-top-bar {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  height: 50px;
+  z-index: 8;
+  background-color: #fff;
+}
+
+.nav-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  transition: all 450ms cubic-bezier(.70, 0, .34, 1);
+}
+
+/* Scroll Hide State */
+.nav-top-bar.hidden {
+  top: -50px;
+}
+
+.menu-opened.hidden {
+  top: 0;
+}
+
+.nav-prime {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+/* Responsive Styles
+  ======================================================================== */
+@media screen and (min-width: 1024px) {
+
+  /* Menu Icon - Hamburger */
+  .burger-container {
+    display: none;
+  }
+
+  /* Menu List - Mobile */
+  .nav-prime .menu-mobile {
+    display: none;
+  }
+
+  /* Menu List - Desktop */
+  .nav-prime .menu-desktop {
+    display: block;
+    width: 100%;
+    padding: 0 1rem 0 0;
+  }
+
+  .nav-prime .menu-desktop .menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+  }
+
+  .nav-prime .menu-desktop .menu-item {
+    padding: 0;
+    margin: 0 0.5rem;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .nav-prime .menu-desktop .menu-item:last-child {
+    margin: 0 0 0 0.5rem;
+  }
+
+  .nav-prime .menu-desktop .menu-item a {
+    text-decoration: none;
+    color: rgba(29, 28, 28, 1.0);
+  }
+
+  /* Navbar */
+  .nav-prime {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,95 @@
+{{ define "main" }}
+<div class="journal-single list-single">
+
+  <div class="main-headroom">
+    <a href="/journal/">Back</a>
+  </div>
+
+  <p class="publish-date-day">
+    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+    {{ $dateFormat := .Site.Params.dateFormat | default "Monday, Jan 2, 2006" }}
+    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format "Monday — 02 January 2006" }}</time>
+  </p>
+
+
+  <article>
+
+    <header>
+
+      {{ if .Params.journal_feature_image }}
+      <div class="feature-image">
+          <img src="{{ .Params.journal_feature_image }}" alt="image from {{ .Title }}">
+      </div>
+      {{ else }}
+
+      {{ if .Params.journal_thumbnail_image }}
+      <div class="thumbnail-image">
+          <img src="{{ .Params.journal_thumbnail_image }}" alt="image from {{ .Title }}">
+      </div>
+      {{ end }}
+      {{ end }}
+
+
+      <ul class="meta-top-a">
+          {{ with .Params.series }}
+          <li class="series">
+            <span>Series:</span>
+            {{ range . }}
+            {{ $href := print (absURL "series/") (urlize .) }}
+            <a href="{{ $href }}">{{ . }}</a>
+            {{ end }}
+          </li>
+          {{ end }}
+
+          {{ with .Params.categories }}
+        <li class="categories">
+          <span>Categories:</span>
+          {{ range . }}
+          {{ $href := print (absURL "categories/") (urlize .) }}
+          <a href="{{ $href }}">{{ . }}</a>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+
+    <h1 class="large-title">
+      {{ $dateTitle := .PublishDate.Format "2006-01-02" }}
+      {{ $dateTitleFormat := .Site.Params.dateFormat | default "Jan 2, 2006 15:04 -0400" }}
+        —
+      <time datetime="{{ $dateTitle }}">{{ .PublishDate.Format "15:04" }}</time>
+    </h1>
+
+  </header>
+
+  <p>
+    {{ .Content }}
+    </p>
+
+  <hr class="quarter" />
+
+  <ul class="meta-bot">
+    {{ with .Params.tags }}
+    <li class="tags">
+      <span>#</span>
+      {{ range . }}
+      {{ $href := print (absURL "tags/") (urlize .) }}
+      <a class="btn btn-sm btn-outline-dark tag-btn" href="{{ $href }}">{{- . -}}</a>
+      {{ end }}
+    </li>
+    {{ end }}
+
+    <li class="word-count">
+      <span>Word Count:</span> {{ .Content | countwords }}
+    </li>
+
+    <li class="characters">
+      <span>Character (minus spaces):</span> {{ .Content | countrunes }}
+    </li>
+  </ul>
+
+</article>
+
+{{ partial "nav_prev_next" . }}
+
+</div>
+{{ end }}

@@ -1,0 +1,141 @@
+{{- define "label_page_layout" }}
+<div class="label__page-layout">Page Layout: blacklog/single.html</div>
+{{- end }}
+
+
+
+{{- define "main_page_specific" }}
+<article class="post-container">
+  <header class="post-container__header">
+
+    {{/* <!-- IDEA Condiser renaming the log to "BlackLog: A lifelog is a personal record of (A BLACK MAN'S) daily life in a varying amount of detail, for a variety of purposes. The record contains a comprehensive dataset of a human's activities. The data could be used to increase knowledge about how people live their lives.[2] In recent years, some lifelog data has been automatically captured by wearable technology or mobile devices. People who keep lifelogs about themselves are known as lifeloggers (or sometimes lifebloggers or lifegloggers).
+
+The sub-field of computer vision that processes and analyses visual data captured by a wearable camera is called "egocentric vision".[citation needed]"
+
+Reference: https://en.wikipedia.org/wiki/Lifelog
+
+Use front matter to fill in the "lifelog" text in titles for each post --> */}}
+
+    {{/* <!-- TODO Decide which date HTML you are going to use. --> */}}
+
+    <ul>
+      {{- partial "date_published.html" . -}}
+    </ul>
+    <p class="">
+      {{- $publishDateTime := .PublishDate.Format "2006-01-02" -}}
+      {{- $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" -}}
+      <time datetime="{{ $publishDateTime }}">
+        {{- .PublishDate.Format "Monday — January 2, 2006" -}}
+      </time>
+    </p>
+
+    {{/* <!-- TODO Make the subtitle mandatory! --> */}}
+    <h1 class="post-container__title">Subtitle:&nbsp;{{ .Params.subtitle }}</h1>
+
+    <ul class="metadata">
+      {{- partial "content_type.html" . -}}
+      {{- partial "date_published.html" . -}}
+      {{- partial "date_modified.html" . -}}
+      {{- partial "author.html" . -}}
+    </ul>
+  </header>
+
+    {{/* <!-- IDEA IS the  following a good use of section tags, can it be cleaner? --> */}}
+  <section class="post-container__main">
+    <section>
+      {{ .Content }}
+    </section>
+
+    <hr/>
+
+    <section>
+      <p>View today's artwork<a href="{{ .Params.vlogLink }}" target="_blank">poster</a> and <a href="{{ .Params.vlogLink }}" target="_blank">portrait</a>.</p>
+    </section>
+
+    <hr/>
+
+    <section>
+      <ol>
+        <li class="love">
+          <h4>Love</h4>
+          <ul>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+          </ul>
+        </li>
+
+        <li class="hunt">
+          <h4>Hunt</h4>
+          <ul>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+          </ul>
+        </li>
+
+        <li class="farm">
+          <h4>Farm</h4>
+          <ul>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+          </ul>
+        </li>
+
+        <li class="train">
+          <h4>Train</h4>
+          <ul>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+          </ul>
+        </li>
+
+        <li class="study">
+          <h4>Study</h4>
+          <ul>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+            <li>Stats Item: {{- .Params.stat_name -}}</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+  <footer class="post-container__footer">
+    <ul class="metadata">
+      {{ partial "tags.html" . }}
+      {{ partial "character_count.html" . }}
+      {{ partial "word_count.html" . }}
+    </ul>
+  </footer>
+</article>
+{{- end }}
+
+
+
+{{- define "aside_left_section_wide" }}
+<ul>
+  <li>Section link</li>
+  <li>Section link</li>
+  <li>Section link</li>
+</ul>
+{{- end }}
+
+
+
+{{- define "aside_right_section_wide" }}
+  <ul>
+    <li>Share link</li>
+    <li>Share link</li>
+    <li>Share link</li>
+  </ul>
+{{- end }}
+
+
+
+{{- define "footer_page_specific" }}
+  {{- partial "prev_next" . -}}
+{{- end }}
